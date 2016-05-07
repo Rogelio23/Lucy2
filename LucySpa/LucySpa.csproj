@@ -1,0 +1,488 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9F382509-40E8-4F90-B67E-0A2AB3B78EEB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LucySpa</RootNamespace>
+    <AssemblyName>LucySpa</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Hal\Dropbox\NETCODE\Lucy Spa\Tercera implementacion\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>5B570DB99A72B9B9B513E3C1A9710B705C630D22</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>LucySpa_ClaveTemporal.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MetroFramework, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\BrisasDelMar\BrisasDelMar\bin\Debug\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.Calendar">
+      <HintPath>Resources\System.Windows.Forms.Calendar.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Citas\frmCitaPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Citas\frmCitaPago.Designer.cs">
+      <DependentUpon>frmCitaPago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Citas\frmCitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Citas\frmCitas.Designer.cs">
+      <DependentUpon>frmCitas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Citas\FrmMostrarCitasConflictivas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Citas\FrmMostrarCitasConflictivas.Designer.cs">
+      <DependentUpon>FrmMostrarCitasConflictivas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clientes\frmClientes.Designer.cs">
+      <DependentUpon>frmClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cuartos\frmCuartos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cuartos\frmCuartos.Designer.cs">
+      <DependentUpon>frmCuartos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cuartos\frmRelacionCuartoServicios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cuartos\frmRelacionCuartoServicios.Designer.cs">
+      <DependentUpon>frmRelacionCuartoServicios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\DSTarjetas.cs">
+      <DependentUpon>DSTarjetas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\DSTarjetas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSTarjetas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\LucySpaDB.cs">
+      <DependentUpon>LucySpaDB.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSReporte.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSReporte.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Pagos\Pagos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pagos\Pagos.Designer.cs">
+      <DependentUpon>Pagos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteEmpleados.Designer.cs">
+      <DependentUpon>ReporteEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Empleados\frmEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Service References\Empleados\frmEmpleados.Designer.cs">
+      <DependentUpon>frmEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clientes\frmClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipo\frmEquipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipo\frmEquipo.Designer.cs">
+      <DependentUpon>frmEquipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Productos\frmVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos\frmVenta.Designer.cs">
+      <DependentUpon>frmVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Productos\Productos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos\Productos.Designer.cs">
+      <DependentUpon>Productos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Servcios\frmServicios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Servcios\frmServicios.Designer.cs">
+      <DependentUpon>frmServicios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tarjetas\frmCrearNuevasTarjetas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tarjetas\frmCrearNuevasTarjetas.Designer.cs">
+      <DependentUpon>frmCrearNuevasTarjetas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tarjetas\frmAsignarTarjetas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tarjetas\frmAsignarTarjetas.Designer.cs">
+      <DependentUpon>frmAsignarTarjetas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tratamientos\Abonos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tratamientos\Abonos.Designer.cs">
+      <DependentUpon>Abonos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tratamientos\frmDetalleTratamiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tratamientos\frmDetalleTratamiento.Designer.cs">
+      <DependentUpon>frmDetalleTratamiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tratamientos\frmSeleccionarClienteYEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tratamientos\frmSeleccionarClienteYEmpleado.Designer.cs">
+      <DependentUpon>frmSeleccionarClienteYEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tratamientos\frmTratamiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tratamientos\frmTratamiento.Designer.cs">
+      <DependentUpon>frmTratamiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tratamientos\frmVentaTratamientocs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tratamientos\frmVentaTratamientocs.Designer.cs">
+      <DependentUpon>frmVentaTratamientocs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tratamientos\TratamientosVendidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tratamientos\TratamientosVendidos.Designer.cs">
+      <DependentUpon>TratamientosVendidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios\frmUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios\frmUsuarios.Designer.cs">
+      <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Herramientas.cs" />
+    <Compile Include="Inicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inicio.Designer.cs">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\LucySpaDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LucySpaDB.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Usuarios\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Citas\frmCitaPago.resx">
+      <DependentUpon>frmCitaPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Citas\frmCitas.resx">
+      <DependentUpon>frmCitas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Citas\FrmMostrarCitasConflictivas.resx">
+      <DependentUpon>FrmMostrarCitasConflictivas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clientes\frmClientes.resx">
+      <DependentUpon>frmClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cuartos\frmCuartos.resx">
+      <DependentUpon>frmCuartos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cuartos\frmRelacionCuartoServicios.resx">
+      <DependentUpon>frmRelacionCuartoServicios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagos\Pagos.resx">
+      <DependentUpon>Pagos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteEmpleado.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteEmpleados.resx">
+      <DependentUpon>ReporteEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Service References\Empleados\frmEmpleados.resx">
+      <DependentUpon>frmEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipo\frmEquipo.resx">
+      <DependentUpon>frmEquipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\frmVenta.resx">
+      <DependentUpon>frmVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\Productos.resx">
+      <DependentUpon>Productos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Servcios\frmServicios.resx">
+      <DependentUpon>frmServicios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tarjetas\frmCrearNuevasTarjetas.resx">
+      <DependentUpon>frmCrearNuevasTarjetas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tarjetas\frmAsignarTarjetas.resx">
+      <DependentUpon>frmAsignarTarjetas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tratamientos\Abonos.resx">
+      <DependentUpon>Abonos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tratamientos\frmDetalleTratamiento.resx">
+      <DependentUpon>frmDetalleTratamiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tratamientos\frmSeleccionarClienteYEmpleado.resx">
+      <DependentUpon>frmSeleccionarClienteYEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tratamientos\frmTratamiento.resx">
+      <DependentUpon>frmTratamiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tratamientos\frmVentaTratamientocs.resx">
+      <DependentUpon>frmVentaTratamientocs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tratamientos\TratamientosVendidos.resx">
+      <DependentUpon>TratamientosVendidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios\frmUsuarios.resx">
+      <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inicio.resx">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DataAccess\DSTarjetas.xsc">
+      <DependentUpon>DSTarjetas.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccess\DSTarjetas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSTarjetas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccess\DSTarjetas.xss">
+      <DependentUpon>DSTarjetas.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccess\LucySpaDB.xsc">
+      <DependentUpon>LucySpaDB.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccess\LucySpaDB.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LucySpaDB.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccess\LucySpaDB.xss">
+      <DependentUpon>LucySpaDB.xsd</DependentUpon>
+    </None>
+    <None Include="DSReporte.xsc">
+      <DependentUpon>DSReporte.xsd</DependentUpon>
+    </None>
+    <None Include="DSReporte.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSReporte.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DSReporte.xss">
+      <DependentUpon>DSReporte.xsd</DependentUpon>
+    </None>
+    <None Include="LucySpa_ClaveTemporal.pfx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lucy-spa.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fonfo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_login.png" />
+    <Content Include="Resources\System.Windows.Forms.Calendar.dll" />
+    <None Include="Resources\clienteDesconocido.jpg" />
+    <Content Include="Resources\clienteSinFoto.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="Microsoft.ReportViewer.Common">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.DataVisualization">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.ProcessingObjectModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.WinForms">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.SqlServer.Types">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
