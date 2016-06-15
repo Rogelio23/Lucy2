@@ -109,44 +109,57 @@ namespace LucySpa.Citas
 
         private void mbtnAgendar_Click(object sender, EventArgs e)
         {
-            //se obtiene el ID del Eliente con el reglon seleccionado///
-            DataGridViewRow reglonServicio = dgvServicios.SelectedRows [0];
-            int servicioID = (int)reglonServicio.Cells[0].Value;
-        
-            //se obtiene el ID del Empleado con el reglon seleccionado///
-            DataGridViewRow reglonEmpleado = dgvEmpleado.SelectedRows[0];
-            int empleadoID = (int)reglonEmpleado.Cells[0].Value;
+            try
+            {
+                //se obtiene el ID del Cliente con el reglon seleccionado///
+                DataGridViewRow reglonServicio = dgvServicios.SelectedRows[0];
+                int servicioID = (int)reglonServicio.Cells[0].Value;
+
+                //se obtiene el ID del Empleado con el reglon seleccionado///
+                DataGridViewRow reglonEmpleado = dgvEmpleado.SelectedRows[0];
+                int empleadoID = (int)reglonEmpleado.Cells[0].Value;
 
 
-            TACitas taCitas = new TACitas();
-            TAVistaCitas taVistaCitas = new TAVistaCitas();
-            string fecha = ((dtpFechaCita.Value.ToString("MM/dd/yyyy hh:mm tt")).Replace("a. m.","am")).Replace("p. m.","pm");
+                TACitas taCitas = new TACitas();
+                TAVistaCitas taVistaCitas = new TAVistaCitas();
+                string fecha = ((dtpFechaCita.Value.ToString("MM/dd/yyyy hh:mm tt")).Replace("a. m.", "am")).Replace("p. m.", "pm");
 
-            //Se busca si hay citas que hacen conflicto con la que se esta agendando
-            VistaCitas vistaCitasConflictivas = taVistaCitas.GetDataByCitasConflictivas(fecha, clienteID, empleadoID, servicioID);
-            if (vistaCitasConflictivas.Rows.Count == 0) {//Si no hay citas conflictivas
-                if (ModooVentana == "Modificar")
-                {
-                    taCitas.UpdateQueryCitaID(clienteID, empleadoID, servicioID, dtpFechaCita.Value, null, null,null,citaID);
-                    MessageBox.Show("Cita modificado satisfactoriamente.", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
+                int cuartoID = (int)cbCuartos.SelectedValue;
+
+                //Se busca si hay citas que hacen conflicto con la que se esta agendando
+                VistaCitas vistaCitasConflictivas = taVistaCitas.GetDataByCitasConflictivas(fecha, clienteID, empleadoID, servicioID,cuartoID);
+                if (vistaCitasConflictivas.Rows.Count == 0)
+                {//Si no hay citas conflictivas
+                    if (ModooVentana == "Modificar")
+                    {
+                        taCitas.UpdateQueryCitaID(clienteID, empleadoID, servicioID, dtpFechaCita.Value, null, null, null, citaID);
+                        MessageBox.Show("Cita modificado satisfactoriamente.", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                    else
+                    {
+                        //Se insertan los datos de la cita a la base de datos//
+                        taCitas.Insert(clienteID, empleadoID, servicioID, dtpFechaCita.Value, null, null, null, (int)cbCuartos.SelectedValue, false);
+                        MessageBox.Show("Guardado satisfactoriamente.", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                    //Se actualiza la lista de registro de citas//
+                    inicioActuaCita.actualizarRegistroCita();
                 }
                 else
                 {
-                    //Se insertan los datos de la cita a la base de datos//
-                    taCitas.Insert(clienteID, empleadoID, servicioID, dtpFechaCita.Value, null, null,null,(int)cbCuartos.SelectedValue,false);
-                    MessageBox.Show("Guardado satisfactoriamente.", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
+                    //Hay citas conflictivas, asi que se le muestran al usuario en una leyenda.
+                    FrmMostrarCitasConflictivas frmCitasConflictivas = new FrmMostrarCitasConflictivas(vistaCitasConflictivas);
+                    frmCitasConflictivas.ShowDialog();
                 }
-                //Se actualiza la lista de registro de citas//
-                inicioActuaCita.actualizarRegistroCita();
             }
-            else
+            catch
             {
-                //Hay citas conflictivas, asi que se le muestran al usuario en una leyenda.
-                FrmMostrarCitasConflictivas frmCitasConflictivas = new FrmMostrarCitasConflictivas(vistaCitasConflictivas);
-                frmCitasConflictivas.ShowDialog();
+                MessageBox.Show("Error al realizar la cita. No hay un Servicio o Empleado selecionado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+
             }
+
         }
 
         private void metroButton2_Click(object sender, EventArgs e)
@@ -184,8 +197,8 @@ namespace LucySpa.Citas
 
 
             d1 = dtpFechaCita.Value;
-            d2 = d1.AddMinutes(40);
-            d3 = d1.AddMinutes(-40);
+            d2 = d1.AddMinutes(30);
+            d3 = d1.AddMinutes(-30);
             
             int cuerto = (int)cbCuartos.SelectedValue;
             
@@ -199,6 +212,14 @@ namespace LucySpa.Citas
             }
         }
 
+        private void dgvEmpleado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
+        }
+
+        private void chbDosPersonas_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

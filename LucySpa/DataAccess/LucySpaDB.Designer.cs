@@ -8113,6 +8113,8 @@ namespace LucySpa.DataAccess {
             
             private global::System.Data.DataColumn columnRealizado;
             
+            private global::System.Data.DataColumn columnCuartoID;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public vistaCitasDataTable() {
@@ -8300,6 +8302,14 @@ namespace LucySpa.DataAccess {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CuartoIDColumn {
+                get {
+                    return this.columnCuartoID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -8354,7 +8364,8 @@ namespace LucySpa.DataAccess {
                         string NombreServicio, 
                         string NomCompletoEmp, 
                         string NomCompletoClie, 
-                        bool Realizado) {
+                        bool Realizado, 
+                        int CuartoID) {
                 vistaCitasRow rowvistaCitasRow = ((vistaCitasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         CitaID,
@@ -8375,7 +8386,8 @@ namespace LucySpa.DataAccess {
                         NombreServicio,
                         NomCompletoEmp,
                         NomCompletoClie,
-                        Realizado};
+                        Realizado,
+                        CuartoID};
                 rowvistaCitasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowvistaCitasRow);
                 return rowvistaCitasRow;
@@ -8424,6 +8436,7 @@ namespace LucySpa.DataAccess {
                 this.columnNomCompletoEmp = base.Columns["NomCompletoEmp"];
                 this.columnNomCompletoClie = base.Columns["NomCompletoClie"];
                 this.columnRealizado = base.Columns["Realizado"];
+                this.columnCuartoID = base.Columns["CuartoID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8467,13 +8480,12 @@ namespace LucySpa.DataAccess {
                 base.Columns.Add(this.columnNomCompletoClie);
                 this.columnRealizado = new global::System.Data.DataColumn("Realizado", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRealizado);
+                this.columnCuartoID = new global::System.Data.DataColumn("CuartoID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCuartoID);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnCitaID}, true));
                 this.columnCitaID.AllowDBNull = false;
                 this.columnCitaID.Unique = true;
-                this.columnClienteID.AllowDBNull = false;
-                this.columnEmpleadoID.AllowDBNull = false;
-                this.columnServicioID.AllowDBNull = false;
                 this.columnFecha.AllowDBNull = false;
                 this.columnNombre.AllowDBNull = false;
                 this.columnNombre.MaxLength = 50;
@@ -10164,8 +10176,6 @@ namespace LucySpa.DataAccess {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class VistaAbonosDataTable : global::System.Data.TypedTableBase<VistaAbonosRow> {
             
-            private global::System.Data.DataColumn columnVentaTratamientoID;
-            
             private global::System.Data.DataColumn columnNombre;
             
             private global::System.Data.DataColumn columnExpr1;
@@ -10175,6 +10185,8 @@ namespace LucySpa.DataAccess {
             private global::System.Data.DataColumn columnCantidad;
             
             private global::System.Data.DataColumn columnCostoTratamiento;
+            
+            private global::System.Data.DataColumn columnVentaTratamientoID;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -10207,14 +10219,6 @@ namespace LucySpa.DataAccess {
             protected VistaAbonosDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn VentaTratamientoIDColumn {
-                get {
-                    return this.columnVentaTratamientoID;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10259,6 +10263,14 @@ namespace LucySpa.DataAccess {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn VentaTratamientoIDColumn {
+                get {
+                    return this.columnVentaTratamientoID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -10294,25 +10306,18 @@ namespace LucySpa.DataAccess {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public VistaAbonosRow AddVistaAbonosRow(int VentaTratamientoID, string Nombre, string Expr1, System.DateTime Fecha, decimal Cantidad, decimal CostoTratamiento) {
+            public VistaAbonosRow AddVistaAbonosRow(string Nombre, string Expr1, System.DateTime Fecha, decimal Cantidad, decimal CostoTratamiento, int VentaTratamientoID) {
                 VistaAbonosRow rowVistaAbonosRow = ((VistaAbonosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        VentaTratamientoID,
                         Nombre,
                         Expr1,
                         Fecha,
                         Cantidad,
-                        CostoTratamiento};
+                        CostoTratamiento,
+                        VentaTratamientoID};
                 rowVistaAbonosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowVistaAbonosRow);
                 return rowVistaAbonosRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public VistaAbonosRow FindByVentaTratamientoID(int VentaTratamientoID) {
-                return ((VistaAbonosRow)(this.Rows.Find(new object[] {
-                            VentaTratamientoID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10332,19 +10337,17 @@ namespace LucySpa.DataAccess {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnVentaTratamientoID = base.Columns["VentaTratamientoID"];
                 this.columnNombre = base.Columns["Nombre"];
                 this.columnExpr1 = base.Columns["Expr1"];
                 this.columnFecha = base.Columns["Fecha"];
                 this.columnCantidad = base.Columns["Cantidad"];
                 this.columnCostoTratamiento = base.Columns["CostoTratamiento"];
+                this.columnVentaTratamientoID = base.Columns["VentaTratamientoID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnVentaTratamientoID = new global::System.Data.DataColumn("VentaTratamientoID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnVentaTratamientoID);
                 this.columnNombre = new global::System.Data.DataColumn("Nombre", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNombre);
                 this.columnExpr1 = new global::System.Data.DataColumn("Expr1", typeof(string), null, global::System.Data.MappingType.Element);
@@ -10355,12 +10358,15 @@ namespace LucySpa.DataAccess {
                 base.Columns.Add(this.columnCantidad);
                 this.columnCostoTratamiento = new global::System.Data.DataColumn("CostoTratamiento", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCostoTratamiento);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnVentaTratamientoID}, true));
-                this.columnVentaTratamientoID.AllowDBNull = false;
-                this.columnVentaTratamientoID.Unique = true;
+                this.columnVentaTratamientoID = new global::System.Data.DataColumn("VentaTratamientoID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVentaTratamientoID);
+                this.columnNombre.AllowDBNull = false;
                 this.columnNombre.MaxLength = 50;
+                this.columnExpr1.AllowDBNull = false;
                 this.columnExpr1.MaxLength = 50;
+                this.columnFecha.AllowDBNull = false;
+                this.columnCantidad.AllowDBNull = false;
+                this.columnCostoTratamiento.AllowDBNull = false;
                 this.CaseSensitive = false;
             }
             
@@ -13109,7 +13115,12 @@ namespace LucySpa.DataAccess {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int ClienteID {
                 get {
-                    return ((int)(this[this.tablevistaCitas.ClienteIDColumn]));
+                    try {
+                        return ((int)(this[this.tablevistaCitas.ClienteIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ClienteID\' in table \'vistaCitas\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablevistaCitas.ClienteIDColumn] = value;
@@ -13120,7 +13131,12 @@ namespace LucySpa.DataAccess {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int EmpleadoID {
                 get {
-                    return ((int)(this[this.tablevistaCitas.EmpleadoIDColumn]));
+                    try {
+                        return ((int)(this[this.tablevistaCitas.EmpleadoIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'EmpleadoID\' in table \'vistaCitas\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablevistaCitas.EmpleadoIDColumn] = value;
@@ -13131,7 +13147,12 @@ namespace LucySpa.DataAccess {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int ServicioID {
                 get {
-                    return ((int)(this[this.tablevistaCitas.ServicioIDColumn]));
+                    try {
+                        return ((int)(this[this.tablevistaCitas.ServicioIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ServicioID\' in table \'vistaCitas\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablevistaCitas.ServicioIDColumn] = value;
@@ -13335,6 +13356,58 @@ namespace LucySpa.DataAccess {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int CuartoID {
+                get {
+                    try {
+                        return ((int)(this[this.tablevistaCitas.CuartoIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CuartoID\' in table \'vistaCitas\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevistaCitas.CuartoIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsClienteIDNull() {
+                return this.IsNull(this.tablevistaCitas.ClienteIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetClienteIDNull() {
+                this[this.tablevistaCitas.ClienteIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsEmpleadoIDNull() {
+                return this.IsNull(this.tablevistaCitas.EmpleadoIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetEmpleadoIDNull() {
+                this[this.tablevistaCitas.EmpleadoIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsServicioIDNull() {
+                return this.IsNull(this.tablevistaCitas.ServicioIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetServicioIDNull() {
+                this[this.tablevistaCitas.ServicioIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsTratamientoIDNull() {
                 return this.IsNull(this.tablevistaCitas.TratamientoIDColumn);
             }
@@ -13403,6 +13476,18 @@ namespace LucySpa.DataAccess {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetRealizadoNull() {
                 this[this.tablevistaCitas.RealizadoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCuartoIDNull() {
+                return this.IsNull(this.tablevistaCitas.CuartoIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCuartoIDNull() {
+                this[this.tablevistaCitas.CuartoIDColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -13813,25 +13898,9 @@ namespace LucySpa.DataAccess {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int VentaTratamientoID {
-                get {
-                    return ((int)(this[this.tableVistaAbonos.VentaTratamientoIDColumn]));
-                }
-                set {
-                    this[this.tableVistaAbonos.VentaTratamientoIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Nombre {
                 get {
-                    try {
-                        return ((string)(this[this.tableVistaAbonos.NombreColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Nombre\' in table \'VistaAbonos\' is DBNull.", e);
-                    }
+                    return ((string)(this[this.tableVistaAbonos.NombreColumn]));
                 }
                 set {
                     this[this.tableVistaAbonos.NombreColumn] = value;
@@ -13842,12 +13911,7 @@ namespace LucySpa.DataAccess {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Expr1 {
                 get {
-                    try {
-                        return ((string)(this[this.tableVistaAbonos.Expr1Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Expr1\' in table \'VistaAbonos\' is DBNull.", e);
-                    }
+                    return ((string)(this[this.tableVistaAbonos.Expr1Column]));
                 }
                 set {
                     this[this.tableVistaAbonos.Expr1Column] = value;
@@ -13858,12 +13922,7 @@ namespace LucySpa.DataAccess {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public System.DateTime Fecha {
                 get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableVistaAbonos.FechaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Fecha\' in table \'VistaAbonos\' is DBNull.", e);
-                    }
+                    return ((global::System.DateTime)(this[this.tableVistaAbonos.FechaColumn]));
                 }
                 set {
                     this[this.tableVistaAbonos.FechaColumn] = value;
@@ -13874,12 +13933,7 @@ namespace LucySpa.DataAccess {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public decimal Cantidad {
                 get {
-                    try {
-                        return ((decimal)(this[this.tableVistaAbonos.CantidadColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Cantidad\' in table \'VistaAbonos\' is DBNull.", e);
-                    }
+                    return ((decimal)(this[this.tableVistaAbonos.CantidadColumn]));
                 }
                 set {
                     this[this.tableVistaAbonos.CantidadColumn] = value;
@@ -13890,12 +13944,7 @@ namespace LucySpa.DataAccess {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public decimal CostoTratamiento {
                 get {
-                    try {
-                        return ((decimal)(this[this.tableVistaAbonos.CostoTratamientoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CostoTratamiento\' in table \'VistaAbonos\' is DBNull.", e);
-                    }
+                    return ((decimal)(this[this.tableVistaAbonos.CostoTratamientoColumn]));
                 }
                 set {
                     this[this.tableVistaAbonos.CostoTratamientoColumn] = value;
@@ -13904,62 +13953,30 @@ namespace LucySpa.DataAccess {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsNombreNull() {
-                return this.IsNull(this.tableVistaAbonos.NombreColumn);
+            public int VentaTratamientoID {
+                get {
+                    try {
+                        return ((int)(this[this.tableVistaAbonos.VentaTratamientoIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'VentaTratamientoID\' in table \'VistaAbonos\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistaAbonos.VentaTratamientoIDColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetNombreNull() {
-                this[this.tableVistaAbonos.NombreColumn] = global::System.Convert.DBNull;
+            public bool IsVentaTratamientoIDNull() {
+                return this.IsNull(this.tableVistaAbonos.VentaTratamientoIDColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr1Null() {
-                return this.IsNull(this.tableVistaAbonos.Expr1Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr1Null() {
-                this[this.tableVistaAbonos.Expr1Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsFechaNull() {
-                return this.IsNull(this.tableVistaAbonos.FechaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetFechaNull() {
-                this[this.tableVistaAbonos.FechaColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsCantidadNull() {
-                return this.IsNull(this.tableVistaAbonos.CantidadColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetCantidadNull() {
-                this[this.tableVistaAbonos.CantidadColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsCostoTratamientoNull() {
-                return this.IsNull(this.tableVistaAbonos.CostoTratamientoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetCostoTratamientoNull() {
-                this[this.tableVistaAbonos.CostoTratamientoColumn] = global::System.Convert.DBNull;
+            public void SetVentaTratamientoIDNull() {
+                this[this.tableVistaAbonos.VentaTratamientoIDColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -24723,6 +24740,7 @@ WHERE        (nombreCompleto LIKE + N'%' + @buscado + N'%') OR
             tableMapping.ColumnMappings.Add("NomCompletoEmp", "NomCompletoEmp");
             tableMapping.ColumnMappings.Add("NomCompletoClie", "NomCompletoClie");
             tableMapping.ColumnMappings.Add("Realizado", "Realizado");
+            tableMapping.ColumnMappings.Add("CuartoID", "CuartoID");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -24740,17 +24758,27 @@ WHERE        (nombreCompleto LIKE + N'%' + @buscado + N'%') OR
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        CitaID, ClienteID, EmpleadoID, ServicioID, Fecha, TratamientoID, VentaTarjeta, Nombre, Apellido, Telefono, Costo, Descripcion, NombreEmpleado, ApellidoEmpleado, TelefonoEmpleado, NombreServicio, 
-                         NomCompletoEmp, NomCompletoClie, Realizado
-FROM            vistaCitas";
+                         NomCompletoEmp, NomCompletoClie, Realizado, CuartoID
+FROM            dbo.vistaCitas";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT Apellido, ApellidoEmpleado, CitaID, ClienteID, Costo, Descripcion, EmpleadoID, Fecha, NomCompletoClie, NomCompletoEmp, Nombre, NombreEmpleado, NombreServicio, Realizado, ServicioID, Telefono, TelefonoEmpleado, TratamientoID, VentaTarjeta FROM vistaCitas WHERE (@fechaHora BETWEEN Fecha AND DATEADD(hour, 1, Fecha)) OR (DATEADD(hour, 1, @fechaHora) BETWEEN Fecha AND DATEADD(hour, 1, Fecha)) AND (ClienteID = @clienteID) OR (DATEADD(hour, 1, @fechaHora) BETWEEN Fecha AND DATEADD(hour, 1, Fecha)) AND (EmpleadoID = @empleadoID) OR (DATEADD(hour, 1, @fechaHora) BETWEEN Fecha AND DATEADD(hour, 1, Fecha)) AND (ServicioID = @servicioID) ORDER BY Fecha";
+            this._commandCollection[1].CommandText = @"SELECT        Apellido, ApellidoEmpleado, CitaID, ClienteID, Costo, CuartoID, Descripcion, EmpleadoID, Fecha, NomCompletoClie, NomCompletoEmp, Nombre, NombreEmpleado, NombreServicio, Realizado, ServicioID, 
+                         Telefono, TelefonoEmpleado, TratamientoID, VentaTarjeta
+FROM            dbo.vistaCitas
+WHERE        (@fechaHora BETWEEN Fecha AND DATEADD(hour, 1, Fecha)) AND (ClienteID = @clienteID) OR
+                         (@fechaHora BETWEEN Fecha AND DATEADD(hour, 1, Fecha)) AND (EmpleadoID = @empleadoID) OR
+                         (@fechaHora BETWEEN Fecha AND DATEADD(hour, 1, Fecha)) AND (ServicioID = @servicioID) AND (CuartoID = @cuartoID) OR
+                         (ClienteID = @clienteID) AND (DATEADD(hour, 1, @fechaHora) BETWEEN Fecha AND DATEADD(hour, 1, Fecha)) OR
+                         (EmpleadoID = @empleadoID) AND (DATEADD(hour, 1, @fechaHora) BETWEEN Fecha AND DATEADD(hour, 1, Fecha)) OR
+                         (ServicioID = @servicioID) AND (CuartoID = @cuartoID) AND (DATEADD(hour, 1, @fechaHora) BETWEEN Fecha AND DATEADD(hour, 1, Fecha))
+ORDER BY Fecha";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaHora", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@clienteID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ClienteID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@empleadoID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "EmpleadoID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@servicioID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ServicioID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cuartoID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CuartoID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = @"SELECT Apellido, ApellidoEmpleado, CitaID, ClienteID, Costo, Descripcion, EmpleadoID, Fecha, NomCompletoClie, NomCompletoEmp, Nombre, NombreEmpleado, NombreServicio, Realizado, ServicioID, Telefono, TelefonoEmpleado, TratamientoID, VentaTarjeta FROM vistaCitas WHERE (Nombre LIKE + N'%' + @buscado + N'%') OR (Apellido LIKE + N'%' + @buscado + N'%')";
@@ -24799,7 +24827,7 @@ WHERE        (Realizado IS NULL)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByCitasConflictivas(LucySpaDB.vistaCitasDataTable dataTable, string fechaHora, int clienteID, int empleadoID, int servicioID) {
+        public virtual int FillByCitasConflictivas(LucySpaDB.vistaCitasDataTable dataTable, string fechaHora, global::System.Nullable<int> clienteID, global::System.Nullable<int> empleadoID, global::System.Nullable<int> servicioID, global::System.Nullable<int> cuartoID) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((fechaHora == null)) {
                 throw new global::System.ArgumentNullException("fechaHora");
@@ -24807,9 +24835,30 @@ WHERE        (Realizado IS NULL)";
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(fechaHora));
             }
-            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(clienteID));
-            this.Adapter.SelectCommand.Parameters[2].Value = ((int)(empleadoID));
-            this.Adapter.SelectCommand.Parameters[3].Value = ((int)(servicioID));
+            if ((clienteID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(clienteID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((empleadoID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(empleadoID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((servicioID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((int)(servicioID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((cuartoID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[4].Value = ((int)(cuartoID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -24821,7 +24870,7 @@ WHERE        (Realizado IS NULL)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual LucySpaDB.vistaCitasDataTable GetDataByCitasConflictivas(string fechaHora, int clienteID, int empleadoID, int servicioID) {
+        public virtual LucySpaDB.vistaCitasDataTable GetDataByCitasConflictivas(string fechaHora, global::System.Nullable<int> clienteID, global::System.Nullable<int> empleadoID, global::System.Nullable<int> servicioID, global::System.Nullable<int> cuartoID) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((fechaHora == null)) {
                 throw new global::System.ArgumentNullException("fechaHora");
@@ -24829,9 +24878,30 @@ WHERE        (Realizado IS NULL)";
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(fechaHora));
             }
-            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(clienteID));
-            this.Adapter.SelectCommand.Parameters[2].Value = ((int)(empleadoID));
-            this.Adapter.SelectCommand.Parameters[3].Value = ((int)(servicioID));
+            if ((clienteID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(clienteID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((empleadoID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(empleadoID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((servicioID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((int)(servicioID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((cuartoID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[4].Value = ((int)(cuartoID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
             LucySpaDB.vistaCitasDataTable dataTable = new LucySpaDB.vistaCitasDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -26165,12 +26235,12 @@ WHERE        (Realizado IS NULL)";
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "VistaAbonos";
-            tableMapping.ColumnMappings.Add("VentaTratamientoID", "VentaTratamientoID");
             tableMapping.ColumnMappings.Add("Nombre", "Nombre");
             tableMapping.ColumnMappings.Add("Expr1", "Expr1");
             tableMapping.ColumnMappings.Add("Fecha", "Fecha");
             tableMapping.ColumnMappings.Add("Cantidad", "Cantidad");
             tableMapping.ColumnMappings.Add("CostoTratamiento", "CostoTratamiento");
+            tableMapping.ColumnMappings.Add("VentaTratamientoID", "VentaTratamientoID");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -26187,13 +26257,13 @@ WHERE        (Realizado IS NULL)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT VentaTratamientoID, Nombre, Expr1, Fecha, Cantidad, CostoTratamiento FROM " +
-                "ticcoden_LucySpa.VistaAbonos";
+            this._commandCollection[0].CommandText = "SELECT        Nombre, Expr1, Fecha, Cantidad, CostoTratamiento, VentaTratamientoI" +
+                "D\r\nFROM            VistaAbonos";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        Cantidad, CostoTratamiento, Expr1, Fecha, Nombre, VentaTratamientoI" +
-                "D\r\nFROM            VistaAbonos\r\nWHERE        (VentaTratamientoID = @ID)";
+            this._commandCollection[1].CommandText = "SELECT Cantidad, CostoTratamiento, Expr1, Fecha, Nombre, VentaTratamientoID FROM " +
+                "VistaAbonos WHERE (VentaTratamientoID = @ID)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "VentaTratamientoID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();

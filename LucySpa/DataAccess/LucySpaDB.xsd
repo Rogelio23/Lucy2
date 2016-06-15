@@ -1939,12 +1939,12 @@ FROM            vistaEmpleado</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vistaCitasTableAdapter" GeneratorDataComponentClassName="vistaCitasTableAdapter" Name="vistaCitas" UserDataComponentName="vistaCitasTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="LucySpaDBConnectionString (Settings)" DbObjectName="LucySpaDB.dbo.vistaCitas" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="LucySpaDBConnectionString (Settings)" DbObjectName="ticcoden_LucySpaDB.dbo.vistaCitas" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        CitaID, ClienteID, EmpleadoID, ServicioID, Fecha, TratamientoID, VentaTarjeta, Nombre, Apellido, Telefono, Costo, Descripcion, NombreEmpleado, ApellidoEmpleado, TelefonoEmpleado, NombreServicio, 
-                         NomCompletoEmp, NomCompletoClie, Realizado
-FROM            vistaCitas</CommandText>
+                         NomCompletoEmp, NomCompletoClie, Realizado, CuartoID
+FROM            dbo.vistaCitas</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -1970,17 +1970,28 @@ FROM            vistaCitas</CommandText>
               <Mapping SourceColumn="NomCompletoEmp" DataSetColumn="NomCompletoEmp" />
               <Mapping SourceColumn="NomCompletoClie" DataSetColumn="NomCompletoClie" />
               <Mapping SourceColumn="Realizado" DataSetColumn="Realizado" />
+              <Mapping SourceColumn="CuartoID" DataSetColumn="CuartoID" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="LucySpaDBConnectionString (Settings)" DbObjectName="LucySpaDB.dbo.vistaCitas" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByCitasConflictivas" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByCitasConflictivas" GeneratorSourceName="FillByCitasConflictivas" GetMethodModifier="Public" GetMethodName="GetDataByCitasConflictivas" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByCitasConflictivas" UserSourceName="FillByCitasConflictivas">
+              <DbSource ConnectionRef="LucySpaDBConnectionString (Settings)" DbObjectName="ticcoden_LucySpaDB.dbo.vistaCitas" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByCitasConflictivas" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByCitasConflictivas" GeneratorSourceName="FillByCitasConflictivas" GetMethodModifier="Public" GetMethodName="GetDataByCitasConflictivas" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByCitasConflictivas" UserSourceName="FillByCitasConflictivas">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT Apellido, ApellidoEmpleado, CitaID, ClienteID, Costo, Descripcion, EmpleadoID, Fecha, NomCompletoClie, NomCompletoEmp, Nombre, NombreEmpleado, NombreServicio, Realizado, ServicioID, Telefono, TelefonoEmpleado, TratamientoID, VentaTarjeta FROM vistaCitas WHERE (@fechaHora BETWEEN Fecha AND DATEADD(hour, 1, Fecha)) OR (DATEADD(hour, 1, @fechaHora) BETWEEN Fecha AND DATEADD(hour, 1, Fecha)) AND (ClienteID = @clienteID) OR (DATEADD(hour, 1, @fechaHora) BETWEEN Fecha AND DATEADD(hour, 1, Fecha)) AND (EmpleadoID = @empleadoID) OR (DATEADD(hour, 1, @fechaHora) BETWEEN Fecha AND DATEADD(hour, 1, Fecha)) AND (ServicioID = @servicioID) ORDER BY Fecha</CommandText>
+                    <CommandText>SELECT        Apellido, ApellidoEmpleado, CitaID, ClienteID, Costo, CuartoID, Descripcion, EmpleadoID, Fecha, NomCompletoClie, NomCompletoEmp, Nombre, NombreEmpleado, NombreServicio, Realizado, ServicioID, 
+                         Telefono, TelefonoEmpleado, TratamientoID, VentaTarjeta
+FROM            dbo.vistaCitas
+WHERE        (@fechaHora BETWEEN Fecha AND DATEADD(hour, 1, Fecha)) AND (ClienteID = @clienteID) OR
+                         (@fechaHora BETWEEN Fecha AND DATEADD(hour, 1, Fecha)) AND (EmpleadoID = @empleadoID) OR
+                         (@fechaHora BETWEEN Fecha AND DATEADD(hour, 1, Fecha)) AND (ServicioID = @servicioID) AND (CuartoID = @cuartoID) OR
+                         (ClienteID = @clienteID) AND (DATEADD(hour, 1, @fechaHora) BETWEEN Fecha AND DATEADD(hour, 1, Fecha)) OR
+                         (EmpleadoID = @empleadoID) AND (DATEADD(hour, 1, @fechaHora) BETWEEN Fecha AND DATEADD(hour, 1, Fecha)) OR
+                         (ServicioID = @servicioID) AND (CuartoID = @cuartoID) AND (DATEADD(hour, 1, @fechaHora) BETWEEN Fecha AND DATEADD(hour, 1, Fecha))
+ORDER BY Fecha</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="fechaHora" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="AnsiString" Direction="Input" ParameterName="@fechaHora" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="clienteID" ColumnName="ClienteID" DataSourceName="LucySpaDB.dbo.vistaCitas" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@clienteID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ClienteID" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="empleadoID" ColumnName="EmpleadoID" DataSourceName="LucySpaDB.dbo.vistaCitas" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@empleadoID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="EmpleadoID" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="servicioID" ColumnName="ServicioID" DataSourceName="LucySpaDB.dbo.vistaCitas" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@servicioID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ServicioID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="clienteID" ColumnName="ClienteID" DataSourceName="ticcoden_LucySpaDB.dbo.vistaCitas" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@clienteID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ClienteID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="empleadoID" ColumnName="EmpleadoID" DataSourceName="ticcoden_LucySpaDB.dbo.vistaCitas" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@empleadoID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="EmpleadoID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="servicioID" ColumnName="ServicioID" DataSourceName="ticcoden_LucySpaDB.dbo.vistaCitas" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@servicioID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ServicioID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="cuartoID" ColumnName="CuartoID" DataSourceName="ticcoden_LucySpaDB.dbo.vistaCitas" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@cuartoID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="CuartoID" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </SelectCommand>
@@ -2713,9 +2724,9 @@ HAVING        (VentaTratamientoID = @VentaTratamientoID)</CommandText>
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CitaID" msprop:Generator_ColumnVarNameInTable="columnCitaID" msprop:Generator_ColumnPropNameInRow="CitaID" msprop:Generator_ColumnPropNameInTable="CitaIDColumn" msprop:Generator_UserColumnName="CitaID" type="xs:int" />
-              <xs:element name="ClienteID" msprop:Generator_ColumnVarNameInTable="columnClienteID" msprop:Generator_ColumnPropNameInRow="ClienteID" msprop:Generator_ColumnPropNameInTable="ClienteIDColumn" msprop:Generator_UserColumnName="ClienteID" type="xs:int" />
-              <xs:element name="EmpleadoID" msprop:Generator_ColumnVarNameInTable="columnEmpleadoID" msprop:Generator_ColumnPropNameInRow="EmpleadoID" msprop:Generator_ColumnPropNameInTable="EmpleadoIDColumn" msprop:Generator_UserColumnName="EmpleadoID" type="xs:int" />
-              <xs:element name="ServicioID" msprop:Generator_ColumnVarNameInTable="columnServicioID" msprop:Generator_ColumnPropNameInRow="ServicioID" msprop:Generator_ColumnPropNameInTable="ServicioIDColumn" msprop:Generator_UserColumnName="ServicioID" type="xs:int" />
+              <xs:element name="ClienteID" msprop:Generator_ColumnVarNameInTable="columnClienteID" msprop:Generator_ColumnPropNameInRow="ClienteID" msprop:Generator_ColumnPropNameInTable="ClienteIDColumn" msprop:Generator_UserColumnName="ClienteID" type="xs:int" minOccurs="0" />
+              <xs:element name="EmpleadoID" msprop:Generator_ColumnVarNameInTable="columnEmpleadoID" msprop:Generator_ColumnPropNameInRow="EmpleadoID" msprop:Generator_ColumnPropNameInTable="EmpleadoIDColumn" msprop:Generator_UserColumnName="EmpleadoID" type="xs:int" minOccurs="0" />
+              <xs:element name="ServicioID" msprop:Generator_ColumnVarNameInTable="columnServicioID" msprop:Generator_ColumnPropNameInRow="ServicioID" msprop:Generator_ColumnPropNameInTable="ServicioIDColumn" msprop:Generator_UserColumnName="ServicioID" type="xs:int" minOccurs="0" />
               <xs:element name="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_UserColumnName="Fecha" type="xs:dateTime" />
               <xs:element name="TratamientoID" msprop:Generator_ColumnVarNameInTable="columnTratamientoID" msprop:Generator_ColumnPropNameInRow="TratamientoID" msprop:Generator_ColumnPropNameInTable="TratamientoIDColumn" msprop:Generator_UserColumnName="TratamientoID" type="xs:int" minOccurs="0" />
               <xs:element name="VentaTarjeta" msprop:Generator_ColumnVarNameInTable="columnVentaTarjeta" msprop:Generator_ColumnPropNameInRow="VentaTarjeta" msprop:Generator_ColumnPropNameInTable="VentaTarjetaColumn" msprop:Generator_UserColumnName="VentaTarjeta" type="xs:int" minOccurs="0" />
@@ -2791,6 +2802,7 @@ HAVING        (VentaTratamientoID = @VentaTratamientoID)</CommandText>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="Realizado" msprop:Generator_ColumnVarNameInTable="columnRealizado" msprop:Generator_ColumnPropNameInRow="Realizado" msprop:Generator_ColumnPropNameInTable="RealizadoColumn" msprop:Generator_UserColumnName="Realizado" type="xs:boolean" minOccurs="0" />
+              <xs:element name="CuartoID" msprop:Generator_ColumnVarNameInTable="columnCuartoID" msprop:Generator_ColumnPropNameInRow="CuartoID" msprop:Generator_ColumnPropNameInTable="CuartoIDColumn" msprop:Generator_UserColumnName="CuartoID" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

@@ -164,6 +164,7 @@
             this.dgvEmpleado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEmpleado.Size = new System.Drawing.Size(474, 248);
             this.dgvEmpleado.TabIndex = 1;
+            this.dgvEmpleado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleado_CellContentClick);
             // 
             // empleadoIDDataGridViewTextBoxColumn
             // 
@@ -381,6 +382,7 @@
             this.chbDosPersonas.TabIndex = 14;
             this.chbDosPersonas.Text = "Dos Personas?";
             this.chbDosPersonas.UseVisualStyleBackColor = true;
+            this.chbDosPersonas.CheckedChanged += new System.EventHandler(this.chbDosPersonas_CheckedChanged);
             // 
             // frmCitas
             // 

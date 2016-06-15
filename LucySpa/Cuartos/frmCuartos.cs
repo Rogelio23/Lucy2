@@ -122,6 +122,7 @@ namespace LucySpa.Cuartos
                         //taEquipo.UpdateEquipoConNuevoCuarto(int.Parse(tbNumeroCuarto.Text), newequipoID);
                         taEquipo.UpdateDelNuevoQueryConCuarto(int.Parse(tbNumeroCuarto.Text), newequipoID);
                         PantallaPrincipal.actualizarVentanaEquipo();
+                        PantallaPrincipal.actualizarCuarto();
                             //MessageBox.Show("si entro");
                         
                     }
@@ -133,7 +134,8 @@ namespace LucySpa.Cuartos
                 {
                     //taCuartos.UpdateCuarto(tbDescripcionCuarto.Text,intNumeroCuarto);
                     taCuartos.UpdateCuarto(tbDescripcionCuarto.Text, tbNombre.Text, intNumeroCuarto);
-                    PantallaPrincipal.actualizarVentanaEquipo();    
+                    PantallaPrincipal.actualizarVentanaEquipo();
+                    PantallaPrincipal.actualizarCuarto();
                     MessageBox.Show("El cuarto se ha modificado exitosamente ", Properties.Resources.strExitoso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
@@ -170,10 +172,6 @@ namespace LucySpa.Cuartos
             int intIdentificador = 0;
             //for (int c = 0; c < numServiciosNuevos; c++)
             //{
-            if (btnGuardar.Text == "Modificar")
-            {
-                intIdentificador = 2;
-            }
 
                 int newservicioID = servicioID;
                 foreach(DataGridViewRow renglon in dgvServicioSeleccionado.Rows){
@@ -202,12 +200,16 @@ namespace LucySpa.Cuartos
                 dgvServicioSeleccionado.AllowUserToAddRows = false;
                 
             }
-                
 
-                
-                
 
-            
+            if (btnGuardar.Text == "Modificar")
+            {
+                intIdentificador = 2;
+            }
+
+
+
+
         }
 
         private void dgvServicios_CellClick(object sender, DataGridViewCellEventArgs e)

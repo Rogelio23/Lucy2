@@ -37,6 +37,7 @@
             this.vistaCitasTableAdapter = new LucySpa.DataAccess.LucySpaDBTableAdapters.vistaCitasTableAdapter();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.citaIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CuartoID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,6 +56,7 @@
             this.dgvCitasConflictivas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCitasConflictivas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.citaIDDataGridViewTextBoxColumn,
+            this.CuartoID,
             this.fechaDataGridViewTextBoxColumn,
             this.nombreDataGridViewTextBoxColumn,
             this.apellidoDataGridViewTextBoxColumn,
@@ -117,6 +119,12 @@
             this.citaIDDataGridViewTextBoxColumn.DataPropertyName = "CitaID";
             this.citaIDDataGridViewTextBoxColumn.HeaderText = "CitaID";
             this.citaIDDataGridViewTextBoxColumn.Name = "citaIDDataGridViewTextBoxColumn";
+            // 
+            // CuartoID
+            // 
+            this.CuartoID.DataPropertyName = "CuartoID";
+            this.CuartoID.HeaderText = "CuartoID";
+            this.CuartoID.Name = "CuartoID";
             // 
             // fechaDataGridViewTextBoxColumn
             // 
@@ -187,6 +195,7 @@
         private DataAccess.LucySpaDBTableAdapters.vistaCitasTableAdapter vistaCitasTableAdapter;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.DataGridViewTextBoxColumn citaIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CuartoID;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn;

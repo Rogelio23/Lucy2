@@ -75,6 +75,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inicio));
             this.tcMenu = new MetroFramework.Controls.MetroTabControl();
             this.tpEmpleados = new MetroFramework.Controls.MetroTabPage();
             this.btnReportes = new MetroFramework.Controls.MetroButton();
@@ -1585,7 +1586,7 @@
             this.calendarAgenda.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.calendarAgenda.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.calendarAgenda.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             calendarHighlightRange1.DayOfWeek = System.DayOfWeek.Monday;
             calendarHighlightRange1.EndTime = System.TimeSpan.Parse("17:00:00");
             calendarHighlightRange1.StartTime = System.TimeSpan.Parse("08:00:00");
@@ -2767,6 +2768,7 @@
             this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.tcMenu);
             this.Controls.Add(this.btnLogin);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "Inicio";
             this.Text = "LucySpa Software de Administración";

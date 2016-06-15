@@ -80,7 +80,8 @@ namespace LucySpa.Tratamientos
             DataGridViewRow reglonEmpleado = dgvEmpleados.SelectedRows[0];
             EmpleadoID = (int)reglonEmpleado.Cells[0].Value;
             string fecha = ((dtpFechaCita.Value.ToString("MM/dd/yyyy hh:mm tt")).Replace("a. m.", "am")).Replace("p. m.", "pm");
-            DataAccess.LucySpaDB.vistaCitasDataTable vistaCitasConflictivas = taVistaCitas.GetDataByCitasConflictivas(fecha, ClienteID, EmpleadoID, servicioID);
+            int cuartoID = (int)cbCuartos.SelectedValue;
+            DataAccess.LucySpaDB.vistaCitasDataTable vistaCitasConflictivas = taVistaCitas.GetDataByCitasConflictivas(fecha, ClienteID, EmpleadoID, servicioID, cuartoID);
             if (vistaCitasConflictivas.Rows.Count == 0)
             {//Si no hay citas conflictivas
                 int numero = (int)cbCuartos.SelectedValue;
