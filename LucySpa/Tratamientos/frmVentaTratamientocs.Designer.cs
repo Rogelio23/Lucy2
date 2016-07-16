@@ -54,10 +54,10 @@
             this.vistaDiseñoTrataConServicioTableAdapter = new LucySpa.DataAccess.LucySpaDBTableAdapters.vistaDiseñoTrataConServicioTableAdapter();
             this.label2 = new System.Windows.Forms.Label();
             this.cbCuartos = new System.Windows.Forms.ComboBox();
+            this.cuartoServicioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cuartoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cuartoTableAdapter = new LucySpa.DataAccess.LucySpaDBTableAdapters.CuartoTableAdapter();
             this.label3 = new System.Windows.Forms.Label();
-            this.cuartoServicioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cuartoServicioTableAdapter = new LucySpa.DataAccess.LucySpaDBTableAdapters.CuartoServicioTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgvServicios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaDiseñoTrataConServicioBindingSource)).BeginInit();
@@ -67,8 +67,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaEmpleadoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaCLienteBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cuartoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cuartoServicioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cuartoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvServicios
@@ -282,6 +282,11 @@
             this.cbCuartos.ValueMember = "CuartoID";
             this.cbCuartos.SelectedIndexChanged += new System.EventHandler(this.cbCuartos_SelectedIndexChanged);
             // 
+            // cuartoServicioBindingSource
+            // 
+            this.cuartoServicioBindingSource.DataMember = "CuartoServicio";
+            this.cuartoServicioBindingSource.DataSource = this.lucySpaDB;
+            // 
             // cuartoBindingSource
             // 
             this.cuartoBindingSource.DataMember = "Cuarto";
@@ -300,11 +305,6 @@
             this.label3.Size = new System.Drawing.Size(57, 20);
             this.label3.TabIndex = 21;
             this.label3.Text = "Cuarto";
-            // 
-            // cuartoServicioBindingSource
-            // 
-            this.cuartoServicioBindingSource.DataMember = "CuartoServicio";
-            this.cuartoServicioBindingSource.DataSource = this.lucySpaDB;
             // 
             // cuartoServicioTableAdapter
             // 
@@ -337,8 +337,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaEmpleadoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaCLienteBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cuartoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cuartoServicioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cuartoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

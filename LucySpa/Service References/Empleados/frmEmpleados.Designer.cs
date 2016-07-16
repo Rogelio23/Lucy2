@@ -48,6 +48,9 @@
             this.tbEmailEmpleado = new System.Windows.Forms.TextBox();
             this.opfEmpleados = new System.Windows.Forms.OpenFileDialog();
             this.pbRegreso = new System.Windows.Forms.PictureBox();
+            this.tbColor = new System.Windows.Forms.TextBox();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.btnColorEmpleado = new MetroFramework.Controls.MetroButton();
             this.gbEmpleado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbEmpleado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRegreso)).BeginInit();
@@ -283,11 +286,36 @@
             this.pbRegreso.TabStop = false;
             this.pbRegreso.Click += new System.EventHandler(this.pbRegreso_Click);
             // 
+            // tbColor
+            // 
+            this.tbColor.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.tbColor.Enabled = false;
+            this.tbColor.Location = new System.Drawing.Point(140, 276);
+            this.tbColor.Name = "tbColor";
+            this.tbColor.ReadOnly = true;
+            this.tbColor.Size = new System.Drawing.Size(51, 20);
+            this.tbColor.TabIndex = 38;
+            // 
+            // btnColorEmpleado
+            // 
+            this.btnColorEmpleado.Highlight = false;
+            this.btnColorEmpleado.Location = new System.Drawing.Point(23, 269);
+            this.btnColorEmpleado.Name = "btnColorEmpleado";
+            this.btnColorEmpleado.Size = new System.Drawing.Size(111, 32);
+            this.btnColorEmpleado.Style = MetroFramework.MetroColorStyle.Blue;
+            this.btnColorEmpleado.StyleManager = null;
+            this.btnColorEmpleado.TabIndex = 40;
+            this.btnColorEmpleado.Text = "Color:";
+            this.btnColorEmpleado.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.btnColorEmpleado.Click += new System.EventHandler(this.btnColorEmpleado_Click);
+            // 
             // frmEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(590, 423);
+            this.Controls.Add(this.btnColorEmpleado);
+            this.Controls.Add(this.tbColor);
             this.Controls.Add(this.pbRegreso);
             this.Controls.Add(this.tbEmailEmpleado);
             this.Controls.Add(this.tbDireccionEmpleado);
@@ -338,5 +366,8 @@
         private System.Windows.Forms.TextBox tbEmailEmpleado;
         private System.Windows.Forms.OpenFileDialog opfEmpleados;
         private System.Windows.Forms.PictureBox pbRegreso;
+        private System.Windows.Forms.TextBox tbColor;
+        private System.Windows.Forms.ColorDialog colorDialog1;
+        private MetroFramework.Controls.MetroButton btnColorEmpleado;
     }
 }

@@ -30,6 +30,8 @@ namespace LucySpa
         int EmpleadoID;
         string MododelaVentana = "Insertar";
         Inicio empleadoactualizar;
+        int colorNumeroEmpleado;
+        
 
         //Variables para validaciones de campos introducidos
         private bool valNombreEmpleado, valApellidoEmpleado, valDireccionEmpleado, valTelefonoEmpleado, valEmailEmpleado;
@@ -48,17 +50,19 @@ namespace LucySpa
             this.Text = "Modificar Empleado";
 
             //***Buscar los datos que le corresponden al empleado y Obteniendo resultados de la busqueda//
-            rowEmpleado reglon = taEmpleados.GetDataByEmpleadoID(EmpleadoID)[0];
+            rowEmpleado renglon = taEmpleados.GetDataByEmpleadoID(EmpleadoID)[0];
 
             //Rellenar los controles con el resultado
-            tbNombreEmpleado.Text = reglon.Nombre;
-            tbApellidoEmpleado.Text = reglon.Apellido;
-            tbDireccionEmpleado.Text = reglon.Direccion;
-            mtbTelefonoEmpleado.Text = reglon.Telefono;
-            dtCumpleañosEmpleado.Text = reglon.Cumpleaños.ToString();
+            tbNombreEmpleado.Text = renglon.Nombre;
+            tbApellidoEmpleado.Text = renglon.Apellido;
+            tbDireccionEmpleado.Text = renglon.Direccion;
+            mtbTelefonoEmpleado.Text = renglon.Telefono;
+            dtCumpleañosEmpleado.Text = renglon.Cumpleaños.ToString();
+            colorNumeroEmpleado = renglon.ColorEmpleado;
+            tbColor.BackColor = Color.FromArgb(colorNumeroEmpleado);
             try
             {
-                tbEmailEmpleado.Text = reglon.Email;
+                tbEmailEmpleado.Text = renglon.Email;
 
             }
             catch
@@ -125,7 +129,7 @@ namespace LucySpa
                 string nombreCompleto = tbNombreEmpleado.Text+" "+ tbApellidoEmpleado.Text;
                 if (MododelaVentana == "Modificar")
                 {
-                    taEmpleados.UpdateQueryEmpleadoID(tbNombreEmpleado.Text.Trim(), tbApellidoEmpleado.Text.Trim(), dtCumpleañosEmpleado.Value, mtbTelefonoEmpleado.Text.Trim(), tbDireccionEmpleado.Text.Trim(), tbEmailEmpleado.Text.Trim(), nombreCompleto, EmpleadoID);
+                    taEmpleados.UpdateQueryEmpleadoID(tbNombreEmpleado.Text.Trim(), tbApellidoEmpleado.Text.Trim(), dtCumpleañosEmpleado.Value, mtbTelefonoEmpleado.Text.Trim(), tbDireccionEmpleado.Text.Trim(), tbEmailEmpleado.Text.Trim(), nombreCompleto, colorNumeroEmpleado, EmpleadoID);
                     MessageBox.Show("Registro Modificado Satisfactoriamente.", "MODIFICAR REGISTRO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     if (fotografiaEmpleados != null)//Se registra la fotografia
                     {
@@ -138,8 +142,10 @@ namespace LucySpa
                 }
                 else
                 {
+
+
                     //******Es recomendable manejar las imagenes en en una tabla diferente a las de datos, se debera crear una relacion 1 a 1********//
-                    EmpleadoID= (int)taEmpleados.AltaEmpleado(tbNombreEmpleado.Text.Trim(), tbApellidoEmpleado.Text.Trim(),tbDireccionEmpleado.Text.Trim(),dtCumpleañosEmpleado.Value,mtbTelefonoEmpleado.Text.Trim(),tbEmailEmpleado.Text.Trim(),nombreCompleto);
+                    EmpleadoID= (int)taEmpleados.AltaEmpleado(tbNombreEmpleado.Text.Trim(), tbApellidoEmpleado.Text.Trim(),tbDireccionEmpleado.Text.Trim(),dtCumpleañosEmpleado.Value,mtbTelefonoEmpleado.Text.Trim(),tbEmailEmpleado.Text.Trim(),nombreCompleto, colorNumeroEmpleado);
                     MessageBox.Show(Resources.strRegistroAlmacenadoSatisfactoriamente, Resources.strExitoso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     if (fotografiaEmpleados != null)//Se registra la fotografia
                     {
@@ -189,6 +195,20 @@ namespace LucySpa
         private void tbEmailEmpleado_Validating(object sender, CancelEventArgs e)
         {
             Herramientas.validarTextBox(tbEmailEmpleado);
+        }
+
+        private void btnColorEmpleado_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = colorDialog1.ShowDialog();
+            Color colorSeleccionado = new Color();
+            if (dr == System.Windows.Forms.DialogResult.OK)
+            {
+                colorSeleccionado = colorDialog1.Color;
+            }
+
+            colorNumeroEmpleado = colorSeleccionado.ToArgb();
+            tbColor.BackColor = Color.FromArgb(colorNumeroEmpleado);
+            
         }
 
         private void btnExaminarEmpleado_Click_1(object sender, EventArgs e)

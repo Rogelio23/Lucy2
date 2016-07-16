@@ -706,12 +706,32 @@ namespace LucySpa
                     DateTime fechaCita = cita.Fecha;
                     //Se compone el texto que se mostrara dentro del control de cita agendada
                     String texto = cita.Nombre + " " + cita.Apellido + ", " + cita.NombreEmpleado + ", " + cita.Fecha.TimeOfDay.ToString() + "\n" + cita.NombreServicio;
+                    
                     //Se construye el control de cita agendada
                     System.Windows.Forms.Calendar.CalendarItem citaAgendada = new System.Windows.Forms.Calendar.CalendarItem(calendarAgenda, fechaCita, fechaCita.AddMinutes(60), texto);
                     citaAgendada.Tag = cita.CitaID;
+                    try
+                    {
+                        int color = cita.ColorEmpleado;
 
-                    //Se agrega a la vista de calendario
-                    calendarAgenda.Items.Add(citaAgendada);
+                        if (color < 0)
+                        {
+                            //Se agrega a la vista de calendario
+                            calendarAgenda.Items.Add(citaAgendada);
+
+                            //Se colorea cada cita que se encuentra en el acalendario
+                            citaAgendada.BackgroundColor = Color.FromArgb(color);//-16711936);
+                        }
+                        else
+                        {
+                            //Se agrega a la vista de calendario
+                            calendarAgenda.Items.Add(citaAgendada);
+                        }
+                    }
+                    catch {
+                        calendarAgenda.Items.Add(citaAgendada);
+                    }
+                    
                 }
             }
         }
@@ -1291,6 +1311,22 @@ namespace LucySpa
             int Clienteid = (int)r.Cells[0].Value;
             TratamientosVendidos v = new TratamientosVendidos(Clienteid);
             v.ShowDialog();
+        }
+
+        private void btnCrearTratamientoCliente_Click(object sender, EventArgs e)
+        {
+            //***Se identifica el ID del cliente//
+            DataGridViewRow filaSeleccionada = dgvClientes.SelectedRows[0];
+            int ClienteID = (int)filaSeleccionada.Cells[0].Value;
+            string tipoTratamieno = "especifico";
+
+            frmTratamiento CrearTratamientoCliente = new frmTratamiento(ClienteID, tipoTratamieno, this);
+            CrearTratamientoCliente.ShowDialog();
+        }
+
+        private void tbBuscarCliente_Click_1(object sender, EventArgs e)
+        {
+
         }
 
         private void tbBuscarEmpleado_Click(object sender, EventArgs e)

@@ -1,10 +1,3 @@
-C:\Users\alumno\Source\Repos\Lucy2\LucySpa\bin\Debug\LucySpa.exe.config
-C:\Users\alumno\Source\Repos\Lucy2\LucySpa\bin\Debug\LucySpa.exe.manifest
-C:\Users\alumno\Source\Repos\Lucy2\LucySpa\bin\Debug\LucySpa.application
-C:\Users\alumno\Source\Repos\Lucy2\LucySpa\bin\Debug\LucySpa.exe
-C:\Users\alumno\Source\Repos\Lucy2\LucySpa\bin\Debug\LucySpa.pdb
-C:\Users\alumno\Source\Repos\Lucy2\LucySpa\bin\Debug\System.Windows.Forms.Calendar.dll
-C:\Users\alumno\Source\Repos\Lucy2\LucySpa\bin\Debug\Microsoft.SqlServer.Types.dll
 C:\Users\alumno\Source\Repos\Lucy2\LucySpa\obj\Debug\LucySpa.Citas.frmCitaPago.resources
 C:\Users\alumno\Source\Repos\Lucy2\LucySpa\obj\Debug\LucySpa.Citas.frmCitas.resources
 C:\Users\alumno\Source\Repos\Lucy2\LucySpa\obj\Debug\LucySpa.Citas.FrmMostrarCitasConflictivas.resources
@@ -31,8 +24,15 @@ C:\Users\alumno\Source\Repos\Lucy2\LucySpa\obj\Debug\LucySpa.Inicio.resources
 C:\Users\alumno\Source\Repos\Lucy2\LucySpa\obj\Debug\LucySpa.Properties.Resources.resources
 C:\Users\alumno\Source\Repos\Lucy2\LucySpa\obj\Debug\LucySpa.Usuarios.frmLogin.resources
 C:\Users\alumno\Source\Repos\Lucy2\LucySpa\obj\Debug\LucySpa.csproj.GenerateResource.Cache
+C:\Users\alumno\Source\Repos\Lucy2\LucySpa\bin\Debug\LucySpa.exe.config
+C:\Users\alumno\Source\Repos\Lucy2\LucySpa\bin\Debug\LucySpa.exe.manifest
+C:\Users\alumno\Source\Repos\Lucy2\LucySpa\bin\Debug\LucySpa.application
+C:\Users\alumno\Source\Repos\Lucy2\LucySpa\bin\Debug\LucySpa.exe
+C:\Users\alumno\Source\Repos\Lucy2\LucySpa\bin\Debug\LucySpa.pdb
+C:\Users\alumno\Source\Repos\Lucy2\LucySpa\bin\Debug\System.Windows.Forms.Calendar.dll
+C:\Users\alumno\Source\Repos\Lucy2\LucySpa\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\alumno\Source\Repos\Lucy2\LucySpa\obj\Debug\LucySpa.csprojResolveAssemblyReference.cache
 C:\Users\alumno\Source\Repos\Lucy2\LucySpa\obj\Debug\LucySpa.exe.manifest
 C:\Users\alumno\Source\Repos\Lucy2\LucySpa\obj\Debug\LucySpa.application
 C:\Users\alumno\Source\Repos\Lucy2\LucySpa\obj\Debug\LucySpa.exe
 C:\Users\alumno\Source\Repos\Lucy2\LucySpa\obj\Debug\LucySpa.pdb
-C:\Users\alumno\Source\Repos\Lucy2\LucySpa\obj\Debug\LucySpa.csprojResolveAssemblyReference.cache

@@ -20,6 +20,10 @@ namespace LucySpa
         int TratamientoID;
         Inicio inicioActualizar;
         string modoVentana = "Registro";
+        string TipoTratamiento = "generico";
+        int ClienteID;
+        string NombreCliente;
+
         //Varibles para validar los datos//
         bool boolNombre;
         bool boolDescripcion;
@@ -30,6 +34,8 @@ namespace LucySpa
         DataAccess.LucySpaDBTableAdapters.DiseñoTratamientoTableAdapter taDiseñoTratamiento = new DataAccess.LucySpaDBTableAdapters.DiseñoTratamientoTableAdapter();
         DataAccess.LucySpaDBTableAdapters.TratamientoTableAdapter taTratamiento = new DataAccess.LucySpaDBTableAdapters.TratamientoTableAdapter();
         DataAccess.LucySpaDBTableAdapters.ServicioTableAdapter taServicio = new DataAccess.LucySpaDBTableAdapters.ServicioTableAdapter();
+        DataAccess.LucySpaDBTableAdapters.vistaCLienteTableAdapter vClientes = new DataAccess.LucySpaDBTableAdapters.vistaCLienteTableAdapter();
+
 
         public frmTratamiento(Inicio inicioActualizar)
         {
@@ -43,6 +49,17 @@ namespace LucySpa
             this.inicioActualizar = inicioActualizar;
             modoVentana = "Modificacion";
             // int nadaaa = nada.;
+        }
+        public frmTratamiento(int clienteID, string tipoTratamiento, Inicio inicioActualizar)
+        {
+            InitializeComponent();
+            ClienteID = clienteID;
+            //Se crea variable para obtener el nombre del cliente
+            NombreCliente = vClientes.GETNombreCompletoCliente(ClienteID);
+            TipoTratamiento = tipoTratamiento;
+            this.inicioActualizar = inicioActualizar;
+            modoVentana = "Registro Tratamiento Especifico";
+
         }
 
         private void frmTratamiento_Load(object sender, EventArgs e)
@@ -129,10 +146,11 @@ namespace LucySpa
             {
                 if (modoVentana == "Registro")
                 {
+
                     //Se crea un alta de Tratamiento el cual con un procedimiento alamcenado regresa el Tratamiento ID//
-                    TratamientoID = (int)taTratamiento.AltaTratamiento(tbNombre.Text.Trim(), tbDescripcion.Text.Trim(), Decimal.Parse(mtbPrecioCatalogo.Text));
+                    TratamientoID = (int)taTratamiento.AltaTratamiento(tbNombre.Text.Trim(), tbDescripcion.Text.Trim(), Decimal.Parse(mtbPrecioCatalogo.Text), TipoTratamiento);
                 }
-                else
+                else if(modoVentana == "Modificacion")
                 {
                     //De lo contrario la ventana estara en modo Modificar por lo que solo borarra//
                     //los servicios asignados a ese Tratamiento para ingresar los nuevos//
@@ -140,6 +158,12 @@ namespace LucySpa
                     decimal nada = Decimal.Parse(mtbPrecioCatalogo.Text);
                     taTratamiento.UpdateQueryTratamientoID(tbNombre.Text.Trim(), tbDescripcion.Text.Trim(), Decimal.Parse(mtbPrecioCatalogo.Text), TratamientoID);
                 }
+                else
+                {
+                    //Se crea un alta de Tratamiento el cual con un procedimiento alamcenado regresa el Tratamiento ID//
+                    TratamientoID = (int)taTratamiento.AltaTratamiento(tbNombre.Text.Trim() + " para " + NombreCliente, tbDescripcion.Text.Trim(), Decimal.Parse(mtbPrecioCatalogo.Text), TipoTratamiento);
+                }
+
                 //Se guarda el tamaño de la lista de tratamiento en una variable//
                 int tamTratamiento = dgvTratamiento.RowCount - 1;
                 //Si El tamaño de la lista de tratamiento no tiene nada no se podra guardar
@@ -149,26 +173,47 @@ namespace LucySpa
                     int cantidad = (int)dgvTratamiento.Rows[c].Cells[2].Value;
                     taDiseñoTratamiento.Insert(TratamientoID, servicioID, cantidad, c);//Se crea un alta de DiseñoTratamiento//
                 }
+
+
                 if (modoVentana == "Registro")
                 {
                     //Se muestra un mensaje de confirmacion del registro exitoso//
                     MessageBox.Show("Se ha registrado satisfactoriamente el tratamiento.", "Registro de Tratamiento",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                else
+                else if(modoVentana == "Modificacion")
                 {
                     //Se muestra un mensaje de Modificacion exitoso//
                     MessageBox.Show("Se ha modificado satisfactoriamente el tratamiento.", "Modificacion de Tratamiento",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                else
+                {
+                    //Se muestra un mensaje de confirmacion del registro exitoso//
+                   var res =  MessageBox.Show("Se ha registrado satisfactoriamente el tratamiento de "+ NombreCliente, "Registro de Tratamiento",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    if(res == DialogResult.OK)
+                    {
+                        int tratamientoID = (int)taTratamiento.GETultimoTratamiento();
+                        decimal costoTratamiento = (decimal)taTratamiento.GETcostoTratamientoPorID(tratamientoID);
+                        Tratamientos.frmVentaTratamientocs ventaTratamiento = new Tratamientos.frmVentaTratamientocs(tratamientoID,ClienteID,costoTratamiento);
+                        ventaTratamiento.ShowDialog();
+                    }
+                }
+
+
                 //Se cierra la ventana de Tratamiento y se actualiza la tabla de Tratamientos
                 this.Close();
                 inicioActualizar.actualizarTratamiento();
+                
             }
-            else {
+            else
+            {
                 //Los datos introducidos no tienen un formato correcto//
                 MessageBox.Show(Resources.strDatosIntroducidosInvalidos, Resources.strError, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
             
         }
 

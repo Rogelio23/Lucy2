@@ -35,7 +35,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -44,12 +43,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -75,6 +69,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inicio));
             this.tcMenu = new MetroFramework.Controls.MetroTabControl();
             this.tpEmpleados = new MetroFramework.Controls.MetroTabPage();
@@ -85,16 +85,7 @@
             this.btnModificarEmpleado = new MetroFramework.Controls.MetroButton();
             this.btnAgregarEmpleado = new MetroFramework.Controls.MetroButton();
             this.dgvEmpleados = new System.Windows.Forms.DataGridView();
-            this.empleadoIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellidoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cumpleañosDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.direccionDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefonoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fotografiaEmppleado = new System.Windows.Forms.DataGridViewImageColumn();
-            this.vistaEmpleadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lucySpaDB = new LucySpa.DataAccess.LucySpaDB();
             this.tpServicios = new MetroFramework.Controls.MetroTabPage();
             this.btnBuscarServicio = new MetroFramework.Controls.MetroButton();
             this.btnBorrarServicio = new MetroFramework.Controls.MetroButton();
@@ -102,11 +93,6 @@
             this.tbBuscarServicio = new MetroFramework.Controls.MetroTextBox();
             this.btnGuardarEmpleado = new MetroFramework.Controls.MetroButton();
             this.dgvServicios = new System.Windows.Forms.DataGridView();
-            this.servicioIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.servicioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tpTratamiento = new MetroFramework.Controls.MetroTabPage();
             this.btnmodificarTratamiento = new MetroFramework.Controls.MetroButton();
             this.btnBorrar = new MetroFramework.Controls.MetroButton();
@@ -116,12 +102,9 @@
             this.btnBuscarTratamiento = new MetroFramework.Controls.MetroButton();
             this.tbBsucarTratamiento = new MetroFramework.Controls.MetroTextBox();
             this.dgvTratamiento = new System.Windows.Forms.DataGridView();
-            this.tratamientoIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precioCatalogo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tratamientoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tpClientes = new MetroFramework.Controls.MetroTabPage();
+            this.btnCrearTratamientoCliente = new MetroFramework.Controls.MetroButton();
             this.btnVenderProducto = new MetroFramework.Controls.MetroButton();
             this.btnAsignarTarjeta = new MetroFramework.Controls.MetroButton();
             this.btnAgendarCita = new MetroFramework.Controls.MetroButton();
@@ -131,14 +114,8 @@
             this.btnModificarCliente = new MetroFramework.Controls.MetroButton();
             this.btnAgregarCliente = new MetroFramework.Controls.MetroButton();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
-            this.clienteIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cumpleañosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.direccionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fotografiaCliente = new System.Windows.Forms.DataGridViewImageColumn();
-            this.vistaCLienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cmsClientes = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tratamientosVendidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tpCitas = new MetroFramework.Controls.MetroTabPage();
@@ -150,17 +127,11 @@
             this.btnModificarCita = new MetroFramework.Controls.MetroButton();
             this.tbBuscarCita = new MetroFramework.Controls.MetroTextBox();
             this.dgvCitas = new System.Windows.Forms.DataGridView();
-            this.citaIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClienteID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NomCompletoClie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NomCompletoEmp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefonoDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Realizado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.vistaCitasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tpAgenda = new MetroFramework.Controls.MetroTabPage();
             this.monthViewAgenda = new System.Windows.Forms.Calendar.MonthView();
             this.calendarAgenda = new System.Windows.Forms.Calendar.Calendar();
@@ -193,13 +164,6 @@
             this.tbBuscarProductos = new MetroFramework.Controls.MetroTextBox();
             this.btnAgregarProductos = new MetroFramework.Controls.MetroButton();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
-            this.productoIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costoDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tpCuartos = new MetroFramework.Controls.MetroTabPage();
             this.btnRelacionCuartoServicios = new MetroFramework.Controls.MetroButton();
             this.btnModificar = new MetroFramework.Controls.MetroButton();
@@ -208,10 +172,7 @@
             this.btnBorrarCuarto = new MetroFramework.Controls.MetroButton();
             this.tbBuscarCuarto = new MetroFramework.Controls.MetroTextBox();
             this.dgvCuartos = new System.Windows.Forms.DataGridView();
-            this.ColumnaNumeroCuarto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaNombreCuarto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaDescripcionCuarto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cuartoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tpEquipo = new MetroFramework.Controls.MetroTabPage();
             this.btnBorrarEquipo = new MetroFramework.Controls.MetroButton();
             this.btnModificarEquipo = new MetroFramework.Controls.MetroButton();
@@ -219,20 +180,67 @@
             this.btnBuscarEquipo = new MetroFramework.Controls.MetroButton();
             this.tbBuscarEquipo = new MetroFramework.Controls.MetroTextBox();
             this.dgvEquipo = new System.Windows.Forms.DataGridView();
+            this.tpConfiguraciones = new MetroFramework.Controls.MetroTabPage();
+            this.btnBorrarUsuario = new MetroFramework.Controls.MetroButton();
+            this.btnAgregarUsuario = new MetroFramework.Controls.MetroButton();
+            this.dgvUsuarios = new System.Windows.Forms.DataGridView();
+            this.btnLogin = new MetroFramework.Controls.MetroButton();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
+            this.tarjetasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.citasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.citasTableAdapter = new LucySpa.DataAccess.DSTarjetasTableAdapters.CitasTableAdapter();
+            this.tarjetasTableAdapter = new LucySpa.DataAccess.DSTarjetasTableAdapters.TarjetasTableAdapter();
+            this.ventaTarjetasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ventaTarjetasTableAdapter = new LucySpa.DataAccess.DSTarjetasTableAdapters.VentaTarjetasTableAdapter();
+            this.vistaClientesConTarjetasTableAdapter = new LucySpa.DataAccess.DSTarjetasTableAdapters.VistaClientesConTarjetasTableAdapter();
+            this.empleadoIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cumpleañosDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccionDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefonoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vistaEmpleadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lucySpaDB = new LucySpa.DataAccess.LucySpaDB();
+            this.servicioIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.servicioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tratamientoIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tratamientoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.clienteIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cumpleañosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vistaCLienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.citaIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefonoDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vistaCitasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productoIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costoDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ColumnaNumeroCuarto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaDescripcionCuarto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cuartoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.equipoIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cuartoIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.equipoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tpConfiguraciones = new MetroFramework.Controls.MetroTabPage();
-            this.btnBorrarUsuario = new MetroFramework.Controls.MetroButton();
-            this.btnAgregarUsuario = new MetroFramework.Controls.MetroButton();
-            this.dgvUsuarios = new System.Windows.Forms.DataGridView();
             this.usuarioIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usuariosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.btnLogin = new MetroFramework.Controls.MetroButton();
-            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.empleadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -248,31 +256,18 @@
             this.tratamientoTableAdapter = new LucySpa.DataAccess.LucySpaDBTableAdapters.TratamientoTableAdapter();
             this.productosTableAdapter = new LucySpa.DataAccess.LucySpaDBTableAdapters.ProductosTableAdapter();
             this.usuariosTableAdapter = new LucySpa.DataAccess.LucySpaDBTableAdapters.UsuariosTableAdapter();
-            this.tarjetasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.citasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.citasTableAdapter = new LucySpa.DataAccess.DSTarjetasTableAdapters.CitasTableAdapter();
-            this.tarjetasTableAdapter = new LucySpa.DataAccess.DSTarjetasTableAdapters.TarjetasTableAdapter();
-            this.ventaTarjetasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ventaTarjetasTableAdapter = new LucySpa.DataAccess.DSTarjetasTableAdapters.VentaTarjetasTableAdapter();
-            this.vistaClientesConTarjetasTableAdapter = new LucySpa.DataAccess.DSTarjetasTableAdapters.VistaClientesConTarjetasTableAdapter();
             this.tcMenu.SuspendLayout();
             this.tpEmpleados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vistaEmpleadoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lucySpaDB)).BeginInit();
             this.tpServicios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvServicios)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.servicioBindingSource)).BeginInit();
             this.tpTratamiento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTratamiento)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tratamientoBindingSource)).BeginInit();
             this.tpClientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vistaCLienteBindingSource)).BeginInit();
             this.cmsClientes.SuspendLayout();
             this.tpCitas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vistaCitasBindingSource)).BeginInit();
             this.tpAgenda.SuspendLayout();
             this.tpTarjetas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTarjetas)).BeginInit();
@@ -280,24 +275,30 @@
             ((System.ComponentModel.ISupportInitialize)(this.dSTarjetas)).BeginInit();
             this.tpProductos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).BeginInit();
             this.tpCuartos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCuartos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cuartoBindingSource)).BeginInit();
             this.tpEquipo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquipo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.equipoBindingSource)).BeginInit();
             this.tpConfiguraciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tarjetasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.citasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ventaTarjetasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaEmpleadoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lucySpaDB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.servicioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tratamientoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaCLienteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaCitasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cuartoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.equipoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lucySpaDB1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tarjetasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.citasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ventaTarjetasBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tcMenu
@@ -321,7 +322,7 @@
             this.tcMenu.FontWeight = MetroFramework.MetroTabControlWeight.Light;
             this.tcMenu.Location = new System.Drawing.Point(11, 81);
             this.tcMenu.Name = "tcMenu";
-            this.tcMenu.SelectedIndex = 3;
+            this.tcMenu.SelectedIndex = 5;
             this.tcMenu.Size = new System.Drawing.Size(1187, 480);
             this.tcMenu.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tcMenu.Style = MetroFramework.MetroColorStyle.Blue;
@@ -497,60 +498,6 @@
             this.dgvEmpleados.TabIndex = 2;
             this.dgvEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellContentClick);
             // 
-            // empleadoIDDataGridViewTextBoxColumn
-            // 
-            this.empleadoIDDataGridViewTextBoxColumn.DataPropertyName = "EmpleadoID";
-            this.empleadoIDDataGridViewTextBoxColumn.HeaderText = "Empleado ID";
-            this.empleadoIDDataGridViewTextBoxColumn.Name = "empleadoIDDataGridViewTextBoxColumn";
-            this.empleadoIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.empleadoIDDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // apellidoDataGridViewTextBoxColumn1
-            // 
-            this.apellidoDataGridViewTextBoxColumn1.DataPropertyName = "Apellido";
-            this.apellidoDataGridViewTextBoxColumn1.HeaderText = "Apellido";
-            this.apellidoDataGridViewTextBoxColumn1.Name = "apellidoDataGridViewTextBoxColumn1";
-            this.apellidoDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.apellidoDataGridViewTextBoxColumn1.Width = 150;
-            // 
-            // nombreDataGridViewTextBoxColumn2
-            // 
-            this.nombreDataGridViewTextBoxColumn2.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn2.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn2.Name = "nombreDataGridViewTextBoxColumn2";
-            this.nombreDataGridViewTextBoxColumn2.ReadOnly = true;
-            this.nombreDataGridViewTextBoxColumn2.Width = 150;
-            // 
-            // cumpleañosDataGridViewTextBoxColumn1
-            // 
-            this.cumpleañosDataGridViewTextBoxColumn1.DataPropertyName = "Cumpleaños";
-            this.cumpleañosDataGridViewTextBoxColumn1.HeaderText = "Cumpleaños";
-            this.cumpleañosDataGridViewTextBoxColumn1.Name = "cumpleañosDataGridViewTextBoxColumn1";
-            this.cumpleañosDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // direccionDataGridViewTextBoxColumn1
-            // 
-            this.direccionDataGridViewTextBoxColumn1.DataPropertyName = "Direccion";
-            this.direccionDataGridViewTextBoxColumn1.HeaderText = "Direccion";
-            this.direccionDataGridViewTextBoxColumn1.Name = "direccionDataGridViewTextBoxColumn1";
-            this.direccionDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.direccionDataGridViewTextBoxColumn1.Width = 300;
-            // 
-            // telefonoDataGridViewTextBoxColumn1
-            // 
-            this.telefonoDataGridViewTextBoxColumn1.DataPropertyName = "Telefono";
-            this.telefonoDataGridViewTextBoxColumn1.HeaderText = "Telefono";
-            this.telefonoDataGridViewTextBoxColumn1.Name = "telefonoDataGridViewTextBoxColumn1";
-            this.telefonoDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // emailDataGridViewTextBoxColumn1
-            // 
-            this.emailDataGridViewTextBoxColumn1.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn1.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn1.Name = "emailDataGridViewTextBoxColumn1";
-            this.emailDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.emailDataGridViewTextBoxColumn1.Width = 250;
-            // 
             // fotografiaEmppleado
             // 
             this.fotografiaEmppleado.DataPropertyName = "fotografiaEmppleado";
@@ -558,16 +505,6 @@
             this.fotografiaEmppleado.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.fotografiaEmppleado.Name = "fotografiaEmppleado";
             this.fotografiaEmppleado.ReadOnly = true;
-            // 
-            // vistaEmpleadoBindingSource
-            // 
-            this.vistaEmpleadoBindingSource.DataMember = "vistaEmpleado";
-            this.vistaEmpleadoBindingSource.DataSource = this.lucySpaDB;
-            // 
-            // lucySpaDB
-            // 
-            this.lucySpaDB.DataSetName = "LucySpaDB";
-            this.lucySpaDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tpServicios
             // 
@@ -716,44 +653,6 @@
             this.dgvServicios.TabIndex = 2;
             this.dgvServicios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellContentClick_1);
             this.dgvServicios.Click += new System.EventHandler(this.dgvServicios_Click);
-            // 
-            // servicioIDDataGridViewTextBoxColumn
-            // 
-            this.servicioIDDataGridViewTextBoxColumn.DataPropertyName = "ServicioID";
-            this.servicioIDDataGridViewTextBoxColumn.HeaderText = "Numero de Servicio";
-            this.servicioIDDataGridViewTextBoxColumn.Name = "servicioIDDataGridViewTextBoxColumn";
-            this.servicioIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nombreDataGridViewTextBoxColumn1
-            // 
-            this.nombreDataGridViewTextBoxColumn1.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn1.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn1.Name = "nombreDataGridViewTextBoxColumn1";
-            this.nombreDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.nombreDataGridViewTextBoxColumn1.Width = 200;
-            // 
-            // costoDataGridViewTextBoxColumn
-            // 
-            this.costoDataGridViewTextBoxColumn.DataPropertyName = "Costo";
-            dataGridViewCellStyle5.Format = "C2";
-            dataGridViewCellStyle5.NullValue = null;
-            this.costoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
-            this.costoDataGridViewTextBoxColumn.HeaderText = "Costo";
-            this.costoDataGridViewTextBoxColumn.Name = "costoDataGridViewTextBoxColumn";
-            this.costoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // descripcionDataGridViewTextBoxColumn
-            // 
-            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
-            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.descripcionDataGridViewTextBoxColumn.Width = 500;
-            // 
-            // servicioBindingSource
-            // 
-            this.servicioBindingSource.DataMember = "Servicio";
-            this.servicioBindingSource.DataSource = this.lucySpaDB;
             // 
             // tpTratamiento
             // 
@@ -936,30 +835,6 @@
             this.dgvTratamiento.Size = new System.Drawing.Size(1144, 259);
             this.dgvTratamiento.TabIndex = 10;
             // 
-            // tratamientoIDDataGridViewTextBoxColumn
-            // 
-            this.tratamientoIDDataGridViewTextBoxColumn.DataPropertyName = "TratamientoID";
-            this.tratamientoIDDataGridViewTextBoxColumn.HeaderText = "TratamientoID";
-            this.tratamientoIDDataGridViewTextBoxColumn.Name = "tratamientoIDDataGridViewTextBoxColumn";
-            this.tratamientoIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tratamientoIDDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // nombreDataGridViewTextBoxColumn5
-            // 
-            this.nombreDataGridViewTextBoxColumn5.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn5.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn5.Name = "nombreDataGridViewTextBoxColumn5";
-            this.nombreDataGridViewTextBoxColumn5.ReadOnly = true;
-            this.nombreDataGridViewTextBoxColumn5.Width = 200;
-            // 
-            // descripcionDataGridViewTextBoxColumn3
-            // 
-            this.descripcionDataGridViewTextBoxColumn3.DataPropertyName = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn3.HeaderText = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn3.Name = "descripcionDataGridViewTextBoxColumn3";
-            this.descripcionDataGridViewTextBoxColumn3.ReadOnly = true;
-            this.descripcionDataGridViewTextBoxColumn3.Width = 200;
-            // 
             // precioCatalogo
             // 
             this.precioCatalogo.DataPropertyName = "precioCatalogo";
@@ -967,13 +842,9 @@
             this.precioCatalogo.Name = "precioCatalogo";
             this.precioCatalogo.ReadOnly = true;
             // 
-            // tratamientoBindingSource
-            // 
-            this.tratamientoBindingSource.DataMember = "Tratamiento";
-            this.tratamientoBindingSource.DataSource = this.lucySpaDB;
-            // 
             // tpClientes
             // 
+            this.tpClientes.Controls.Add(this.btnCrearTratamientoCliente);
             this.tpClientes.Controls.Add(this.btnVenderProducto);
             this.tpClientes.Controls.Add(this.btnAsignarTarjeta);
             this.tpClientes.Controls.Add(this.btnAgendarCita);
@@ -1002,13 +873,27 @@
             this.tpClientes.VerticalScrollbarSize = 10;
             this.tpClientes.Click += new System.EventHandler(this.tpClientes_Click);
             // 
+            // btnCrearTratamientoCliente
+            // 
+            this.btnCrearTratamientoCliente.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnCrearTratamientoCliente.Highlight = false;
+            this.btnCrearTratamientoCliente.Location = new System.Drawing.Point(977, 359);
+            this.btnCrearTratamientoCliente.Name = "btnCrearTratamientoCliente";
+            this.btnCrearTratamientoCliente.Size = new System.Drawing.Size(147, 60);
+            this.btnCrearTratamientoCliente.Style = MetroFramework.MetroColorStyle.Blue;
+            this.btnCrearTratamientoCliente.StyleManager = null;
+            this.btnCrearTratamientoCliente.TabIndex = 6;
+            this.btnCrearTratamientoCliente.Text = "Crear Tratamiento";
+            this.btnCrearTratamientoCliente.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.btnCrearTratamientoCliente.Click += new System.EventHandler(this.btnCrearTratamientoCliente_Click);
+            // 
             // btnVenderProducto
             // 
             this.btnVenderProducto.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnVenderProducto.Highlight = false;
-            this.btnVenderProducto.Location = new System.Drawing.Point(988, 359);
+            this.btnVenderProducto.Location = new System.Drawing.Point(824, 359);
             this.btnVenderProducto.Name = "btnVenderProducto";
-            this.btnVenderProducto.Size = new System.Drawing.Size(180, 60);
+            this.btnVenderProducto.Size = new System.Drawing.Size(147, 60);
             this.btnVenderProducto.Style = MetroFramework.MetroColorStyle.Blue;
             this.btnVenderProducto.StyleManager = null;
             this.btnVenderProducto.TabIndex = 10;
@@ -1020,9 +905,9 @@
             // 
             this.btnAsignarTarjeta.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnAsignarTarjeta.Highlight = false;
-            this.btnAsignarTarjeta.Location = new System.Drawing.Point(802, 359);
+            this.btnAsignarTarjeta.Location = new System.Drawing.Point(671, 359);
             this.btnAsignarTarjeta.Name = "btnAsignarTarjeta";
-            this.btnAsignarTarjeta.Size = new System.Drawing.Size(180, 60);
+            this.btnAsignarTarjeta.Size = new System.Drawing.Size(147, 60);
             this.btnAsignarTarjeta.Style = MetroFramework.MetroColorStyle.Blue;
             this.btnAsignarTarjeta.StyleManager = null;
             this.btnAsignarTarjeta.TabIndex = 9;
@@ -1034,9 +919,9 @@
             // 
             this.btnAgendarCita.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnAgendarCita.Highlight = false;
-            this.btnAgendarCita.Location = new System.Drawing.Point(616, 359);
+            this.btnAgendarCita.Location = new System.Drawing.Point(518, 359);
             this.btnAgendarCita.Name = "btnAgendarCita";
-            this.btnAgendarCita.Size = new System.Drawing.Size(180, 60);
+            this.btnAgendarCita.Size = new System.Drawing.Size(147, 60);
             this.btnAgendarCita.Style = MetroFramework.MetroColorStyle.Blue;
             this.btnAgendarCita.StyleManager = null;
             this.btnAgendarCita.TabIndex = 8;
@@ -1076,15 +961,16 @@
             this.tbBuscarCliente.TabIndex = 6;
             this.tbBuscarCliente.Theme = MetroFramework.MetroThemeStyle.Light;
             this.tbBuscarCliente.UseStyleColors = false;
+            this.tbBuscarCliente.Click += new System.EventHandler(this.tbBuscarCliente_Click_1);
             this.tbBuscarCliente.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbBuscarCliente_KeyUp);
             // 
             // btnBorrarCliente
             // 
             this.btnBorrarCliente.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnBorrarCliente.Highlight = false;
-            this.btnBorrarCliente.Location = new System.Drawing.Point(430, 359);
+            this.btnBorrarCliente.Location = new System.Drawing.Point(365, 359);
             this.btnBorrarCliente.Name = "btnBorrarCliente";
-            this.btnBorrarCliente.Size = new System.Drawing.Size(180, 60);
+            this.btnBorrarCliente.Size = new System.Drawing.Size(147, 60);
             this.btnBorrarCliente.Style = MetroFramework.MetroColorStyle.Blue;
             this.btnBorrarCliente.StyleManager = null;
             this.btnBorrarCliente.TabIndex = 5;
@@ -1096,9 +982,9 @@
             // 
             this.btnModificarCliente.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnModificarCliente.Highlight = false;
-            this.btnModificarCliente.Location = new System.Drawing.Point(244, 359);
+            this.btnModificarCliente.Location = new System.Drawing.Point(212, 359);
             this.btnModificarCliente.Name = "btnModificarCliente";
-            this.btnModificarCliente.Size = new System.Drawing.Size(180, 60);
+            this.btnModificarCliente.Size = new System.Drawing.Size(147, 60);
             this.btnModificarCliente.Style = MetroFramework.MetroColorStyle.Blue;
             this.btnModificarCliente.StyleManager = null;
             this.btnModificarCliente.TabIndex = 4;
@@ -1110,9 +996,9 @@
             // 
             this.btnAgregarCliente.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnAgregarCliente.Highlight = false;
-            this.btnAgregarCliente.Location = new System.Drawing.Point(58, 359);
+            this.btnAgregarCliente.Location = new System.Drawing.Point(59, 359);
             this.btnAgregarCliente.Name = "btnAgregarCliente";
-            this.btnAgregarCliente.Size = new System.Drawing.Size(180, 60);
+            this.btnAgregarCliente.Size = new System.Drawing.Size(147, 60);
             this.btnAgregarCliente.Style = MetroFramework.MetroColorStyle.Blue;
             this.btnAgregarCliente.StyleManager = null;
             this.btnAgregarCliente.TabIndex = 3;
@@ -1176,15 +1062,6 @@
             this.dgvClientes.Size = new System.Drawing.Size(1144, 288);
             this.dgvClientes.TabIndex = 2;
             // 
-            // clienteIDDataGridViewTextBoxColumn
-            // 
-            this.clienteIDDataGridViewTextBoxColumn.DataPropertyName = "ClienteID";
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clienteIDDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle13;
-            this.clienteIDDataGridViewTextBoxColumn.HeaderText = "Numero de Socio";
-            this.clienteIDDataGridViewTextBoxColumn.Name = "clienteIDDataGridViewTextBoxColumn";
-            this.clienteIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // nombreCompleto
             // 
             this.nombreCompleto.DataPropertyName = "nombreCompleto";
@@ -1194,44 +1071,6 @@
             this.nombreCompleto.Name = "nombreCompleto";
             this.nombreCompleto.ReadOnly = true;
             this.nombreCompleto.Width = 350;
-            // 
-            // cumpleañosDataGridViewTextBoxColumn
-            // 
-            this.cumpleañosDataGridViewTextBoxColumn.DataPropertyName = "Cumpleaños";
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cumpleañosDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle15;
-            this.cumpleañosDataGridViewTextBoxColumn.HeaderText = "Cumpleaños";
-            this.cumpleañosDataGridViewTextBoxColumn.Name = "cumpleañosDataGridViewTextBoxColumn";
-            this.cumpleañosDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // direccionDataGridViewTextBoxColumn
-            // 
-            this.direccionDataGridViewTextBoxColumn.DataPropertyName = "Direccion";
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.direccionDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle16;
-            this.direccionDataGridViewTextBoxColumn.HeaderText = "Direccion";
-            this.direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
-            this.direccionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.direccionDataGridViewTextBoxColumn.Width = 300;
-            // 
-            // telefonoDataGridViewTextBoxColumn
-            // 
-            this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono";
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.telefonoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle17;
-            this.telefonoDataGridViewTextBoxColumn.HeaderText = "Telefono";
-            this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
-            this.telefonoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emailDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle18;
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
-            this.emailDataGridViewTextBoxColumn.Width = 250;
             // 
             // fotografiaCliente
             // 
@@ -1244,11 +1083,6 @@
             this.fotografiaCliente.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.fotografiaCliente.Name = "fotografiaCliente";
             this.fotografiaCliente.ReadOnly = true;
-            // 
-            // vistaCLienteBindingSource
-            // 
-            this.vistaCLienteBindingSource.DataMember = "vistaCLiente";
-            this.vistaCLienteBindingSource.DataSource = this.lucySpaDB;
             // 
             // cmsClientes
             // 
@@ -1453,15 +1287,6 @@
             this.dgvCitas.TabIndex = 2;
             this.dgvCitas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
             // 
-            // citaIDDataGridViewTextBoxColumn
-            // 
-            this.citaIDDataGridViewTextBoxColumn.DataPropertyName = "CitaID";
-            this.citaIDDataGridViewTextBoxColumn.HeaderText = "CitaID";
-            this.citaIDDataGridViewTextBoxColumn.Name = "citaIDDataGridViewTextBoxColumn";
-            this.citaIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.citaIDDataGridViewTextBoxColumn.Visible = false;
-            this.citaIDDataGridViewTextBoxColumn.Width = 150;
-            // 
             // ClienteID
             // 
             this.ClienteID.DataPropertyName = "ClienteID";
@@ -1486,14 +1311,6 @@
             this.NomCompletoEmp.ReadOnly = true;
             this.NomCompletoEmp.Width = 150;
             // 
-            // fechaDataGridViewTextBoxColumn
-            // 
-            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha de Cita";
-            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
-            this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fechaDataGridViewTextBoxColumn.Width = 150;
-            // 
             // NombreServicio
             // 
             this.NombreServicio.DataPropertyName = "NombreServicio";
@@ -1502,38 +1319,12 @@
             this.NombreServicio.ReadOnly = true;
             this.NombreServicio.Width = 150;
             // 
-            // costoDataGridViewTextBoxColumn1
-            // 
-            this.costoDataGridViewTextBoxColumn1.DataPropertyName = "Costo";
-            this.costoDataGridViewTextBoxColumn1.HeaderText = "Costo";
-            this.costoDataGridViewTextBoxColumn1.Name = "costoDataGridViewTextBoxColumn1";
-            this.costoDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // telefonoDataGridViewTextBoxColumn2
-            // 
-            this.telefonoDataGridViewTextBoxColumn2.DataPropertyName = "Telefono";
-            this.telefonoDataGridViewTextBoxColumn2.HeaderText = "Telefono del Cliente";
-            this.telefonoDataGridViewTextBoxColumn2.Name = "telefonoDataGridViewTextBoxColumn2";
-            this.telefonoDataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // descripcionDataGridViewTextBoxColumn1
-            // 
-            this.descripcionDataGridViewTextBoxColumn1.DataPropertyName = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn1.HeaderText = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn1.Name = "descripcionDataGridViewTextBoxColumn1";
-            this.descripcionDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
             // Realizado
             // 
             this.Realizado.DataPropertyName = "Realizado";
             this.Realizado.HeaderText = "Realizado";
             this.Realizado.Name = "Realizado";
             this.Realizado.ReadOnly = true;
-            // 
-            // vistaCitasBindingSource
-            // 
-            this.vistaCitasBindingSource.DataMember = "vistaCitas";
-            this.vistaCitasBindingSource.DataSource = this.lucySpaDB;
             // 
             // tpAgenda
             // 
@@ -2110,55 +1901,6 @@
             this.dgvProductos.Size = new System.Drawing.Size(1144, 282);
             this.dgvProductos.TabIndex = 10;
             // 
-            // productoIDDataGridViewTextBoxColumn
-            // 
-            this.productoIDDataGridViewTextBoxColumn.DataPropertyName = "ProductoID";
-            this.productoIDDataGridViewTextBoxColumn.HeaderText = "ProductoID";
-            this.productoIDDataGridViewTextBoxColumn.Name = "productoIDDataGridViewTextBoxColumn";
-            this.productoIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nombreDataGridViewTextBoxColumn6
-            // 
-            this.nombreDataGridViewTextBoxColumn6.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn6.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn6.Name = "nombreDataGridViewTextBoxColumn6";
-            this.nombreDataGridViewTextBoxColumn6.ReadOnly = true;
-            this.nombreDataGridViewTextBoxColumn6.Width = 200;
-            // 
-            // precioDataGridViewTextBoxColumn
-            // 
-            this.precioDataGridViewTextBoxColumn.DataPropertyName = "Precio";
-            this.precioDataGridViewTextBoxColumn.HeaderText = "Precio";
-            this.precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
-            this.precioDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // costoDataGridViewTextBoxColumn3
-            // 
-            this.costoDataGridViewTextBoxColumn3.DataPropertyName = "Costo";
-            this.costoDataGridViewTextBoxColumn3.HeaderText = "Costo";
-            this.costoDataGridViewTextBoxColumn3.Name = "costoDataGridViewTextBoxColumn3";
-            this.costoDataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // cantidadDataGridViewTextBoxColumn
-            // 
-            this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "Cantidad";
-            this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
-            this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
-            this.cantidadDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // descripcionDataGridViewTextBoxColumn4
-            // 
-            this.descripcionDataGridViewTextBoxColumn4.DataPropertyName = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn4.HeaderText = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn4.Name = "descripcionDataGridViewTextBoxColumn4";
-            this.descripcionDataGridViewTextBoxColumn4.ReadOnly = true;
-            this.descripcionDataGridViewTextBoxColumn4.Width = 500;
-            // 
-            // productosBindingSource
-            // 
-            this.productosBindingSource.DataMember = "Productos";
-            this.productosBindingSource.DataSource = this.lucySpaDB;
-            // 
             // tpCuartos
             // 
             this.tpCuartos.Controls.Add(this.btnRelacionCuartoServicios);
@@ -2321,14 +2063,6 @@
             this.dgvCuartos.RegionChanged += new System.EventHandler(this.dgvCuartos_RegionChanged);
             this.dgvCuartos.Click += new System.EventHandler(this.dgvCuartos_Click);
             // 
-            // ColumnaNumeroCuarto
-            // 
-            this.ColumnaNumeroCuarto.DataPropertyName = "CuartoID";
-            this.ColumnaNumeroCuarto.HeaderText = "Numero de Cuarto";
-            this.ColumnaNumeroCuarto.Name = "ColumnaNumeroCuarto";
-            this.ColumnaNumeroCuarto.ReadOnly = true;
-            this.ColumnaNumeroCuarto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
             // ColumnaNombreCuarto
             // 
             this.ColumnaNombreCuarto.DataPropertyName = "Nombre";
@@ -2337,20 +2071,6 @@
             this.ColumnaNombreCuarto.ReadOnly = true;
             this.ColumnaNombreCuarto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.ColumnaNombreCuarto.Width = 150;
-            // 
-            // ColumnaDescripcionCuarto
-            // 
-            this.ColumnaDescripcionCuarto.DataPropertyName = "Descripcion";
-            this.ColumnaDescripcionCuarto.HeaderText = "Descripcion";
-            this.ColumnaDescripcionCuarto.Name = "ColumnaDescripcionCuarto";
-            this.ColumnaDescripcionCuarto.ReadOnly = true;
-            this.ColumnaDescripcionCuarto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ColumnaDescripcionCuarto.Width = 500;
-            // 
-            // cuartoBindingSource
-            // 
-            this.cuartoBindingSource.DataMember = "Cuarto";
-            this.cuartoBindingSource.DataSource = this.lucySpaDB;
             // 
             // tpEquipo
             // 
@@ -2497,43 +2217,6 @@
             this.dgvEquipo.TabIndex = 3;
             this.dgvEquipo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEquipo_CellContentClick);
             // 
-            // equipoIDDataGridViewTextBoxColumn
-            // 
-            this.equipoIDDataGridViewTextBoxColumn.DataPropertyName = "EquipoID";
-            this.equipoIDDataGridViewTextBoxColumn.HeaderText = "EquipoID";
-            this.equipoIDDataGridViewTextBoxColumn.Name = "equipoIDDataGridViewTextBoxColumn";
-            this.equipoIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.equipoIDDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // cuartoIDDataGridViewTextBoxColumn
-            // 
-            this.cuartoIDDataGridViewTextBoxColumn.DataPropertyName = "CuartoID";
-            this.cuartoIDDataGridViewTextBoxColumn.HeaderText = "Numero de Cuarto";
-            this.cuartoIDDataGridViewTextBoxColumn.Name = "cuartoIDDataGridViewTextBoxColumn";
-            this.cuartoIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nombreDataGridViewTextBoxColumn4
-            // 
-            this.nombreDataGridViewTextBoxColumn4.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn4.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn4.Name = "nombreDataGridViewTextBoxColumn4";
-            this.nombreDataGridViewTextBoxColumn4.ReadOnly = true;
-            this.nombreDataGridViewTextBoxColumn4.Width = 200;
-            // 
-            // descripcionDataGridViewTextBoxColumn2
-            // 
-            this.descripcionDataGridViewTextBoxColumn2.DataPropertyName = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn2.HeaderText = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn2.Name = "descripcionDataGridViewTextBoxColumn2";
-            this.descripcionDataGridViewTextBoxColumn2.ReadOnly = true;
-            this.descripcionDataGridViewTextBoxColumn2.Width = 700;
-            // 
-            // equipoBindingSource
-            // 
-            this.equipoBindingSource.DataMember = "Equipo";
-            this.equipoBindingSource.DataSource = this.lucySpaDB;
-            this.equipoBindingSource.CurrentChanged += new System.EventHandler(this.equipoBindingSource_CurrentChanged);
-            // 
             // tpConfiguraciones
             // 
             this.tpConfiguraciones.Controls.Add(this.btnBorrarUsuario);
@@ -2619,27 +2302,6 @@
             this.dgvUsuarios.Size = new System.Drawing.Size(303, 200);
             this.dgvUsuarios.TabIndex = 2;
             // 
-            // usuarioIDDataGridViewTextBoxColumn
-            // 
-            this.usuarioIDDataGridViewTextBoxColumn.DataPropertyName = "UsuarioID";
-            this.usuarioIDDataGridViewTextBoxColumn.FillWeight = 120F;
-            this.usuarioIDDataGridViewTextBoxColumn.HeaderText = "UsuarioID";
-            this.usuarioIDDataGridViewTextBoxColumn.Name = "usuarioIDDataGridViewTextBoxColumn";
-            this.usuarioIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.usuarioIDDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "NuevoUsuario";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Usuario";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // usuariosBindingSource1
-            // 
-            this.usuariosBindingSource1.DataMember = "Usuarios";
-            this.usuariosBindingSource1.DataSource = this.lucySpaDB;
-            // 
             // btnLogin
             // 
             this.btnLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -2664,6 +2326,392 @@
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbLogo.TabIndex = 1;
             this.pbLogo.TabStop = false;
+            // 
+            // tarjetasBindingSource
+            // 
+            this.tarjetasBindingSource.DataMember = "Tarjetas";
+            this.tarjetasBindingSource.DataSource = this.dSTarjetas;
+            // 
+            // citasBindingSource
+            // 
+            this.citasBindingSource.DataMember = "Citas";
+            this.citasBindingSource.DataSource = this.dSTarjetas;
+            // 
+            // citasTableAdapter
+            // 
+            this.citasTableAdapter.ClearBeforeFill = true;
+            // 
+            // tarjetasTableAdapter
+            // 
+            this.tarjetasTableAdapter.ClearBeforeFill = true;
+            // 
+            // ventaTarjetasBindingSource
+            // 
+            this.ventaTarjetasBindingSource.DataMember = "VentaTarjetas";
+            this.ventaTarjetasBindingSource.DataSource = this.dSTarjetas;
+            // 
+            // ventaTarjetasTableAdapter
+            // 
+            this.ventaTarjetasTableAdapter.ClearBeforeFill = true;
+            // 
+            // vistaClientesConTarjetasTableAdapter
+            // 
+            this.vistaClientesConTarjetasTableAdapter.ClearBeforeFill = true;
+            // 
+            // empleadoIDDataGridViewTextBoxColumn
+            // 
+            this.empleadoIDDataGridViewTextBoxColumn.DataPropertyName = "EmpleadoID";
+            this.empleadoIDDataGridViewTextBoxColumn.HeaderText = "Empleado ID";
+            this.empleadoIDDataGridViewTextBoxColumn.Name = "empleadoIDDataGridViewTextBoxColumn";
+            this.empleadoIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.empleadoIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // apellidoDataGridViewTextBoxColumn1
+            // 
+            this.apellidoDataGridViewTextBoxColumn1.DataPropertyName = "Apellido";
+            this.apellidoDataGridViewTextBoxColumn1.HeaderText = "Apellido";
+            this.apellidoDataGridViewTextBoxColumn1.Name = "apellidoDataGridViewTextBoxColumn1";
+            this.apellidoDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.apellidoDataGridViewTextBoxColumn1.Width = 150;
+            // 
+            // nombreDataGridViewTextBoxColumn2
+            // 
+            this.nombreDataGridViewTextBoxColumn2.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn2.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn2.Name = "nombreDataGridViewTextBoxColumn2";
+            this.nombreDataGridViewTextBoxColumn2.ReadOnly = true;
+            this.nombreDataGridViewTextBoxColumn2.Width = 150;
+            // 
+            // cumpleañosDataGridViewTextBoxColumn1
+            // 
+            this.cumpleañosDataGridViewTextBoxColumn1.DataPropertyName = "Cumpleaños";
+            this.cumpleañosDataGridViewTextBoxColumn1.HeaderText = "Cumpleaños";
+            this.cumpleañosDataGridViewTextBoxColumn1.Name = "cumpleañosDataGridViewTextBoxColumn1";
+            this.cumpleañosDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // direccionDataGridViewTextBoxColumn1
+            // 
+            this.direccionDataGridViewTextBoxColumn1.DataPropertyName = "Direccion";
+            this.direccionDataGridViewTextBoxColumn1.HeaderText = "Direccion";
+            this.direccionDataGridViewTextBoxColumn1.Name = "direccionDataGridViewTextBoxColumn1";
+            this.direccionDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.direccionDataGridViewTextBoxColumn1.Width = 300;
+            // 
+            // telefonoDataGridViewTextBoxColumn1
+            // 
+            this.telefonoDataGridViewTextBoxColumn1.DataPropertyName = "Telefono";
+            this.telefonoDataGridViewTextBoxColumn1.HeaderText = "Telefono";
+            this.telefonoDataGridViewTextBoxColumn1.Name = "telefonoDataGridViewTextBoxColumn1";
+            this.telefonoDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // emailDataGridViewTextBoxColumn1
+            // 
+            this.emailDataGridViewTextBoxColumn1.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn1.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn1.Name = "emailDataGridViewTextBoxColumn1";
+            this.emailDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.emailDataGridViewTextBoxColumn1.Width = 250;
+            // 
+            // vistaEmpleadoBindingSource
+            // 
+            this.vistaEmpleadoBindingSource.DataMember = "vistaEmpleado";
+            this.vistaEmpleadoBindingSource.DataSource = this.lucySpaDB;
+            // 
+            // lucySpaDB
+            // 
+            this.lucySpaDB.DataSetName = "LucySpaDB";
+            this.lucySpaDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // servicioIDDataGridViewTextBoxColumn
+            // 
+            this.servicioIDDataGridViewTextBoxColumn.DataPropertyName = "ServicioID";
+            this.servicioIDDataGridViewTextBoxColumn.HeaderText = "Numero de Servicio";
+            this.servicioIDDataGridViewTextBoxColumn.Name = "servicioIDDataGridViewTextBoxColumn";
+            this.servicioIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nombreDataGridViewTextBoxColumn1
+            // 
+            this.nombreDataGridViewTextBoxColumn1.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn1.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn1.Name = "nombreDataGridViewTextBoxColumn1";
+            this.nombreDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.nombreDataGridViewTextBoxColumn1.Width = 200;
+            // 
+            // costoDataGridViewTextBoxColumn
+            // 
+            this.costoDataGridViewTextBoxColumn.DataPropertyName = "Costo";
+            dataGridViewCellStyle5.Format = "C2";
+            dataGridViewCellStyle5.NullValue = null;
+            this.costoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            this.costoDataGridViewTextBoxColumn.HeaderText = "Costo";
+            this.costoDataGridViewTextBoxColumn.Name = "costoDataGridViewTextBoxColumn";
+            this.costoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descripcionDataGridViewTextBoxColumn
+            // 
+            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descripcionDataGridViewTextBoxColumn.Width = 500;
+            // 
+            // servicioBindingSource
+            // 
+            this.servicioBindingSource.DataMember = "Servicio";
+            this.servicioBindingSource.DataSource = this.lucySpaDB;
+            // 
+            // tratamientoIDDataGridViewTextBoxColumn
+            // 
+            this.tratamientoIDDataGridViewTextBoxColumn.DataPropertyName = "TratamientoID";
+            this.tratamientoIDDataGridViewTextBoxColumn.HeaderText = "TratamientoID";
+            this.tratamientoIDDataGridViewTextBoxColumn.Name = "tratamientoIDDataGridViewTextBoxColumn";
+            this.tratamientoIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tratamientoIDDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // nombreDataGridViewTextBoxColumn5
+            // 
+            this.nombreDataGridViewTextBoxColumn5.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn5.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn5.Name = "nombreDataGridViewTextBoxColumn5";
+            this.nombreDataGridViewTextBoxColumn5.ReadOnly = true;
+            this.nombreDataGridViewTextBoxColumn5.Width = 200;
+            // 
+            // descripcionDataGridViewTextBoxColumn3
+            // 
+            this.descripcionDataGridViewTextBoxColumn3.DataPropertyName = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn3.HeaderText = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn3.Name = "descripcionDataGridViewTextBoxColumn3";
+            this.descripcionDataGridViewTextBoxColumn3.ReadOnly = true;
+            this.descripcionDataGridViewTextBoxColumn3.Width = 200;
+            // 
+            // tratamientoBindingSource
+            // 
+            this.tratamientoBindingSource.DataMember = "Tratamiento";
+            this.tratamientoBindingSource.DataSource = this.lucySpaDB;
+            // 
+            // clienteIDDataGridViewTextBoxColumn
+            // 
+            this.clienteIDDataGridViewTextBoxColumn.DataPropertyName = "ClienteID";
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clienteIDDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle13;
+            this.clienteIDDataGridViewTextBoxColumn.HeaderText = "Numero de Socio";
+            this.clienteIDDataGridViewTextBoxColumn.Name = "clienteIDDataGridViewTextBoxColumn";
+            this.clienteIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cumpleañosDataGridViewTextBoxColumn
+            // 
+            this.cumpleañosDataGridViewTextBoxColumn.DataPropertyName = "Cumpleaños";
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cumpleañosDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle15;
+            this.cumpleañosDataGridViewTextBoxColumn.HeaderText = "Cumpleaños";
+            this.cumpleañosDataGridViewTextBoxColumn.Name = "cumpleañosDataGridViewTextBoxColumn";
+            this.cumpleañosDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // direccionDataGridViewTextBoxColumn
+            // 
+            this.direccionDataGridViewTextBoxColumn.DataPropertyName = "Direccion";
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.direccionDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle16;
+            this.direccionDataGridViewTextBoxColumn.HeaderText = "Direccion";
+            this.direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
+            this.direccionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.direccionDataGridViewTextBoxColumn.Width = 300;
+            // 
+            // telefonoDataGridViewTextBoxColumn
+            // 
+            this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono";
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.telefonoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle17;
+            this.telefonoDataGridViewTextBoxColumn.HeaderText = "Telefono";
+            this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
+            this.telefonoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle18;
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
+            this.emailDataGridViewTextBoxColumn.Width = 250;
+            // 
+            // vistaCLienteBindingSource
+            // 
+            this.vistaCLienteBindingSource.DataMember = "vistaCLiente";
+            this.vistaCLienteBindingSource.DataSource = this.lucySpaDB;
+            // 
+            // citaIDDataGridViewTextBoxColumn
+            // 
+            this.citaIDDataGridViewTextBoxColumn.DataPropertyName = "CitaID";
+            this.citaIDDataGridViewTextBoxColumn.HeaderText = "CitaID";
+            this.citaIDDataGridViewTextBoxColumn.Name = "citaIDDataGridViewTextBoxColumn";
+            this.citaIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.citaIDDataGridViewTextBoxColumn.Visible = false;
+            this.citaIDDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // fechaDataGridViewTextBoxColumn
+            // 
+            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha de Cita";
+            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
+            this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fechaDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // costoDataGridViewTextBoxColumn1
+            // 
+            this.costoDataGridViewTextBoxColumn1.DataPropertyName = "Costo";
+            this.costoDataGridViewTextBoxColumn1.HeaderText = "Costo";
+            this.costoDataGridViewTextBoxColumn1.Name = "costoDataGridViewTextBoxColumn1";
+            this.costoDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // telefonoDataGridViewTextBoxColumn2
+            // 
+            this.telefonoDataGridViewTextBoxColumn2.DataPropertyName = "Telefono";
+            this.telefonoDataGridViewTextBoxColumn2.HeaderText = "Telefono del Cliente";
+            this.telefonoDataGridViewTextBoxColumn2.Name = "telefonoDataGridViewTextBoxColumn2";
+            this.telefonoDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // descripcionDataGridViewTextBoxColumn1
+            // 
+            this.descripcionDataGridViewTextBoxColumn1.DataPropertyName = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn1.HeaderText = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn1.Name = "descripcionDataGridViewTextBoxColumn1";
+            this.descripcionDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // vistaCitasBindingSource
+            // 
+            this.vistaCitasBindingSource.DataMember = "vistaCitas";
+            this.vistaCitasBindingSource.DataSource = this.lucySpaDB;
+            // 
+            // productoIDDataGridViewTextBoxColumn
+            // 
+            this.productoIDDataGridViewTextBoxColumn.DataPropertyName = "ProductoID";
+            this.productoIDDataGridViewTextBoxColumn.HeaderText = "ProductoID";
+            this.productoIDDataGridViewTextBoxColumn.Name = "productoIDDataGridViewTextBoxColumn";
+            this.productoIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nombreDataGridViewTextBoxColumn6
+            // 
+            this.nombreDataGridViewTextBoxColumn6.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn6.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn6.Name = "nombreDataGridViewTextBoxColumn6";
+            this.nombreDataGridViewTextBoxColumn6.ReadOnly = true;
+            this.nombreDataGridViewTextBoxColumn6.Width = 200;
+            // 
+            // precioDataGridViewTextBoxColumn
+            // 
+            this.precioDataGridViewTextBoxColumn.DataPropertyName = "Precio";
+            this.precioDataGridViewTextBoxColumn.HeaderText = "Precio";
+            this.precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
+            this.precioDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // costoDataGridViewTextBoxColumn3
+            // 
+            this.costoDataGridViewTextBoxColumn3.DataPropertyName = "Costo";
+            this.costoDataGridViewTextBoxColumn3.HeaderText = "Costo";
+            this.costoDataGridViewTextBoxColumn3.Name = "costoDataGridViewTextBoxColumn3";
+            this.costoDataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // cantidadDataGridViewTextBoxColumn
+            // 
+            this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "Cantidad";
+            this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
+            this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
+            this.cantidadDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descripcionDataGridViewTextBoxColumn4
+            // 
+            this.descripcionDataGridViewTextBoxColumn4.DataPropertyName = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn4.HeaderText = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn4.Name = "descripcionDataGridViewTextBoxColumn4";
+            this.descripcionDataGridViewTextBoxColumn4.ReadOnly = true;
+            this.descripcionDataGridViewTextBoxColumn4.Width = 500;
+            // 
+            // productosBindingSource
+            // 
+            this.productosBindingSource.DataMember = "Productos";
+            this.productosBindingSource.DataSource = this.lucySpaDB;
+            // 
+            // ColumnaNumeroCuarto
+            // 
+            this.ColumnaNumeroCuarto.DataPropertyName = "CuartoID";
+            this.ColumnaNumeroCuarto.HeaderText = "Numero de Cuarto";
+            this.ColumnaNumeroCuarto.Name = "ColumnaNumeroCuarto";
+            this.ColumnaNumeroCuarto.ReadOnly = true;
+            this.ColumnaNumeroCuarto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // ColumnaDescripcionCuarto
+            // 
+            this.ColumnaDescripcionCuarto.DataPropertyName = "Descripcion";
+            this.ColumnaDescripcionCuarto.HeaderText = "Descripcion";
+            this.ColumnaDescripcionCuarto.Name = "ColumnaDescripcionCuarto";
+            this.ColumnaDescripcionCuarto.ReadOnly = true;
+            this.ColumnaDescripcionCuarto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ColumnaDescripcionCuarto.Width = 500;
+            // 
+            // cuartoBindingSource
+            // 
+            this.cuartoBindingSource.DataMember = "Cuarto";
+            this.cuartoBindingSource.DataSource = this.lucySpaDB;
+            // 
+            // equipoIDDataGridViewTextBoxColumn
+            // 
+            this.equipoIDDataGridViewTextBoxColumn.DataPropertyName = "EquipoID";
+            this.equipoIDDataGridViewTextBoxColumn.HeaderText = "EquipoID";
+            this.equipoIDDataGridViewTextBoxColumn.Name = "equipoIDDataGridViewTextBoxColumn";
+            this.equipoIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.equipoIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // cuartoIDDataGridViewTextBoxColumn
+            // 
+            this.cuartoIDDataGridViewTextBoxColumn.DataPropertyName = "CuartoID";
+            this.cuartoIDDataGridViewTextBoxColumn.HeaderText = "Numero de Cuarto";
+            this.cuartoIDDataGridViewTextBoxColumn.Name = "cuartoIDDataGridViewTextBoxColumn";
+            this.cuartoIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nombreDataGridViewTextBoxColumn4
+            // 
+            this.nombreDataGridViewTextBoxColumn4.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn4.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn4.Name = "nombreDataGridViewTextBoxColumn4";
+            this.nombreDataGridViewTextBoxColumn4.ReadOnly = true;
+            this.nombreDataGridViewTextBoxColumn4.Width = 200;
+            // 
+            // descripcionDataGridViewTextBoxColumn2
+            // 
+            this.descripcionDataGridViewTextBoxColumn2.DataPropertyName = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn2.HeaderText = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn2.Name = "descripcionDataGridViewTextBoxColumn2";
+            this.descripcionDataGridViewTextBoxColumn2.ReadOnly = true;
+            this.descripcionDataGridViewTextBoxColumn2.Width = 700;
+            // 
+            // equipoBindingSource
+            // 
+            this.equipoBindingSource.DataMember = "Equipo";
+            this.equipoBindingSource.DataSource = this.lucySpaDB;
+            this.equipoBindingSource.CurrentChanged += new System.EventHandler(this.equipoBindingSource_CurrentChanged);
+            // 
+            // usuarioIDDataGridViewTextBoxColumn
+            // 
+            this.usuarioIDDataGridViewTextBoxColumn.DataPropertyName = "UsuarioID";
+            this.usuarioIDDataGridViewTextBoxColumn.FillWeight = 120F;
+            this.usuarioIDDataGridViewTextBoxColumn.HeaderText = "UsuarioID";
+            this.usuarioIDDataGridViewTextBoxColumn.Name = "usuarioIDDataGridViewTextBoxColumn";
+            this.usuarioIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.usuarioIDDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "NuevoUsuario";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Usuario";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // usuariosBindingSource1
+            // 
+            this.usuariosBindingSource1.DataMember = "Usuarios";
+            this.usuariosBindingSource1.DataSource = this.lucySpaDB;
             // 
             // usuariosBindingSource
             // 
@@ -2729,37 +2777,6 @@
             // 
             this.usuariosTableAdapter.ClearBeforeFill = true;
             // 
-            // tarjetasBindingSource
-            // 
-            this.tarjetasBindingSource.DataMember = "Tarjetas";
-            this.tarjetasBindingSource.DataSource = this.dSTarjetas;
-            // 
-            // citasBindingSource
-            // 
-            this.citasBindingSource.DataMember = "Citas";
-            this.citasBindingSource.DataSource = this.dSTarjetas;
-            // 
-            // citasTableAdapter
-            // 
-            this.citasTableAdapter.ClearBeforeFill = true;
-            // 
-            // tarjetasTableAdapter
-            // 
-            this.tarjetasTableAdapter.ClearBeforeFill = true;
-            // 
-            // ventaTarjetasBindingSource
-            // 
-            this.ventaTarjetasBindingSource.DataMember = "VentaTarjetas";
-            this.ventaTarjetasBindingSource.DataSource = this.dSTarjetas;
-            // 
-            // ventaTarjetasTableAdapter
-            // 
-            this.ventaTarjetasTableAdapter.ClearBeforeFill = true;
-            // 
-            // vistaClientesConTarjetasTableAdapter
-            // 
-            this.vistaClientesConTarjetasTableAdapter.ClearBeforeFill = true;
-            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2777,21 +2794,15 @@
             this.tcMenu.ResumeLayout(false);
             this.tpEmpleados.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vistaEmpleadoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lucySpaDB)).EndInit();
             this.tpServicios.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvServicios)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.servicioBindingSource)).EndInit();
             this.tpTratamiento.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTratamiento)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tratamientoBindingSource)).EndInit();
             this.tpClientes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vistaCLienteBindingSource)).EndInit();
             this.cmsClientes.ResumeLayout(false);
             this.tpCitas.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vistaCitasBindingSource)).EndInit();
             this.tpAgenda.ResumeLayout(false);
             this.tpTarjetas.ResumeLayout(false);
             this.tpTarjetas.PerformLayout();
@@ -2800,24 +2811,30 @@
             ((System.ComponentModel.ISupportInitialize)(this.dSTarjetas)).EndInit();
             this.tpProductos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).EndInit();
             this.tpCuartos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCuartos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cuartoBindingSource)).EndInit();
             this.tpEquipo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquipo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.equipoBindingSource)).EndInit();
             this.tpConfiguraciones.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tarjetasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.citasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ventaTarjetasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaEmpleadoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lucySpaDB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.servicioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tratamientoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaCLienteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaCitasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cuartoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.equipoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lucySpaDB1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tarjetasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.citasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ventaTarjetasBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3007,6 +3024,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn precioCatalogo;
         private System.Windows.Forms.ContextMenuStrip cmsClientes;
         private System.Windows.Forms.ToolStripMenuItem tratamientosVendidosToolStripMenuItem;
+        private MetroFramework.Controls.MetroButton btnCrearTratamientoCliente;
     }
 }
 

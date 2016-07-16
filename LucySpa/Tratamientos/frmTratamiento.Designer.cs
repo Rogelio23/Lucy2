@@ -40,11 +40,6 @@
             this.servicioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lucySpaDB = new LucySpa.DataAccess.LucySpaDB();
             this.dgvTratamiento = new System.Windows.Forms.DataGridView();
-            this.tratamiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.servicioID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Orden = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbNombre = new MetroFramework.Controls.MetroTextBox();
             this.tbDescripcion = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
@@ -55,6 +50,12 @@
             this.mtbPrecioCatalogo = new System.Windows.Forms.MaskedTextBox();
             this.lblPrecioCatalogo = new MetroFramework.Controls.MetroLabel();
             this.servicioTableAdapter = new LucySpa.DataAccess.LucySpaDBTableAdapters.ServicioTableAdapter();
+            this.lblCantidad = new System.Windows.Forms.Label();
+            this.tratamiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.servicioID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Orden = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvServicios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.servicioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lucySpaDB)).BeginInit();
@@ -183,36 +184,6 @@
             this.dgvTratamiento.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTratamiento.Size = new System.Drawing.Size(440, 150);
             this.dgvTratamiento.TabIndex = 43;
-            // 
-            // tratamiento
-            // 
-            this.tratamiento.HeaderText = "ServicioID";
-            this.tratamiento.Name = "tratamiento";
-            this.tratamiento.ReadOnly = true;
-            // 
-            // servicioID
-            // 
-            this.servicioID.HeaderText = "Nombre";
-            this.servicioID.Name = "servicioID";
-            this.servicioID.ReadOnly = true;
-            // 
-            // cantidad
-            // 
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.Name = "cantidad";
-            this.cantidad.ReadOnly = true;
-            // 
-            // Costo
-            // 
-            this.Costo.HeaderText = "Costo";
-            this.Costo.Name = "Costo";
-            this.Costo.ReadOnly = true;
-            // 
-            // Orden
-            // 
-            this.Orden.HeaderText = "Orden";
-            this.Orden.Name = "Orden";
-            this.Orden.ReadOnly = true;
             // 
             // tbNombre
             // 
@@ -355,11 +326,52 @@
             // 
             this.servicioTableAdapter.ClearBeforeFill = true;
             // 
+            // lblCantidad
+            // 
+            this.lblCantidad.AutoSize = true;
+            this.lblCantidad.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCantidad.Location = new System.Drawing.Point(523, 261);
+            this.lblCantidad.Name = "lblCantidad";
+            this.lblCantidad.Size = new System.Drawing.Size(59, 16);
+            this.lblCantidad.TabIndex = 56;
+            this.lblCantidad.Text = "Cantidad";
+            // 
+            // tratamiento
+            // 
+            this.tratamiento.HeaderText = "ServicioID";
+            this.tratamiento.Name = "tratamiento";
+            this.tratamiento.ReadOnly = true;
+            // 
+            // servicioID
+            // 
+            this.servicioID.HeaderText = "Nombre";
+            this.servicioID.Name = "servicioID";
+            this.servicioID.ReadOnly = true;
+            // 
+            // cantidad
+            // 
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.Name = "cantidad";
+            this.cantidad.ReadOnly = true;
+            // 
+            // Costo
+            // 
+            this.Costo.HeaderText = "Costo";
+            this.Costo.Name = "Costo";
+            this.Costo.ReadOnly = true;
+            // 
+            // Orden
+            // 
+            this.Orden.HeaderText = "Orden";
+            this.Orden.Name = "Orden";
+            this.Orden.ReadOnly = true;
+            // 
             // frmTratamiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(910, 513);
+            this.Controls.Add(this.lblCantidad);
             this.Controls.Add(this.mtbPrecioCatalogo);
             this.Controls.Add(this.lblPrecioCatalogo);
             this.Controls.Add(this.mtbnCantidad);
@@ -409,12 +421,13 @@
         private MetroFramework.Controls.MetroButton btnGuardar;
         private MetroFramework.Controls.MetroButton btnRemover;
         private System.Windows.Forms.MaskedTextBox mtbnCantidad;
+        private System.Windows.Forms.MaskedTextBox mtbPrecioCatalogo;
+        private MetroFramework.Controls.MetroLabel lblPrecioCatalogo;
+        private System.Windows.Forms.Label lblCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn tratamiento;
         private System.Windows.Forms.DataGridViewTextBoxColumn servicioID;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Costo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Orden;
-        private System.Windows.Forms.MaskedTextBox mtbPrecioCatalogo;
-        private MetroFramework.Controls.MetroLabel lblPrecioCatalogo;
     }
 }
