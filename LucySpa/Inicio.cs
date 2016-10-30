@@ -41,7 +41,7 @@ namespace LucySpa
 
         int equipoID = 0;
         decimal costoTarjetas;
-
+        string tipoTarjeta = "";
 
         public Inicio()
         {
@@ -67,7 +67,11 @@ namespace LucySpa
             // TODO: This line of code loads data into the 'lucySpaDB.Productos' table. You can move, or remove it, as needed.
             this.productosTableAdapter.Fill(this.lucySpaDB.Productos);
             // TODO: This line of code loads data into the 'dSTarjetas.Tarjetas' table. You can move, or remove it, as needed.
-            this.tarjetasTableAdapter.Fill(this.dSTarjetas.Tarjetas);
+            try
+            {
+                this.tarjetasTableAdapter.Fill(this.dSTarjetas.Tarjetas);
+            }
+            catch { }
             // TODO: This line of code loads data into the 'dSTarjetas.Citas' table. You can move, or remove it, as needed.
             this.citasTableAdapter.Fill(this.dSTarjetas.Citas);
             // TODO: This line of code loads data into the 'lucySpaDB.Tratamiento' table. You can move, or remove it, as needed.
@@ -103,9 +107,27 @@ namespace LucySpa
                 MessageBox.Show(Resources.strSinConexion);
             }
 
-            costoTarjetas = (decimal)taTarjetas.QueryCosto();
-            cargarDatosTarjetas();
+            ////////////////////////bool vipCard = rbVipCard.Checked;
+            ////////////////////////bool giftCard = rbGiftCard.Checked;
+            ////////////////////////bool lucyFriends = rbLucyFriends.Checked;
+            ////////////////////////if (vipCard == true)
+            ////////////////////////{
+            ////////////////////////    costoTarjetas = (decimal)taTarjetas.QueryCosto();
+            ////////////////////////    cargarDatosTarjetas();
+            ////////////////////////}
+            ////////////////////////else if (giftCard == true)
+            ////////////////////////{
+
+            ////////////////////////}
+            ////////////////////////else if (lucyFriends == true)
+            ////////////////////////{
+
+            ////////////////////////}
+
+            //costoTarjetas = (decimal)taTarjetas.QueryCosto();
+            //cargarDatosTarjetas();
             hideFunciones();
+            
         }
 
         /// <summary>
@@ -376,13 +398,27 @@ namespace LucySpa
 
         private void btnAgregarTarjeta_Click(object sender, EventArgs e)
         {
+
             //frmCrearNuevasTarjetas VentanaTarjetas = new frmCrearNuevasTarjetas(this);
             //VentanaTarjetas.ShowDialog();
             if (validarTarjetas() == true)
             {
-                taTarjetas.registrarNuevasTarjetas("PREMIUM", costoTarjetas, int.Parse(tbNuevasTarjetas.Text));
-                MessageBox.Show("Se agregarón " + tbNuevasTarjetas.Text + "Tarjetas");
-                cargarDatosTarjetas();
+                if (rbVipCard.Checked == true)
+                {
+                    tipoTarjeta = "PREMIUM";
+                }
+                else if (rbGiftCard.Checked == true)
+                {
+                    tipoTarjeta = "GIFT CARD";
+                }
+                else
+                {
+                    tipoTarjeta = "LUCY FRIENDS";
+                }
+
+                taTarjetas.registrarNuevasTarjetas(tipoTarjeta, costoTarjetas, int.Parse(tbNuevasTarjetas.Text));
+                MessageBox.Show("Se agregarón " + tbNuevasTarjetas.Text + " Tarjetas");
+                cargarDatosTarjetas(tipoTarjeta);
                 tbNuevasTarjetas.Text = "";
             }
             else
@@ -422,7 +458,7 @@ namespace LucySpa
         private void btnAgregarCuarto_Click(object sender, EventArgs e)
         {
             intNumCuarto = 0;
-            Cuartos.frmCuartos VentanaCuartos = new Cuartos.frmCuartos(intNumCuarto,this);
+            Cuartos.frmCuartos VentanaCuartos = new Cuartos.frmCuartos(intNumCuarto, this);
             VentanaCuartos.ShowDialog();
         }
 
@@ -654,7 +690,7 @@ namespace LucySpa
                 DateTime fechacita = (DateTime)dgvCitas.Rows[c].Cells[4].Value;
                 fechacita.AddMinutes(15);
                 DateTime fechaHoy = DateTime.Now;
-                if (fechacita>fechaHoy)
+                if (fechacita > fechaHoy)
                 {
                     dgvCitas.Rows[c].Visible = true;
                 }
@@ -701,12 +737,12 @@ namespace LucySpa
                 TablaCitas citasAgendadas = vistaCitasTableAdapter.GetDataByRangoDeFechas(calendarAgenda.ViewStart, calendarAgenda.ViewEnd);
                 calendarAgenda.Items.Clear();//Se limpia la agenda
                 //Por cada cita agendada, se genera un control para verlas en forma de calendario
-                foreach (RowVistaCita cita in citasAgendadas.Rows) 
+                foreach (RowVistaCita cita in citasAgendadas.Rows)
                 {
                     DateTime fechaCita = cita.Fecha;
                     //Se compone el texto que se mostrara dentro del control de cita agendada
                     String texto = cita.Nombre + " " + cita.Apellido + ", " + cita.NombreEmpleado + ", " + cita.Fecha.TimeOfDay.ToString() + "\n" + cita.NombreServicio;
-                    
+
                     //Se construye el control de cita agendada
                     System.Windows.Forms.Calendar.CalendarItem citaAgendada = new System.Windows.Forms.Calendar.CalendarItem(calendarAgenda, fechaCita, fechaCita.AddMinutes(60), texto);
                     citaAgendada.Tag = cita.CitaID;
@@ -728,10 +764,11 @@ namespace LucySpa
                             calendarAgenda.Items.Add(citaAgendada);
                         }
                     }
-                    catch {
+                    catch
+                    {
                         calendarAgenda.Items.Add(citaAgendada);
                     }
-                    
+
                 }
             }
         }
@@ -795,13 +832,13 @@ namespace LucySpa
             //fromclientes.Show(this);
             DataGridViewRow filaSeleccionada = dgvEquipo.SelectedRows[0];
             equipoID = (int)filaSeleccionada.Cells[0].Value;
-            Equipo.frmEquipo updateEquipo = new Equipo.frmEquipo(equipoID,this);
+            Equipo.frmEquipo updateEquipo = new Equipo.frmEquipo(equipoID, this);
             updateEquipo.ShowDialog();
         }
 
         private void btnAgregarEquipo_Click(object sender, EventArgs e)
         {
-            Equipo.frmEquipo NuevoEquipo = new Equipo.frmEquipo(0,this);
+            Equipo.frmEquipo NuevoEquipo = new Equipo.frmEquipo(0, this);
             NuevoEquipo.ShowDialog();
         }
 
@@ -880,7 +917,8 @@ namespace LucySpa
 
         private void btnDetalles_Click(object sender, EventArgs e)
         {
-            try {
+            try
+            {
                 DataGridViewRow r = dgvTratamiento.SelectedRows[0];
                 int tratamientoID = (int)r.Cells[0].Value;
                 frmDetalleTratamiento v = new frmDetalleTratamiento(tratamientoID);
@@ -938,7 +976,7 @@ namespace LucySpa
             DataGridViewRow filaSeleccionada = dgvTratamiento.SelectedRows[0];
             int TratamientoID = (int)filaSeleccionada.Cells[0].Value;
             decimal costo = (decimal)filaSeleccionada.Cells[3].Value;
-            frmSeleccionarClienteYEmpleado v = new frmSeleccionarClienteYEmpleado(TratamientoID,costo);
+            frmSeleccionarClienteYEmpleado v = new frmSeleccionarClienteYEmpleado(TratamientoID, costo);
             v.ShowDialog();
         }
 
@@ -1046,9 +1084,21 @@ namespace LucySpa
             //ActualizarTarjetas();
             if (string.IsNullOrWhiteSpace(tbNuevasTarjetas.Text) != true)
             {
+                if (rbVipCard.Checked == true)
+                {
+                    tipoTarjeta = "PREMIUM";
+                }
+                else if (rbGiftCard.Checked == true)
+                {
+                    tipoTarjeta = "GIFT CARD";
+                }
+                else
+                {
+                    tipoTarjeta = "LUCY FRIENDS";
+                }
                 taTarjetas.DeleteMuchasTarjetas(int.Parse(tbNuevasTarjetas.Text));
                 MessageBox.Show("Se han eliminado " + tbNuevasTarjetas.Text + " Tarjetas");
-                cargarDatosTarjetas();
+                cargarDatosTarjetas(tipoTarjeta);
                 tbNuevasTarjetas.Text = "";
             }
         }
@@ -1079,7 +1129,7 @@ namespace LucySpa
 
         private void btnBuscarProductos_Click(object sender, EventArgs e)
         {
-            this.equipoTableAdapter.FillByNombre(this.lucySpaDB.Equipo,tbBuscarEquipo.Text);
+            this.equipoTableAdapter.FillByNombre(this.lucySpaDB.Equipo, tbBuscarEquipo.Text);
         }
 
         private void btnBuscarProducto_Click(object sender, EventArgs e)
@@ -1097,7 +1147,7 @@ namespace LucySpa
                 CitasVencidas();
                 btnAdministrar.Text = "Activos";
             }
-                //Se muestran todas aquellas citas que aun no llega la hora de su servicio y que no estan canceladas//
+            //Se muestran todas aquellas citas que aun no llega la hora de su servicio y que no estan canceladas//
             else
             {
                 actualizarRegistroCita();
@@ -1111,7 +1161,7 @@ namespace LucySpa
             for (int c = 0; c < tamañoDgvCitas; c++)
             {
                 DateTime fechacita = (DateTime)dgvCitas.Rows[c].Cells[4].Value;
-                fechacita=fechacita.AddMinutes(15);
+                fechacita = fechacita.AddMinutes(15);
                 DateTime fechaHoy = DateTime.Now;
                 if (fechaHoy > fechacita)
                 {
@@ -1150,27 +1200,92 @@ namespace LucySpa
             boolcaantidad = !string.IsNullOrWhiteSpace(tbNuevasTarjetas.Text);
             return boolcaantidad && boolcosto;
         }
-        private void cargarDatosTarjetas()
+        private void cargarDatosTarjetas(string tipo)
         {
-            int cantidad = (int)taTarjetas.QueryCantidadTotalTarjetas();
+            int cantidad;//= (int)taTarjetas.QueryCantidadTotalTarjetas();
+            int tarjetasAsignadas;// = (int)taVentaTarjetas.QueryTarjetasAsignadas();
+            int TarjetasSinAsignar;// = (int)taTarjetas.QueryTarjetasSinAsignar();
+            string TipoTarjeta;
 
-            int tarjetasAsignadas = (int)taVentaTarjetas.QueryTarjetasAsignadas();
-            int TarjetasSinAsignar = (int)taTarjetas.QueryTarjetasSinAsignar();
+            TipoTarjeta = tipo;
+            cantidad = (int)taTarjetas.QueryCantidadTotalTarjetas(TipoTarjeta);
+
+            tarjetasAsignadas = (int)taVentaTarjetas.QueryTarjetasAsignadas(TipoTarjeta);
+            //TarjetasSinAsignar = (int)taTarjetas.QueryTarjetasSinAsignar(TipoTarjeta);
+            TarjetasSinAsignar = cantidad - tarjetasAsignadas;
             tbCantidadTarjetas.Text = cantidad.ToString();
-            tbCostoTarjetas.Text = costoTarjetas.ToString();
+            //tbCostoTarjetas.Text = costoTarjetas.ToString();
+            tbCostoTarjetas.Text= String.Format("{0:C}", costoTarjetas);
+            //tbCostoTarjetas.Text = costoTarjetas.ToString();
             tbTarjetasAsignadas.Text = tarjetasAsignadas.ToString();
             tbTarjetasLibres.Text = TarjetasSinAsignar.ToString();
+
+            //if (rbVipCard.Checked == true)
+            //{
+            //    TipoTarjeta = "PREMIUM";
+            //    cantidad = (int)taTarjetas.QueryCantidadTotalTarjetas(TipoTarjeta);
+
+            //    tarjetasAsignadas = (int)taVentaTarjetas.QueryTarjetasAsignadas(TipoTarjeta);
+            //    //TarjetasSinAsignar = (int)taTarjetas.QueryTarjetasSinAsignar(TipoTarjeta);
+            //    TarjetasSinAsignar = cantidad - tarjetasAsignadas;
+            //    tbCantidadTarjetas.Text = cantidad.ToString();
+            //    tbCostoTarjetas.Text = costoTarjetas.ToString();
+            //    tbTarjetasAsignadas.Text = tarjetasAsignadas.ToString();
+            //    tbTarjetasLibres.Text = TarjetasSinAsignar.ToString();
+            //}
+            //else if (rbGiftCard.Checked == true)
+            //{
+            //    TipoTarjeta = "GIFT CARD";
+            //    cantidad = (int)taTarjetas.QueryCantidadTotalTarjetas(TipoTarjeta);
+            //    TarjetasSinAsignar = (int)taTarjetas.QueryTarjetasSinAsignar(TipoTarjeta);
+            //    tarjetasAsignadas = (int)taVentaTarjetas.QueryTarjetasAsignadas(TipoTarjeta);
+            //    tbCantidadTarjetas.Text = cantidad.ToString();
+            //    tbCostoTarjetas.Text = costoTarjetas.ToString();
+            //    tbTarjetasAsignadas.Text = tarjetasAsignadas.ToString();
+            //    tbTarjetasLibres.Text = TarjetasSinAsignar.ToString();
+            //}
+            //else
+            //{
+            //    TipoTarjeta = "LUCY FRIENDS";
+            //    cantidad = (int)taTarjetas.QueryCantidadTotalTarjetas(TipoTarjeta);
+            //    TarjetasSinAsignar = (int)taTarjetas.QueryTarjetasSinAsignar(TipoTarjeta);
+            //    tarjetasAsignadas = (int)taVentaTarjetas.QueryTarjetasAsignadas(TipoTarjeta);
+            //    tbCantidadTarjetas.Text = cantidad.ToString();
+            //    tbCostoTarjetas.Text = costoTarjetas.ToString();
+            //    tbTarjetasAsignadas.Text = tarjetasAsignadas.ToString();
+            //    tbTarjetasLibres.Text = TarjetasSinAsignar.ToString();
+            //}
+            //int cantidad = (int)taTarjetas.QueryCantidadTotalTarjetas();
+
+            //int tarjetasAsignadas = (int)taVentaTarjetas.QueryTarjetasAsignadas();
+            //int TarjetasSinAsignar = (int)taTarjetas.QueryTarjetasSinAsignar();
+            //tbCantidadTarjetas.Text = cantidad.ToString();
+            //tbCostoTarjetas.Text = costoTarjetas.ToString();
+            //tbTarjetasAsignadas.Text = tarjetasAsignadas.ToString();
+            //tbTarjetasLibres.Text = TarjetasSinAsignar.ToString();
 
 
         }
 
         private void btnModificarCostoTarjeta_Click(object sender, EventArgs e)
         {
+            if (rbVipCard.Checked == true)
+            {
+                tipoTarjeta = "PREMIUM";
+            }
+            else if (rbGiftCard.Checked == true)
+            {
+                tipoTarjeta = "GIFT CARD";
+            }
+            else
+            {
+                tipoTarjeta = "LUCY FRIENDS";
+            }
             if (string.IsNullOrWhiteSpace(tbCostoTarjetas.Text) != true)
             {
                 if (costoTarjetas != decimal.Parse(tbCostoTarjetas.Text))
                 {
-                    taTarjetas.UpdateCostoTarjetas(decimal.Parse(tbCostoTarjetas.Text), costoTarjetas);
+                    taTarjetas.UpdateCostoTarjetas(decimal.Parse(tbCostoTarjetas.Text), costoTarjetas, tipoTarjeta);
                     MessageBox.Show("Se cambio el costo de las tarjetas");
                     costoTarjetas = decimal.Parse(tbCostoTarjetas.Text);
                 }
@@ -1199,7 +1314,7 @@ namespace LucySpa
             //int tarjetaID = Fila.VentaTarjeta;
             taCitas.UpdateQueryCitaID(clienteID, empleadoID, servicioID, fechaCita, null, null, false, citaID);
             MessageBox.Show("Se ha cancelado la cita satisfactoriamente", Resources.strExitoso, MessageBoxButtons.OK, MessageBoxIcon.Information);
-           //se Actualiza la lista de las citas dependiendo del estado en que esten//
+            //se Actualiza la lista de las citas dependiendo del estado en que esten//
             if (btnAdministrar.Text == "Activos")
             {
                 CitasVencidas();
@@ -1213,9 +1328,12 @@ namespace LucySpa
 
         private void btnPagar_Click(object sender, EventArgs e)
         {
-            decimal costoServicio = (decimal)dgvCitas.Rows[0].Cells[6].Value;
+            DataGridViewRow filaSeleccionada = dgvCitas.SelectedRows[0];
+            decimal costoServicio = (decimal)filaSeleccionada.Cells[6].Value;
+
             int citaID = Herramientas.dgvValorInt(dgvCitas, 0, 0);
-            LucySpa.Citas.frmCitaPago frmCitaPago = new Citas.frmCitaPago(citaID, costoServicio,this);
+            //decimal costoServicio = (decimal)dgvCitas.Rows[0].Cells[6].Value;
+            LucySpa.Citas.frmCitaPago frmCitaPago = new Citas.frmCitaPago(citaID, costoServicio, this);
             frmCitaPago.Show();
         }
 
@@ -1230,8 +1348,9 @@ namespace LucySpa
                     btnLogin.Text = "Cerrar Sesion";
                     //btnLogin.Visible = false;
                 }
-            }else
-            if(btnLogin.Text=="Cerrar Sesion")
+            }
+            else
+            if (btnLogin.Text == "Cerrar Sesion")
             {
                 if (boolLoin == true)
                 {
@@ -1298,7 +1417,7 @@ namespace LucySpa
         {
 
         }
-        
+
 
         private void tpTratamiento_Click(object sender, EventArgs e)
         {
@@ -1329,11 +1448,47 @@ namespace LucySpa
 
         }
 
-        private void tbBuscarEmpleado_Click(object sender, EventArgs e)
+        private void calendarAgenda_LoadItems(object sender, System.Windows.Forms.Calendar.CalendarLoadEventArgs e)
         {
 
         }
 
+        private void tbCantidadTarjetas_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void tbTarjetasAsignadas_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rbVipCard_CheckedChanged(object sender, EventArgs e)
+        {
+            costoTarjetas = (decimal)taTarjetas.QueryCosto("PREMIUM");
+            cargarDatosTarjetas("PREMIUM");
+        }
+
+        private void rbGiftCard_CheckedChanged(object sender, EventArgs e)
+        {
+            costoTarjetas = (decimal)taTarjetas.QueryCosto("GIFT CARD");
+            cargarDatosTarjetas("GIFT CARD");
+        }
+
+        private void rbLucyFriends_CheckedChanged(object sender, EventArgs e)
+        {
+            costoTarjetas = (decimal)taTarjetas.QueryCosto("LUCY FRIENDS");
+            cargarDatosTarjetas("LUCY FRIENDS");
+        }
+
+        private void tbNuevasTarjetas_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Herramientas.keyPressNumerosSinDecimales(tbNuevasTarjetas, e, sender);
+        }
+
+        private void tbBuscarEmpleado_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

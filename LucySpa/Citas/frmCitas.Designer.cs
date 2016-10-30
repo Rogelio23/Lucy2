@@ -266,7 +266,7 @@
             this.dtpFechaCita.Name = "dtpFechaCita";
             this.dtpFechaCita.Size = new System.Drawing.Size(205, 26);
             this.dtpFechaCita.TabIndex = 7;
-            this.dtpFechaCita.Value = new System.DateTime(2016, 2, 8, 0, 0, 0, 0);
+            this.dtpFechaCita.Value = new System.DateTime(2016, 8, 25, 0, 0, 0, 0);
             this.dtpFechaCita.ValueChanged += new System.EventHandler(this.dtpFechaCita_ValueChanged);
             // 
             // lbBuscaCliente

@@ -147,11 +147,12 @@ namespace LucySpa
                     //******Es recomendable manejar las imagenes en en una tabla diferente a las de datos, se debera crear una relacion 1 a 1********//
                     EmpleadoID= (int)taEmpleados.AltaEmpleado(tbNombreEmpleado.Text.Trim(), tbApellidoEmpleado.Text.Trim(),tbDireccionEmpleado.Text.Trim(),dtCumpleañosEmpleado.Value,mtbTelefonoEmpleado.Text.Trim(),tbEmailEmpleado.Text.Trim(),nombreCompleto, colorNumeroEmpleado);
                     MessageBox.Show(Resources.strRegistroAlmacenadoSatisfactoriamente, Resources.strExitoso, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                 
                     if (fotografiaEmpleados != null)//Se registra la fotografia
                     {
-                        Byte[] imagenEnBytes = Herramientas.imageToByteArray(fotografiaEmpleados);//Se transforma a arreglo de bytes
-                        taFotografiaEmpleado taFotoEmpleado = new taFotografiaEmpleado();
-                        taFotoEmpleado.FotografiaEmpleados(EmpleadoID, imagenEnBytes);//Se almacena en BD
+                       Byte[] imagenEnBytes = Herramientas.imageToByteArray(fotografiaEmpleados);//Se transforma a arreglo de bytes
+                       taFotografiaEmpleado taFotoEmpleado = new taFotografiaEmpleado();
+                       taFotoEmpleado.FotografiaEmpleados(EmpleadoID, imagenEnBytes);//Se almacena en BD
                     }
                 }
                 this.Close();//Se cierra la ventana

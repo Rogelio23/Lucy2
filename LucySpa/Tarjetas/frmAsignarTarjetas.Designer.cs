@@ -167,10 +167,10 @@
             this.rbPremium.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbPremium.Location = new System.Drawing.Point(176, 116);
             this.rbPremium.Name = "rbPremium";
-            this.rbPremium.Size = new System.Drawing.Size(89, 24);
+            this.rbPremium.Size = new System.Drawing.Size(88, 24);
             this.rbPremium.TabIndex = 47;
             this.rbPremium.TabStop = true;
-            this.rbPremium.Text = "Premium";
+            this.rbPremium.Text = "Vip Card";
             this.rbPremium.UseVisualStyleBackColor = true;
             this.rbPremium.CheckedChanged += new System.EventHandler(this.rbPremium_CheckedChanged);
             // 
@@ -178,11 +178,11 @@
             // 
             this.rbCortesia.AutoSize = true;
             this.rbCortesia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbCortesia.Location = new System.Drawing.Point(290, 117);
+            this.rbCortesia.Location = new System.Drawing.Point(270, 116);
             this.rbCortesia.Name = "rbCortesia";
-            this.rbCortesia.Size = new System.Drawing.Size(86, 24);
+            this.rbCortesia.Size = new System.Drawing.Size(91, 24);
             this.rbCortesia.TabIndex = 48;
-            this.rbCortesia.Text = "Cortesia";
+            this.rbCortesia.Text = "Gift Card";
             this.rbCortesia.UseVisualStyleBackColor = true;
             this.rbCortesia.CheckedChanged += new System.EventHandler(this.rbCortesia_CheckedChanged);
             // 
@@ -190,11 +190,11 @@
             // 
             this.rbRegalo.AutoSize = true;
             this.rbRegalo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbRegalo.Location = new System.Drawing.Point(394, 116);
+            this.rbRegalo.Location = new System.Drawing.Point(367, 117);
             this.rbRegalo.Name = "rbRegalo";
-            this.rbRegalo.Size = new System.Drawing.Size(78, 24);
+            this.rbRegalo.Size = new System.Drawing.Size(117, 24);
             this.rbRegalo.TabIndex = 49;
-            this.rbRegalo.Text = "Regalo";
+            this.rbRegalo.Text = "Lucy Friends";
             this.rbRegalo.UseVisualStyleBackColor = true;
             this.rbRegalo.CheckedChanged += new System.EventHandler(this.rbRegalo_CheckedChanged);
             // 

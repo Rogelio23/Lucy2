@@ -70,6 +70,7 @@ namespace LucySpa.Cuartos
             //taVistaDiseñoCuartoServicio.FillRellenarDiseñoCuartoServicio(this.lucySpaDB.VistaDiseñoCuartoServicio, intNumeroCuarto);
             //this.vistaDiseñoCuartoServicioTableAdapter.Fill(this.lucySpaDB.VistaDiseñoCuartoServicio);
             //dgvtablatemporal.DataSource = this.vistaDiseñoCuartoServicioTableAdapter.GetData();
+
             
         }
 
@@ -81,15 +82,18 @@ namespace LucySpa.Cuartos
                 {
                     
                     taCuartos.Insert1(intNumeroCuarto, tbNombre.Text,tbDescripcionCuarto.Text);
-                    
+
                     //int numServiciosNuevos = dgvServicioSeleccionado.RowCount - 1;
                     //for (int c = 0; c < numServiciosNuevos; c++)
                     //{
                     //    //int newservicioID = (int)dgvServicioSeleccionado.Rows[c].Cells[0].Value;
-                        
+
                     //    //taDiseñoTratamiento.Insert(TratamientoID, servicioID, cantidad);//Se crea un alta de DiseñoTratamiento//
                     //    //taDiseñoCuarto.Insert(int.Parse(tbNumeroCuarto.Text), newservicioID);                      
-                    //}
+                    //}}
+
+                    
+                   
                     foreach (DataGridViewRow renglon in dgvServicioSeleccionado.Rows)
                     {
                         int newservicioID = (int)renglon.Cells[0].Value;
@@ -134,6 +138,32 @@ namespace LucySpa.Cuartos
                 {
                     //taCuartos.UpdateCuarto(tbDescripcionCuarto.Text,intNumeroCuarto);
                     taCuartos.UpdateCuarto(tbDescripcionCuarto.Text, tbNombre.Text, intNumeroCuarto);
+                    taDiseñoCuarto.DeleteServiciosDeCuarto(intNumeroCuarto);
+                    //Este foreach guarda los cambios hechos en los servicios del cuarto
+                    foreach (DataGridViewRow renglon in dgvServicioSeleccionado.Rows)
+                    {
+                        int servicioProvado = 0;
+                        int newservicioID = (int)renglon.Cells[0].Value;
+                        servicioProvado = (int)taDiseñoCuarto.BuscarSiExisteCuartoConServicio(int.Parse(tbNumeroCuarto.Text), newservicioID);
+
+                        if (servicioProvado==0)
+                        {
+                            taDiseñoCuarto.Insert(int.Parse(tbNumeroCuarto.Text), newservicioID);
+                            PantallaPrincipal.actualizarCuarto(); 
+                        }
+                    }
+                    //Este foreach guarda los cambios hechos en los equipos de los cuartos
+                    taEquipo.UpdateEqupoConCuartoIDEnNulo(intNumeroCuarto);
+                    foreach (DataGridViewRow renglon in dgvEquipoSeleccionado.Rows)
+                    {
+                        //int newequipoID = (int)dgvEquipoSeleccionado.Rows[c].Cells[0].Value;
+
+                        int newequipoID = (int)renglon.Cells[0].Value;
+                        int numCuarto = int.Parse(tbNumeroCuarto.Text);
+                        taEquipo.UpdateDelNuevoQueryConCuarto(numCuarto, newequipoID);
+                        
+                    }
+
                     PantallaPrincipal.actualizarVentanaEquipo();
                     PantallaPrincipal.actualizarCuarto();
                     MessageBox.Show("El cuarto se ha modificado exitosamente ", Properties.Resources.strExitoso, MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -306,7 +336,7 @@ namespace LucySpa.Cuartos
         }
         private void clonardatagrid()
         {
-            
+
             dgvModificarServicio.DataSource = taVistaCuartosConServicios.GetDataByCuarto(intNumeroCuarto);
             int intIDservicio;
             string stringNombre;
@@ -319,13 +349,16 @@ namespace LucySpa.Cuartos
                 DataGridViewRow row = (DataGridViewRow)dgvServicioSeleccionado.Rows[0].Clone();
                 row.Cells[0].Value = intIDservicio;
                 row.Cells[1].Value = stringNombre;
-                dgvServicioSeleccionado.Rows.Add(row);  
+                dgvServicioSeleccionado.Rows.Add(row);
                 dgvServicioSeleccionado.AllowUserToAddRows = false;
-             }
+            }
+
+            //this.dataGridView.DataSource = null; 
+            this.dgvServicioSeleccionado.DataSource = null;
             dgvModificarServicio.DataSource = taEquipo.GetDataByEquiposDelCuerpo(intNumeroCuarto);
             foreach (DataGridViewRow renglon2 in dgvModificarServicio.Rows)
             {
-                intIDservicio = (int)renglon2.Cells[1].Value;
+                intIDservicio = (int)renglon2.Cells[0].Value;
                 stringNombre = (string)renglon2.Cells[2].Value;
 
                 dgvEquipoSeleccionado.AllowUserToAddRows = true;
@@ -335,6 +368,7 @@ namespace LucySpa.Cuartos
                 dgvEquipoSeleccionado.Rows.Add(row2);//Se inserta al DataGridView de tratamiento un nuevo reglon//  
                 dgvEquipoSeleccionado.AllowUserToAddRows = false;
             }
+            this.dgvServicioSeleccionado.DataSource = null;
         }
 
         private void btnDesseleccionarServicio_Click(object sender, EventArgs e)

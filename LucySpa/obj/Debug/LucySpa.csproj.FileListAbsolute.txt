@@ -36,3 +36,131 @@ C:\Users\alumno\Source\Repos\Lucy2\LucySpa\obj\Debug\LucySpa.exe.manifest
 C:\Users\alumno\Source\Repos\Lucy2\LucySpa\obj\Debug\LucySpa.application
 C:\Users\alumno\Source\Repos\Lucy2\LucySpa\obj\Debug\LucySpa.exe
 C:\Users\alumno\Source\Repos\Lucy2\LucySpa\obj\Debug\LucySpa.pdb
+C:\Users\netcode\Desktop\Lucy2\LucySpa\bin\Debug\LucySpa.exe.config
+C:\Users\netcode\Desktop\Lucy2\LucySpa\obj\Debug\LucySpa.exe
+C:\Users\netcode\Desktop\Lucy2\LucySpa\obj\Debug\LucySpa.pdb
+C:\Users\netcode\Desktop\Lucy2\LucySpa\obj\Debug\LucySpa.csprojResolveAssemblyReference.cache
+C:\Users\netcode\Desktop\Lucy2\LucySpa\obj\Debug\LucySpa.Citas.frmCitaPago.resources
+C:\Users\netcode\Desktop\Lucy2\LucySpa\obj\Debug\LucySpa.Citas.frmCitas.resources
+C:\Users\netcode\Desktop\Lucy2\LucySpa\obj\Debug\LucySpa.Citas.FrmMostrarCitasConflictivas.resources
+C:\Users\netcode\Desktop\Lucy2\LucySpa\obj\Debug\LucySpa.frmClientes.resources
+C:\Users\netcode\Desktop\Lucy2\LucySpa\obj\Debug\LucySpa.Cuartos.frmCuartos.resources
+C:\Users\netcode\Desktop\Lucy2\LucySpa\obj\Debug\LucySpa.Cuartos.frmRelacionCuartoServicios.resources
+C:\Users\netcode\Desktop\Lucy2\LucySpa\obj\Debug\LucySpa.Pagos.Pagos.resources
+C:\Users\netcode\Desktop\Lucy2\LucySpa\obj\Debug\LucySpa.Productos.ReporteEmpleados.resources
+C:\Users\netcode\Desktop\Lucy2\LucySpa\obj\Debug\LucySpa.frmEmpleados.resources
+C:\Users\netcode\Desktop\Lucy2\LucySpa\obj\Debug\LucySpa.Equipo.frmEquipo.resources
+C:\Users\netcode\Desktop\Lucy2\LucySpa\obj\Debug\LucySpa.Productos.frmVenta.resources
+C:\Users\netcode\Desktop\Lucy2\LucySpa\obj\Debug\LucySpa.Productos.frmProductos.resources
+C:\Users\netcode\Desktop\Lucy2\LucySpa\obj\Debug\LucySpa.frmServicios.resources
+C:\Users\netcode\Desktop\Lucy2\LucySpa\obj\Debug\LucySpa.frmCrearNuevasTarjetas.resources
+C:\Users\netcode\Desktop\Lucy2\LucySpa\obj\Debug\LucySpa.frmAsignarTarjetas.resources
+C:\Users\netcode\Desktop\Lucy2\LucySpa\obj\Debug\LucySpa.Tratamientos.Abonos.resources
+C:\Users\netcode\Desktop\Lucy2\LucySpa\obj\Debug\LucySpa.Tratamientos.frmDetalleTratamiento.resources
+C:\Users\netcode\Desktop\Lucy2\LucySpa\obj\Debug\LucySpa.Tratamientos.frmSeleccionarClienteYEmpleado.resources
+C:\Users\netcode\Desktop\Lucy2\LucySpa\obj\Debug\LucySpa.frmTratamiento.resources
+C:\Users\netcode\Desktop\Lucy2\LucySpa\obj\Debug\LucySpa.Tratamientos.frmVentaTratamientocs.resources
+C:\Users\netcode\Desktop\Lucy2\LucySpa\obj\Debug\LucySpa.Tratamientos.TratamientosVendidos.resources
+C:\Users\netcode\Desktop\Lucy2\LucySpa\obj\Debug\LucySpa.frmUsuarios.resources
+C:\Users\netcode\Desktop\Lucy2\LucySpa\obj\Debug\LucySpa.Inicio.resources
+C:\Users\netcode\Desktop\Lucy2\LucySpa\obj\Debug\LucySpa.Properties.Resources.resources
+C:\Users\netcode\Desktop\Lucy2\LucySpa\obj\Debug\LucySpa.Usuarios.frmLogin.resources
+C:\Users\netcode\Desktop\Lucy2\LucySpa\obj\Debug\LucySpa.csproj.GenerateResource.Cache
+C:\Users\netcode\Desktop\Lucy2\LucySpa\obj\Debug\RdlCompile.cache
+C:\Users\netcode\Desktop\Lucy2\LucySpa\obj\Debug\RdlCompile.compiled
+C:\Users\netcode\Desktop\Lucy2\LucySpa\bin\Debug\LucySpa.exe.manifest
+C:\Users\netcode\Desktop\Lucy2\LucySpa\bin\Debug\LucySpa.application
+C:\Users\netcode\Desktop\Lucy2\LucySpa\bin\Debug\LucySpa.exe
+C:\Users\netcode\Desktop\Lucy2\LucySpa\bin\Debug\LucySpa.pdb
+C:\Users\netcode\Desktop\Lucy2\LucySpa\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\netcode\Desktop\Lucy2\LucySpa\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\netcode\Desktop\Lucy2\LucySpa\bin\Debug\System.Windows.Forms.Calendar.dll
+C:\Users\netcode\Desktop\Lucy2\LucySpa\bin\Debug\Microsoft.ReportViewer.WinForms.xml
+C:\Users\netcode\Desktop\Lucy2\LucySpa\obj\Debug\LucySpa.exe.manifest
+C:\Users\netcode\Desktop\Lucy2\LucySpa\obj\Debug\LucySpa.application
+C:\Users\netcode\Downloads\Lucy2\LucySpa\bin\Debug\LucySpa.exe.config
+C:\Users\netcode\Downloads\Lucy2\LucySpa\obj\Debug\LucySpa.exe
+C:\Users\netcode\Downloads\Lucy2\LucySpa\obj\Debug\LucySpa.pdb
+C:\Users\HAL\Dropbox\NETCODE\Lucy Spa\Lucy2\LucySpa\bin\Debug\LucySpa.exe.config
+C:\Users\HAL\Dropbox\NETCODE\Lucy Spa\Lucy2\LucySpa\obj\Debug\LucySpa.exe
+C:\Users\HAL\Dropbox\NETCODE\Lucy Spa\Lucy2\LucySpa\obj\Debug\LucySpa.pdb
+C:\Users\HAL\Dropbox\NETCODE\Lucy Spa\Lucy2\LucySpa\bin\Debug\LucySpa.exe.manifest
+C:\Users\HAL\Dropbox\NETCODE\Lucy Spa\Lucy2\LucySpa\bin\Debug\LucySpa.application
+C:\Users\HAL\Dropbox\NETCODE\Lucy Spa\Lucy2\LucySpa\bin\Debug\LucySpa.exe
+C:\Users\HAL\Dropbox\NETCODE\Lucy Spa\Lucy2\LucySpa\bin\Debug\LucySpa.pdb
+C:\Users\HAL\Dropbox\NETCODE\Lucy Spa\Lucy2\LucySpa\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\HAL\Dropbox\NETCODE\Lucy Spa\Lucy2\LucySpa\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\HAL\Dropbox\NETCODE\Lucy Spa\Lucy2\LucySpa\bin\Debug\System.Windows.Forms.Calendar.dll
+C:\Users\HAL\Dropbox\NETCODE\Lucy Spa\Lucy2\LucySpa\bin\Debug\Microsoft.ReportViewer.WinForms.xml
+C:\Users\HAL\Dropbox\NETCODE\Lucy Spa\Lucy2\LucySpa\obj\Debug\LucySpa.csprojResolveAssemblyReference.cache
+C:\Users\HAL\Dropbox\NETCODE\Lucy Spa\Lucy2\LucySpa\obj\Debug\LucySpa.Citas.frmCitaPago.resources
+C:\Users\HAL\Dropbox\NETCODE\Lucy Spa\Lucy2\LucySpa\obj\Debug\LucySpa.Citas.frmCitas.resources
+C:\Users\HAL\Dropbox\NETCODE\Lucy Spa\Lucy2\LucySpa\obj\Debug\LucySpa.Citas.FrmMostrarCitasConflictivas.resources
+C:\Users\HAL\Dropbox\NETCODE\Lucy Spa\Lucy2\LucySpa\obj\Debug\LucySpa.frmClientes.resources
+C:\Users\HAL\Dropbox\NETCODE\Lucy Spa\Lucy2\LucySpa\obj\Debug\LucySpa.Cuartos.frmCuartos.resources
+C:\Users\HAL\Dropbox\NETCODE\Lucy Spa\Lucy2\LucySpa\obj\Debug\LucySpa.Cuartos.frmRelacionCuartoServicios.resources
+C:\Users\HAL\Dropbox\NETCODE\Lucy Spa\Lucy2\LucySpa\obj\Debug\LucySpa.Pagos.Pagos.resources
+C:\Users\HAL\Dropbox\NETCODE\Lucy Spa\Lucy2\LucySpa\obj\Debug\LucySpa.Productos.ReporteEmpleados.resources
+C:\Users\HAL\Dropbox\NETCODE\Lucy Spa\Lucy2\LucySpa\obj\Debug\LucySpa.frmEmpleados.resources
+C:\Users\HAL\Dropbox\NETCODE\Lucy Spa\Lucy2\LucySpa\obj\Debug\LucySpa.Equipo.frmEquipo.resources
+C:\Users\HAL\Dropbox\NETCODE\Lucy Spa\Lucy2\LucySpa\obj\Debug\LucySpa.Productos.frmVenta.resources
+C:\Users\HAL\Dropbox\NETCODE\Lucy Spa\Lucy2\LucySpa\obj\Debug\LucySpa.Productos.frmProductos.resources
+C:\Users\HAL\Dropbox\NETCODE\Lucy Spa\Lucy2\LucySpa\obj\Debug\LucySpa.frmServicios.resources
+C:\Users\HAL\Dropbox\NETCODE\Lucy Spa\Lucy2\LucySpa\obj\Debug\LucySpa.frmCrearNuevasTarjetas.resources
+C:\Users\HAL\Dropbox\NETCODE\Lucy Spa\Lucy2\LucySpa\obj\Debug\LucySpa.frmAsignarTarjetas.resources
+C:\Users\HAL\Dropbox\NETCODE\Lucy Spa\Lucy2\LucySpa\obj\Debug\LucySpa.Tratamientos.Abonos.resources
+C:\Users\HAL\Dropbox\NETCODE\Lucy Spa\Lucy2\LucySpa\obj\Debug\LucySpa.Tratamientos.frmDetalleTratamiento.resources
+C:\Users\HAL\Dropbox\NETCODE\Lucy Spa\Lucy2\LucySpa\obj\Debug\LucySpa.Tratamientos.frmSeleccionarClienteYEmpleado.resources
+C:\Users\HAL\Dropbox\NETCODE\Lucy Spa\Lucy2\LucySpa\obj\Debug\LucySpa.frmTratamiento.resources
+C:\Users\HAL\Dropbox\NETCODE\Lucy Spa\Lucy2\LucySpa\obj\Debug\LucySpa.Tratamientos.frmVentaTratamientocs.resources
+C:\Users\HAL\Dropbox\NETCODE\Lucy Spa\Lucy2\LucySpa\obj\Debug\LucySpa.Tratamientos.TratamientosVendidos.resources
+C:\Users\HAL\Dropbox\NETCODE\Lucy Spa\Lucy2\LucySpa\obj\Debug\LucySpa.frmUsuarios.resources
+C:\Users\HAL\Dropbox\NETCODE\Lucy Spa\Lucy2\LucySpa\obj\Debug\LucySpa.Inicio.resources
+C:\Users\HAL\Dropbox\NETCODE\Lucy Spa\Lucy2\LucySpa\obj\Debug\LucySpa.Properties.Resources.resources
+C:\Users\HAL\Dropbox\NETCODE\Lucy Spa\Lucy2\LucySpa\obj\Debug\LucySpa.Usuarios.frmLogin.resources
+C:\Users\HAL\Dropbox\NETCODE\Lucy Spa\Lucy2\LucySpa\obj\Debug\LucySpa.csproj.GenerateResource.Cache
+C:\Users\HAL\Dropbox\NETCODE\Lucy Spa\Lucy2\LucySpa\obj\Debug\RdlCompile.cache
+C:\Users\HAL\Dropbox\NETCODE\Lucy Spa\Lucy2\LucySpa\obj\Debug\RdlCompile.compiled
+C:\Users\HAL\Dropbox\NETCODE\Lucy Spa\Lucy2\LucySpa\obj\Debug\LucySpa.exe.manifest
+C:\Users\HAL\Dropbox\NETCODE\Lucy Spa\Lucy2\LucySpa\obj\Debug\LucySpa.application
+C:\Users\HAL\Documents\Lucy2\LucySpa\bin\Debug\LucySpa.exe.config
+C:\Users\HAL\Documents\Lucy2\LucySpa\obj\Debug\LucySpa.exe
+C:\Users\HAL\Documents\Lucy2\LucySpa\obj\Debug\LucySpa.pdb
+C:\Users\HAL\Documents\Lucy2\LucySpa\bin\Debug\LucySpa.exe.manifest
+C:\Users\HAL\Documents\Lucy2\LucySpa\bin\Debug\LucySpa.application
+C:\Users\HAL\Documents\Lucy2\LucySpa\bin\Debug\LucySpa.exe
+C:\Users\HAL\Documents\Lucy2\LucySpa\bin\Debug\LucySpa.pdb
+C:\Users\HAL\Documents\Lucy2\LucySpa\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\HAL\Documents\Lucy2\LucySpa\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\HAL\Documents\Lucy2\LucySpa\bin\Debug\System.Windows.Forms.Calendar.dll
+C:\Users\HAL\Documents\Lucy2\LucySpa\bin\Debug\Microsoft.ReportViewer.WinForms.xml
+C:\Users\HAL\Documents\Lucy2\LucySpa\obj\Debug\LucySpa.Citas.frmCitaPago.resources
+C:\Users\HAL\Documents\Lucy2\LucySpa\obj\Debug\LucySpa.Citas.frmCitas.resources
+C:\Users\HAL\Documents\Lucy2\LucySpa\obj\Debug\LucySpa.Citas.FrmMostrarCitasConflictivas.resources
+C:\Users\HAL\Documents\Lucy2\LucySpa\obj\Debug\LucySpa.frmClientes.resources
+C:\Users\HAL\Documents\Lucy2\LucySpa\obj\Debug\LucySpa.Cuartos.frmCuartos.resources
+C:\Users\HAL\Documents\Lucy2\LucySpa\obj\Debug\LucySpa.Cuartos.frmRelacionCuartoServicios.resources
+C:\Users\HAL\Documents\Lucy2\LucySpa\obj\Debug\LucySpa.Pagos.Pagos.resources
+C:\Users\HAL\Documents\Lucy2\LucySpa\obj\Debug\LucySpa.Productos.ReporteEmpleados.resources
+C:\Users\HAL\Documents\Lucy2\LucySpa\obj\Debug\LucySpa.frmEmpleados.resources
+C:\Users\HAL\Documents\Lucy2\LucySpa\obj\Debug\LucySpa.Equipo.frmEquipo.resources
+C:\Users\HAL\Documents\Lucy2\LucySpa\obj\Debug\LucySpa.Productos.frmVenta.resources
+C:\Users\HAL\Documents\Lucy2\LucySpa\obj\Debug\LucySpa.Productos.frmProductos.resources
+C:\Users\HAL\Documents\Lucy2\LucySpa\obj\Debug\LucySpa.frmServicios.resources
+C:\Users\HAL\Documents\Lucy2\LucySpa\obj\Debug\LucySpa.frmCrearNuevasTarjetas.resources
+C:\Users\HAL\Documents\Lucy2\LucySpa\obj\Debug\LucySpa.frmAsignarTarjetas.resources
+C:\Users\HAL\Documents\Lucy2\LucySpa\obj\Debug\LucySpa.Tratamientos.Abonos.resources
+C:\Users\HAL\Documents\Lucy2\LucySpa\obj\Debug\LucySpa.Tratamientos.frmDetalleTratamiento.resources
+C:\Users\HAL\Documents\Lucy2\LucySpa\obj\Debug\LucySpa.Tratamientos.frmSeleccionarClienteYEmpleado.resources
+C:\Users\HAL\Documents\Lucy2\LucySpa\obj\Debug\LucySpa.frmTratamiento.resources
+C:\Users\HAL\Documents\Lucy2\LucySpa\obj\Debug\LucySpa.Tratamientos.frmVentaTratamientocs.resources
+C:\Users\HAL\Documents\Lucy2\LucySpa\obj\Debug\LucySpa.Tratamientos.TratamientosVendidos.resources
+C:\Users\HAL\Documents\Lucy2\LucySpa\obj\Debug\LucySpa.frmUsuarios.resources
+C:\Users\HAL\Documents\Lucy2\LucySpa\obj\Debug\LucySpa.Inicio.resources
+C:\Users\HAL\Documents\Lucy2\LucySpa\obj\Debug\LucySpa.Properties.Resources.resources
+C:\Users\HAL\Documents\Lucy2\LucySpa\obj\Debug\LucySpa.Usuarios.frmLogin.resources
+C:\Users\HAL\Documents\Lucy2\LucySpa\obj\Debug\LucySpa.csproj.GenerateResource.Cache
+C:\Users\HAL\Documents\Lucy2\LucySpa\obj\Debug\RdlCompile.cache
+C:\Users\HAL\Documents\Lucy2\LucySpa\obj\Debug\RdlCompile.compiled
+C:\Users\HAL\Documents\Lucy2\LucySpa\obj\Debug\LucySpa.exe.manifest
+C:\Users\HAL\Documents\Lucy2\LucySpa\obj\Debug\LucySpa.application

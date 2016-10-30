@@ -122,12 +122,12 @@ namespace LucySpa.Citas
 
                 TACitas taCitas = new TACitas();
                 TAVistaCitas taVistaCitas = new TAVistaCitas();
-                string fecha = ((dtpFechaCita.Value.ToString("MM/dd/yyyy hh:mm tt")).Replace("a. m.", "am")).Replace("p. m.", "pm");
-
+                string fecha = ((dtpFechaCita.Value.ToString("MM/dd/yyyy hh:mm:ss tt")).Replace("a.m.","am")).Replace("p.m.", "pm");
+                
                 int cuartoID = (int)cbCuartos.SelectedValue;
 
                 //Se busca si hay citas que hacen conflicto con la que se esta agendando
-                VistaCitas vistaCitasConflictivas = taVistaCitas.GetDataByCitasConflictivas(fecha, clienteID, empleadoID, servicioID,cuartoID);
+                VistaCitas vistaCitasConflictivas = taVistaCitas.GetDataByCitasConflictivas(clienteID, fecha, empleadoID, servicioID,cuartoID);
                 if (vistaCitasConflictivas.Rows.Count == 0)
                 {//Si no hay citas conflictivas
                     if (ModooVentana == "Modificar")
@@ -198,7 +198,7 @@ namespace LucySpa.Citas
 
             d1 = dtpFechaCita.Value;
             d2 = d1.AddMinutes(30);
-            d3 = d1.AddMinutes(-30);
+            d3 = d1.AddMinutes(-29);
             
             int cuerto = (int)cbCuartos.SelectedValue;
             

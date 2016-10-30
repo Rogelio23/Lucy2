@@ -17294,8 +17294,9 @@ SELECT EmpleadoID, Nombre, Apellido, Cumpleaños, Telefono, Direccion, Email, No
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EmpleadoID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "EmpleadoID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT Apellido, Cumpleaños, Direccion, Email, EmpleadoID, Nombre, NombreCompleto" +
-                ", Telefono FROM dbo.Empleados WHERE (EmpleadoID = @EmpleadoID)";
+            this._commandCollection[3].CommandText = "SELECT        Apellido, Cumpleaños, Direccion, Email, EmpleadoID, Nombre, NombreC" +
+                "ompleto, Telefono, ColorEmpleado\r\nFROM            dbo.Empleados\r\nWHERE        (E" +
+                "mpleadoID = @EmpleadoID)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EmpleadoID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "EmpleadoID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
@@ -17953,7 +17954,7 @@ SELECT EquipoID, CuartoID, Nombre, Descripcion FROM Equipo WHERE (EquipoID = @Eq
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[11];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[12];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT EquipoID, CuartoID, Nombre, Descripcion FROM dbo.Equipo";
@@ -18021,6 +18022,12 @@ SELECT EquipoID, CuartoID, Nombre, Descripcion FROM Equipo WHERE (EquipoID = @Eq
             this._commandCollection[10].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[10].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NuevoCuartoID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CuartoID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[10].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EquipoID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "EquipoID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[11] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[11].Connection = this.Connection;
+            this._commandCollection[11].CommandText = "UPDATE       dbo.Equipo\r\nSET                CuartoID = NULL\r\nWHERE        (Cuarto" +
+                "ID = @cuartoID)";
+            this._commandCollection[11].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[11].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cuartoID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CuartoID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -18517,6 +18524,35 @@ SELECT EquipoID, CuartoID, Nombre, Descripcion FROM Equipo WHERE (EquipoID = @Eq
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }
             command.Parameters[1].Value = ((int)(EquipoID));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateEqupoConCuartoIDEnNulo(global::System.Nullable<int> cuartoID) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[11];
+            if ((cuartoID.HasValue == true)) {
+                command.Parameters[0].Value = ((int)(cuartoID.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -22851,7 +22887,7 @@ SELECT VentaTarjetaID, ClienteID, TarjetaID, FecchaCompra, FechaTerminacion FROM
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT VentaTarjetaID, ClienteID, TarjetaID, FecchaCompra, FechaTerminacion FROM " +
@@ -22866,16 +22902,24 @@ SELECT VentaTarjetaID, ClienteID, TarjetaID, FecchaCompra, FechaTerminacion FROM
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClienteID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ClienteID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"UPDATE       dbo.VentaTarjetas
+            this._commandCollection[2].CommandText = @"SELECT        TOP (1) dbo.Tarjetas.Tipo
+FROM            dbo.Tarjetas LEFT OUTER JOIN
+                         dbo.VentaTarjetas ON dbo.Tarjetas.TarjetaID = dbo.VentaTarjetas.TarjetaID
+WHERE        (dbo.VentaTarjetas.FechaTerminacion IS NULL) AND (dbo.VentaTarjetas.ClienteID = @ClienteID)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClienteID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ClienteID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = @"UPDATE       dbo.VentaTarjetas
 SET                ClienteID = @ClienteID, TarjetaID = @TarjetaID, FecchaCompra = @FecchaCompra, FechaTerminacion = @FechaTerminacion
 WHERE        (VentaTarjetaID = @VentaTarjetaID); 
 SELECT VentaTarjetaID, ClienteID, TarjetaID, FecchaCompra, FechaTerminacion FROM VentaTarjetas ";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClienteID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ClienteID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TarjetaID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "TarjetaID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FecchaCompra", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "FecchaCompra", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaTerminacion", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "FechaTerminacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@VentaTarjetaID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "VentaTarjetaID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClienteID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ClienteID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TarjetaID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "TarjetaID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FecchaCompra", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "FecchaCompra", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaTerminacion", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "FechaTerminacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@VentaTarjetaID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "VentaTarjetaID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -23084,9 +23128,43 @@ SELECT VentaTarjetaID, ClienteID, TarjetaID, FecchaCompra, FechaTerminacion FROM
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual string QueryTipoTarjetaDelCliente(global::System.Nullable<int> ClienteID) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            if ((ClienteID.HasValue == true)) {
+                command.Parameters[0].Value = ((int)(ClienteID.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((string)(returnValue));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int UpdateQueryVentaTarjetaID(global::System.Nullable<int> ClienteID, global::System.Nullable<int> TarjetaID, System.DateTime FecchaCompra, global::System.Nullable<global::System.DateTime> FechaTerminacion, int VentaTarjetaID) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
             if ((ClienteID.HasValue == true)) {
                 command.Parameters[0].Value = ((int)(ClienteID.Value));
             }
@@ -25049,10 +25127,19 @@ FROM            dbo.vistaCitas";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT Apellido, ApellidoEmpleado, CitaID, ClienteID, ColorEmpleado, Costo, CuartoID, Descripcion, EmpleadoID, Fecha, NomCompletoClie, NomCompletoEmp, Nombre, NombreEmpleado, NombreServicio, Realizado, ServicioID, Telefono, TelefonoEmpleado, TratamientoID, VentaTarjeta FROM dbo.vistaCitas WHERE (@fechaHora BETWEEN Fecha AND DATEADD(hour, 1, Fecha)) AND (ClienteID = @clienteID) OR (@fechaHora BETWEEN Fecha AND DATEADD(hour, 1, Fecha)) AND (EmpleadoID = @empleadoID) OR (@fechaHora BETWEEN Fecha AND DATEADD(hour, 1, Fecha)) AND (ServicioID = @servicioID) AND (CuartoID = @cuartoID) OR (ClienteID = @clienteID) AND (DATEADD(hour, 1, @fechaHora) BETWEEN Fecha AND DATEADD(hour, 1, Fecha)) OR (EmpleadoID = @empleadoID) AND (DATEADD(hour, 1, @fechaHora) BETWEEN Fecha AND DATEADD(hour, 1, Fecha)) OR (ServicioID = @servicioID) AND (CuartoID = @cuartoID) AND (DATEADD(hour, 1, @fechaHora) BETWEEN Fecha AND DATEADD(hour, 1, Fecha)) ORDER BY Fecha";
+            this._commandCollection[1].CommandText = @"SELECT        Apellido, ApellidoEmpleado, CitaID, ClienteID, ColorEmpleado, Costo, CuartoID, Descripcion, EmpleadoID, Fecha, NomCompletoClie, NomCompletoEmp, Nombre, 
+                         NombreEmpleado, NombreServicio, Realizado, ServicioID, Telefono, TelefonoEmpleado, TratamientoID, VentaTarjeta
+FROM            dbo.vistaCitas
+WHERE        (ClienteID = @clienteID) AND (CAST(@fechaHora AS DATETIME2) BETWEEN Fecha AND DATEADD(hour, 1, Fecha)) OR
+                         (EmpleadoID = @empleadoID) AND (CAST(@fechaHora AS DATETIME2) BETWEEN Fecha AND DATEADD(hour, 1, Fecha)) OR
+                         (ServicioID = @servicioID) AND (CuartoID = @cuartoID) AND (CAST(@fechaHora AS DATETIME2) BETWEEN Fecha AND DATEADD(hour, 1, Fecha)) OR
+                         (ClienteID = @clienteID) AND (DATEADD(hour, 1, CAST(@fechaHora AS DATETIME2)) BETWEEN Fecha AND DATEADD(hour, 1, Fecha)) OR
+                         (EmpleadoID = @empleadoID) AND (DATEADD(hour, 1, CAST(@fechaHora AS DATETIME2)) BETWEEN Fecha AND DATEADD(hour, 1, Fecha)) OR
+                         (ServicioID = @servicioID) AND (CuartoID = @cuartoID) AND (DATEADD(hour, 1, CAST(@fechaHora AS DATETIME2)) BETWEEN Fecha AND DATEADD(hour, 1, Fecha))
+ORDER BY Fecha";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaHora", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@clienteID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ClienteID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaHora", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@empleadoID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "EmpleadoID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@servicioID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ServicioID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cuartoID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CuartoID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -25108,19 +25195,19 @@ ORDER BY Fecha";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByCitasConflictivas(LucySpaDB.vistaCitasDataTable dataTable, string fechaHora, global::System.Nullable<int> clienteID, global::System.Nullable<int> empleadoID, global::System.Nullable<int> servicioID, global::System.Nullable<int> cuartoID) {
+        public virtual int FillByCitasConflictivas(LucySpaDB.vistaCitasDataTable dataTable, global::System.Nullable<int> clienteID, string fechaHora, global::System.Nullable<int> empleadoID, global::System.Nullable<int> servicioID, global::System.Nullable<int> cuartoID) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((clienteID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(clienteID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             if ((fechaHora == null)) {
                 throw new global::System.ArgumentNullException("fechaHora");
             }
             else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(fechaHora));
-            }
-            if ((clienteID.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(clienteID.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(fechaHora));
             }
             if ((empleadoID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[2].Value = ((int)(empleadoID.Value));
@@ -25151,19 +25238,19 @@ ORDER BY Fecha";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual LucySpaDB.vistaCitasDataTable GetDataByCitasConflictivas(string fechaHora, global::System.Nullable<int> clienteID, global::System.Nullable<int> empleadoID, global::System.Nullable<int> servicioID, global::System.Nullable<int> cuartoID) {
+        public virtual LucySpaDB.vistaCitasDataTable GetDataByCitasConflictivas(global::System.Nullable<int> clienteID, string fechaHora, global::System.Nullable<int> empleadoID, global::System.Nullable<int> servicioID, global::System.Nullable<int> cuartoID) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((clienteID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(clienteID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             if ((fechaHora == null)) {
                 throw new global::System.ArgumentNullException("fechaHora");
             }
             else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(fechaHora));
-            }
-            if ((clienteID.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(clienteID.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(fechaHora));
             }
             if ((empleadoID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[2].Value = ((int)(empleadoID.Value));
@@ -25627,17 +25714,29 @@ ORDER BY Fecha";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT CuartoID, ServicioID FROM dbo.CuartoServicio";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        CuartoID, ServicioID\r\nFROM            dbo.CuartoServicio\r\nWHERE    " +
-                "    (ServicioID = @servicioID)";
+            this._commandCollection[1].CommandText = "SELECT        COUNT(CuartoID) AS cuarto\r\nFROM            dbo.CuartoServicio\r\nWHER" +
+                "E        (CuartoID = @cuartoID) AND (ServicioID = @servicioID)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cuartoID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CuartoID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@servicioID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ServicioID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "DELETE FROM dbo.CuartoServicio\r\nWHERE        (CuartoID = @cuartoID)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cuartoID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CuartoID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT        CuartoID, ServicioID\r\nFROM            dbo.CuartoServicio\r\nWHERE    " +
+                "    (ServicioID = @servicioID)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@servicioID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ServicioID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -25669,7 +25768,7 @@ ORDER BY Fecha";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillByServicioId(LucySpaDB.CuartoServicioDataTable dataTable, int servicioID) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(servicioID));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -25683,7 +25782,7 @@ ORDER BY Fecha";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual LucySpaDB.CuartoServicioDataTable GetDataByServicioId(int servicioID) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(servicioID));
             LucySpaDB.CuartoServicioDataTable dataTable = new LucySpaDB.CuartoServicioDataTable();
             this.Adapter.Fill(dataTable);
@@ -25740,6 +25839,60 @@ ORDER BY Fecha";
                     this.Adapter.InsertCommand.Connection.Close();
                 }
             }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<int> BuscarSiExisteCuartoConServicio(int cuartoID, int servicioID) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            command.Parameters[0].Value = ((int)(cuartoID));
+            command.Parameters[1].Value = ((int)(servicioID));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<int>();
+            }
+            else {
+                return new global::System.Nullable<int>(((int)(returnValue)));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
+        public virtual int DeleteServiciosDeCuarto(int cuartoID) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            command.Parameters[0].Value = ((int)(cuartoID));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     

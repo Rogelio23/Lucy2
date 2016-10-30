@@ -195,7 +195,7 @@
             this.metroLabel1.LabelMode = MetroFramework.Controls.MetroLabelMode.Default;
             this.metroLabel1.Location = new System.Drawing.Point(23, 252);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(123, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(122, 19);
             this.metroLabel1.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroLabel1.StyleManager = null;
             this.metroLabel1.TabIndex = 41;
@@ -220,6 +220,7 @@
             this.metroLabel2.Text = "Tiempo de re-preparacion";
             this.metroLabel2.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroLabel2.UseStyleColors = false;
+            this.metroLabel2.Visible = false;
             // 
             // mtbRepreparacion
             // 
@@ -230,6 +231,7 @@
             this.mtbRepreparacion.Size = new System.Drawing.Size(49, 20);
             this.mtbRepreparacion.TabIndex = 42;
             this.mtbRepreparacion.ValidatingType = typeof(System.DateTime);
+            this.mtbRepreparacion.Visible = false;
             // 
             // frmServicios
             // 

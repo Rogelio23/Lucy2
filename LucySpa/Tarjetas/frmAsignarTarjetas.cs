@@ -56,21 +56,33 @@ namespace LucySpa
             MessageBox.Show("Tarjeta asignada correctamente");
             this.Close();
         }
-        
+
 
         private void rbPremium_CheckedChanged(object sender, EventArgs e)
         {
-            this.tarjetasTableAdapter.FillByPremiumTarjetas(this.dSTarjetas.Tarjetas);
+            try
+            {
+                this.tarjetasTableAdapter.FillByPremiumTarjetas(this.dSTarjetas.Tarjetas);
+            }
+            catch{ }
         }
 
         private void rbRegalo_CheckedChanged(object sender, EventArgs e)
         {
-            this.tarjetasTableAdapter.FillByRegaloTarjetas(this.dSTarjetas.Tarjetas);
+            try
+            {
+                this.tarjetasTableAdapter.FillByRegaloTarjetas(this.dSTarjetas.Tarjetas);
+            }
+            catch{ }
         }
 
         private void rbCortesia_CheckedChanged(object sender, EventArgs e)
         {
-            this.tarjetasTableAdapter.FillByCortesiaTarjetas(this.dSTarjetas.Tarjetas);
+            try
+            {
+                this.tarjetasTableAdapter.FillByCortesiaTarjetas(this.dSTarjetas.Tarjetas);
+            }
+            catch{ }
         }
     }
 }

@@ -3014,7 +3014,7 @@ SELECT VentaTarjetaID, ClienteID, TarjetaID, FecchaCompra, FechaTerminacion FROM
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT VentaTarjetaID, ClienteID, TarjetaID, FecchaCompra, FechaTerminacion FROM " +
@@ -3022,9 +3022,20 @@ SELECT VentaTarjetaID, ClienteID, TarjetaID, FecchaCompra, FechaTerminacion FROM
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        COUNT(VentaTarjetaID) AS TarjetasAsignadas\r\nFROM            VentaTa" +
-                "rjetas\r\nWHERE        (FechaTerminacion IS NULL)";
+            this._commandCollection[1].CommandText = @"SELECT        COUNT(dbo.VentaTarjetas.VentaTarjetaID) AS TarjetasAsignadas
+FROM            dbo.VentaTarjetas INNER JOIN
+                         dbo.Tarjetas ON dbo.VentaTarjetas.TarjetaID = dbo.Tarjetas.TarjetaID
+WHERE        (dbo.VentaTarjetas.FechaTerminacion IS NULL) AND (dbo.Tarjetas.Tipo = @TipoTarjeta)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TipoTarjeta", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "Tipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT        TOP (1) dbo.Tarjetas.Tipo
+FROM            dbo.Tarjetas LEFT OUTER JOIN
+                         dbo.VentaTarjetas ON dbo.Tarjetas.TarjetaID = dbo.VentaTarjetas.TarjetaID
+WHERE        (dbo.VentaTarjetas.FechaTerminacion IS NULL) AND (dbo.VentaTarjetas.ClienteID = @ClienteID)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClienteID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ClienteID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3197,8 +3208,14 @@ SELECT VentaTarjetaID, ClienteID, TarjetaID, FecchaCompra, FechaTerminacion FROM
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual global::System.Nullable<int> QueryTarjetasAsignadas() {
+        public virtual object QueryTarjetasAsignadas(string TipoTarjeta) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            if ((TipoTarjeta == null)) {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[0].Value = ((string)(TipoTarjeta));
+            }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3215,10 +3232,44 @@ SELECT VentaTarjetaID, ClienteID, TarjetaID, FecchaCompra, FechaTerminacion FROM
             }
             if (((returnValue == null) 
                         || (returnValue.GetType() == typeof(global::System.DBNull)))) {
-                return new global::System.Nullable<int>();
+                return null;
             }
             else {
-                return new global::System.Nullable<int>(((int)(returnValue)));
+                return ((object)(returnValue));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual string QueryTipoTarjetaDelCliente(global::System.Nullable<int> ClienteID) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            if ((ClienteID.HasValue == true)) {
+                command.Parameters[0].Value = ((int)(ClienteID.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((string)(returnValue));
             }
         }
     }
@@ -3861,10 +3912,10 @@ SELECT TarjetaID, Tipo, Costo FROM Tarjetas WHERE (TarjetaID = @TarjetaID)";
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TarjetaID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "TarjetaID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = @"SELECT        Tarjetas.TarjetaID, Tarjetas.Tipo, Tarjetas.Costo, VentaTarjetas.ClienteID, VentaTarjetas.FechaTerminacion
-FROM            Tarjetas LEFT OUTER JOIN
-                         VentaTarjetas ON Tarjetas.TarjetaID = VentaTarjetas.TarjetaID
-WHERE        (VentaTarjetas.ClienteID IS NULL) AND (VentaTarjetas.FechaTerminacion IS NULL) AND (Tarjetas.Tipo = 'CORTESIA')";
+            this._commandCollection[3].CommandText = @"SELECT        dbo.Tarjetas.TarjetaID, dbo.Tarjetas.Tipo, dbo.Tarjetas.Costo, dbo.VentaTarjetas.ClienteID, dbo.VentaTarjetas.FechaTerminacion
+FROM            dbo.Tarjetas LEFT OUTER JOIN
+                         dbo.VentaTarjetas ON dbo.Tarjetas.TarjetaID = dbo.VentaTarjetas.TarjetaID
+WHERE        (dbo.VentaTarjetas.ClienteID IS NULL) AND (dbo.VentaTarjetas.FechaTerminacion IS NULL) AND (dbo.Tarjetas.Tipo = 'GIFT CARD')";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
@@ -3875,25 +3926,31 @@ WHERE        (VentaTarjetas.ClienteID IS NULL) AND (VentaTarjetas.FechaTerminaci
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = @"SELECT        Tarjetas.TarjetaID, Tarjetas.Tipo, Tarjetas.Costo, VentaTarjetas.ClienteID, VentaTarjetas.FechaTerminacion
-FROM            Tarjetas LEFT OUTER JOIN
-                         VentaTarjetas ON Tarjetas.TarjetaID = VentaTarjetas.TarjetaID
-WHERE        (VentaTarjetas.ClienteID IS NULL) AND (VentaTarjetas.FechaTerminacion IS NULL) AND (Tarjetas.Tipo = 'regalo')";
+            this._commandCollection[5].CommandText = @"SELECT        dbo.Tarjetas.TarjetaID, dbo.Tarjetas.Tipo, dbo.Tarjetas.Costo, dbo.VentaTarjetas.ClienteID, dbo.VentaTarjetas.FechaTerminacion
+FROM            dbo.Tarjetas LEFT OUTER JOIN
+                         dbo.VentaTarjetas ON dbo.Tarjetas.TarjetaID = dbo.VentaTarjetas.TarjetaID
+WHERE        (dbo.VentaTarjetas.ClienteID IS NULL) AND (dbo.VentaTarjetas.FechaTerminacion IS NULL) AND (dbo.Tarjetas.Tipo = 'LUCY FRIENDS')";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = "SELECT        COUNT(TarjetaID) AS Cantidad\r\nFROM            Tarjetas";
+            this._commandCollection[6].CommandText = "SELECT        COUNT(Tipo) AS Cantidad\r\nFROM            dbo.Tarjetas\r\nWHERE       " +
+                " (Tipo = @TipoTarjeta)";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TipoTarjeta", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "Tipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[7].Connection = this.Connection;
-            this._commandCollection[7].CommandText = "SELECT        TOP (1) Costo\r\nFROM            Tarjetas";
+            this._commandCollection[7].CommandText = "SELECT        TOP (1) Costo\r\nFROM            dbo.Tarjetas\r\nWHERE        (Tipo = @" +
+                "TipoTarjeta)";
             this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TipoTarjeta", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "Tipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[8] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[8].Connection = this.Connection;
-            this._commandCollection[8].CommandText = "SELECT        COUNT(Tarjetas.TarjetaID) AS TarjetasSinAsignar\r\nFROM            Ta" +
-                "rjetas LEFT OUTER JOIN\r\n                         VentaTarjetas ON Tarjetas.Tarje" +
-                "taID = VentaTarjetas.TarjetaID\r\nWHERE        (VentaTarjetas.ClienteID IS NULL)";
+            this._commandCollection[8].CommandText = @"SELECT        COUNT(dbo.Tarjetas.TarjetaID) AS TarjetasSinAsignar
+FROM            dbo.Tarjetas LEFT OUTER JOIN
+                         dbo.VentaTarjetas ON dbo.Tarjetas.TarjetaID = dbo.VentaTarjetas.TarjetaID
+WHERE        (dbo.VentaTarjetas.ClienteID IS NULL) AND (dbo.Tarjetas.Tipo = @TipoTarjeta)";
             this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TipoTarjeta", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "Tipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[9] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[9].Connection = this.Connection;
             this._commandCollection[9].CommandText = "dbo.registrarNuevasTarjetas";
@@ -3904,11 +3961,12 @@ WHERE        (VentaTarjetas.ClienteID IS NULL) AND (VentaTarjetas.FechaTerminaci
             this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cantidad", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[10] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[10].Connection = this.Connection;
-            this._commandCollection[10].CommandText = "UPDATE       Tarjetas\r\nSET                Costo = @Costo\r\nWHERE        (Costo = @" +
-                "Original_Costo); \r\n";
+            this._commandCollection[10].CommandText = "UPDATE       dbo.Tarjetas\r\nSET                Costo = @Costo\r\nWHERE        (Costo" +
+                " = @Original_Costo) AND (Tipo = @TipoTarjeta);  \r\n";
             this._commandCollection[10].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[10].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Costo", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Costo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[10].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Costo", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Costo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[10].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TipoTarjeta", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "Tipo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4218,8 +4276,14 @@ WHERE        (VentaTarjetas.ClienteID IS NULL) AND (VentaTarjetas.FechaTerminaci
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual global::System.Nullable<int> QueryCantidadTotalTarjetas() {
+        public virtual object QueryCantidadTotalTarjetas(string TipoTarjeta) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
+            if ((TipoTarjeta == null)) {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[0].Value = ((string)(TipoTarjeta));
+            }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4236,18 +4300,24 @@ WHERE        (VentaTarjetas.ClienteID IS NULL) AND (VentaTarjetas.FechaTerminaci
             }
             if (((returnValue == null) 
                         || (returnValue.GetType() == typeof(global::System.DBNull)))) {
-                return new global::System.Nullable<int>();
+                return null;
             }
             else {
-                return new global::System.Nullable<int>(((int)(returnValue)));
+                return ((object)(returnValue));
             }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual global::System.Nullable<decimal> QueryCosto() {
+        public virtual object QueryCosto(string TipoTarjeta) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[7];
+            if ((TipoTarjeta == null)) {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[0].Value = ((string)(TipoTarjeta));
+            }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4264,18 +4334,24 @@ WHERE        (VentaTarjetas.ClienteID IS NULL) AND (VentaTarjetas.FechaTerminaci
             }
             if (((returnValue == null) 
                         || (returnValue.GetType() == typeof(global::System.DBNull)))) {
-                return new global::System.Nullable<decimal>();
+                return null;
             }
             else {
-                return new global::System.Nullable<decimal>(((decimal)(returnValue)));
+                return ((object)(returnValue));
             }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual global::System.Nullable<int> QueryTarjetasSinAsignar() {
+        public virtual object QueryTarjetasSinAsignar(string TipoTarjeta) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[8];
+            if ((TipoTarjeta == null)) {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[0].Value = ((string)(TipoTarjeta));
+            }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4292,10 +4368,10 @@ WHERE        (VentaTarjetas.ClienteID IS NULL) AND (VentaTarjetas.FechaTerminaci
             }
             if (((returnValue == null) 
                         || (returnValue.GetType() == typeof(global::System.DBNull)))) {
-                return new global::System.Nullable<int>();
+                return null;
             }
             else {
-                return new global::System.Nullable<int>(((int)(returnValue)));
+                return ((object)(returnValue));
             }
         }
         
@@ -4349,7 +4425,7 @@ WHERE        (VentaTarjetas.ClienteID IS NULL) AND (VentaTarjetas.FechaTerminaci
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int UpdateCostoTarjetas(global::System.Nullable<decimal> Costo, global::System.Nullable<decimal> Original_Costo) {
+        public virtual int UpdateCostoTarjetas(global::System.Nullable<decimal> Costo, global::System.Nullable<decimal> Original_Costo, string TipoTarjeta) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[10];
             if ((Costo.HasValue == true)) {
                 command.Parameters[0].Value = ((decimal)(Costo.Value));
@@ -4362,6 +4438,12 @@ WHERE        (VentaTarjetas.ClienteID IS NULL) AND (VentaTarjetas.FechaTerminaci
             }
             else {
                 command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((TipoTarjeta == null)) {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[2].Value = ((string)(TipoTarjeta));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 

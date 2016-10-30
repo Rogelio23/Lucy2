@@ -272,7 +272,7 @@
             this.lblServicio.LabelMode = MetroFramework.Controls.MetroLabelMode.Default;
             this.lblServicio.Location = new System.Drawing.Point(66, 130);
             this.lblServicio.Name = "lblServicio";
-            this.lblServicio.Size = new System.Drawing.Size(189, 25);
+            this.lblServicio.Size = new System.Drawing.Size(188, 25);
             this.lblServicio.Style = MetroFramework.MetroColorStyle.Blue;
             this.lblServicio.StyleManager = null;
             this.lblServicio.TabIndex = 51;
@@ -436,7 +436,7 @@
             this.dgvModificarServicio.AllowUserToAddRows = false;
             this.dgvModificarServicio.AllowUserToDeleteRows = false;
             this.dgvModificarServicio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvModificarServicio.Location = new System.Drawing.Point(620, 144);
+            this.dgvModificarServicio.Location = new System.Drawing.Point(608, 144);
             this.dgvModificarServicio.Name = "dgvModificarServicio";
             this.dgvModificarServicio.Size = new System.Drawing.Size(240, 150);
             this.dgvModificarServicio.TabIndex = 58;
@@ -522,11 +522,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridView dgvModificarServicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridView dgvModificarServicio;
     }
 }

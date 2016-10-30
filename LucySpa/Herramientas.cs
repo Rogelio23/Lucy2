@@ -278,6 +278,27 @@ namespace LucySpa
                 e.Handled = true;
             }
         }
+
+        /// <summary>
+        /// Evento para validar la introduccion de caracteres de tipo numero y punto dentro de una caja de texto del tipo metroTexbox.
+        /// </summary>
+        /// <param name="tb">MaskedTextBox que se desea validar.</param>
+        /// <param name="e">Objeto de argumentos del evento de presionado de tecla.</param>
+        /// <param name="sender">MaskedTextBox que se desea validar.</param>
+        public static void keyPressNumerosSinDecimales(MetroTextBox tb, KeyPressEventArgs e, object sender)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            //if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            //{
+            //    e.Handled = true;
+            //}
+        }
+
     }
 
     

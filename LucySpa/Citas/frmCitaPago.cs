@@ -14,7 +14,7 @@ namespace LucySpa.Citas
     using RowCita = LucySpa.DataAccess.LucySpaDB.CitasRow;
     public partial class frmCitaPago : MetroFramework.Forms.MetroForm
     {
-        string EstadoCompra;
+        string EstadoCompra = "Efectivo";
         int CitaID;
         decimal CostoServicio;
         Inicio frmPrincipal;
@@ -78,30 +78,51 @@ namespace LucySpa.Citas
                 int empleadoID = Fila.EmpleadoID;
                 int clienteID = Fila.ClienteID;
                 DateTime fechaCita = Fila.Fecha;
-
+                string tarjetaCliente;
 
 
                 try
                 {
                     DataAccess.LucySpaDB.VentaTarjetasRow renglon = taVentaTarjetas.GetDataByClienteID(clienteID)[0];
-
+                    tarjetaCliente = taVentaTarjetas.QueryTipoTarjetaDelCliente(clienteID);
                     if (renglon.IsFechaTerminacionNull())
                     {
-                        int contador = (int)taCitas.contarPagosConTarjeta(renglon.VentaTarjetaID);
-                        if (contador <= 3)
+                        if (tarjetaCliente == "PREMIUM")
                         {
-
-                            taCitas.UpdateQueryCitaID(clienteID, empleadoID, servicioID, fechaCita, null, renglon.VentaTarjetaID, true, CitaID);
-                            if (contador == 3)
+                            int contador = (int)taCitas.contarPagosConTarjeta(renglon.VentaTarjetaID);
+                            if (contador <= 3)
                             {
-                                taVentaTarjetas.UpdateQueryVentaTarjetaID(clienteID, renglon.TarjetaID, renglon.FecchaCompra, DateTime.Today, renglon.VentaTarjetaID);
-                                MessageBox.Show("La tarjeta a expirado con este ultimo pago porfavor retire la tarjeta al cliente", "Tarjeta terminada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                taCitas.UpdateQueryCitaID(clienteID, empleadoID, servicioID, fechaCita, null, renglon.VentaTarjetaID, true, CitaID);
+                                if (contador == 3)
+                                {
+                                    taVentaTarjetas.UpdateQueryVentaTarjetaID(clienteID, renglon.TarjetaID, renglon.FecchaCompra, DateTime.Today, renglon.VentaTarjetaID);
+                                    MessageBox.Show("La tarjeta a expirado con este ultimo pago porfavor retire la tarjeta al cliente", "Tarjeta terminada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+                                MessageBox.Show("Se ha realizado el pago satisfactoriamente con la VIP CARD", Resources.strExitoso, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                //se cierra esta ventana
+                                this.Close();
+                                frmPrincipal.actualizarRegistroCita();
                             }
-                            MessageBox.Show("Se ha realizado el pago satisfactoriamente", Resources.strExitoso, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }else if (tarjetaCliente == "GIFT CARD")
+                        {
+                            taCitas.UpdateQueryCitaID(clienteID, empleadoID, servicioID, fechaCita, null, renglon.VentaTarjetaID, true, CitaID);
+                            taVentaTarjetas.UpdateQueryVentaTarjetaID(clienteID, renglon.TarjetaID, renglon.FecchaCompra, DateTime.Today, renglon.VentaTarjetaID);
+                            MessageBox.Show("Se ha realizado el pago satisfactoriamente con la " + tarjetaCliente + ". Profavor retire la tarjeta al cliente", Resources.strExitoso, MessageBoxButtons.OK, MessageBoxIcon.Information);
                             //se cierra esta ventana
                             this.Close();
                             frmPrincipal.actualizarRegistroCita();
                         }
+                        else
+                        {
+                            taCitas.UpdateQueryCitaID(clienteID, empleadoID, servicioID, fechaCita, null, renglon.VentaTarjetaID, true, CitaID);
+                            taVentaTarjetas.UpdateQueryVentaTarjetaID(clienteID, renglon.TarjetaID, renglon.FecchaCompra, DateTime.Today, renglon.VentaTarjetaID);
+                            MessageBox.Show("Se ha realizado el pago satisfactoriamente con la " + tarjetaCliente + ". Profavor retire la tarjeta al cliente", Resources.strExitoso, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            //se cierra esta ventana
+                            this.Close();
+                            frmPrincipal.actualizarRegistroCita();
+                        }
+                            
 
                     }
                     else
@@ -123,6 +144,7 @@ namespace LucySpa.Citas
 
         private void btnTarjeta_Click(object sender, EventArgs e)
         {
+            EstadoCompra = "Tarjeta";
             if (btnTarjeta.Text=="Tarjeta")
             {
                 btnTarjeta.Text = "Efectivo";
