@@ -25,7 +25,7 @@ namespace LucySpa.Citas
             InitializeComponent();
             this.CitaID = CitaID;
             this.CostoServicio = CostoServicio;
-            tbTotal.Text = CostoServicio.ToString();
+            tbTotal.Text = String.Format("{0:C}", CostoServicio); 
             this.frmPrincipal=frmPrincipal;
         }
 
@@ -41,7 +41,7 @@ namespace LucySpa.Citas
             //se obtiene el dinero con el que se pagara
             decimal dinero = decimal.Parse(tbAPagar.Text);
             //se obtiene el dinero con el que se pagara
-            decimal totalDeLaVenta = decimal.Parse(tbTotal.Text);
+            decimal totalDeLaVenta = CostoServicio;
 
             decimal cambio;
             //Se calcula el cambio
@@ -173,6 +173,11 @@ namespace LucySpa.Citas
         private void gbEfectivo_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void tbAPagar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Herramientas.keyPressNumeros(e, sender);
         }
     }
 }

@@ -49,7 +49,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>xS+cr3EPa96PdLebegMe5eQn2mcr2KJdgfI8JAEL/Bo=</dsig:DigestValue>
+        <dsig:DigestValue>iYCoEe7ShWy2U+/fLwLsWOB5xCfX8Vb2+YeaA8HFM1o=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -125,13 +125,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="LucySpa.exe.config" size="890">
+  <file name="LucySpa.exe.config" size="899">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>0mWLX/51i2LxJ7+9K7treFayheyslFuFwUomEecLb+Q=</dsig:DigestValue>
+      <dsig:DigestValue>h6GIDKxIJK7DXBh8AwEOibd1h/iqQ/SCDeI5IixH+qo=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Resources\clienteSinFoto.jpg" size="4970">

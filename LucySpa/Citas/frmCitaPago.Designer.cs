@@ -36,8 +36,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tbTotal = new System.Windows.Forms.TextBox();
             this.gbEfectivo = new System.Windows.Forms.GroupBox();
-            this.btnTarjeta = new MetroFramework.Controls.MetroButton();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnTarjeta = new MetroFramework.Controls.MetroButton();
             this.gbEfectivo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,6 +81,7 @@
             this.tbAPagar.Name = "tbAPagar";
             this.tbAPagar.Size = new System.Drawing.Size(176, 26);
             this.tbAPagar.TabIndex = 37;
+            this.tbAPagar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbAPagar_KeyPress);
             this.tbAPagar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbAPagar_KeyUp);
             // 
             // label3
@@ -129,6 +130,14 @@
             this.gbEfectivo.Text = "Pago en efectivo";
             this.gbEfectivo.Enter += new System.EventHandler(this.gbEfectivo_Enter);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(54, 123);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 13);
+            this.label2.TabIndex = 43;
+            // 
             // btnTarjeta
             // 
             this.btnTarjeta.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -142,14 +151,6 @@
             this.btnTarjeta.Text = "Tarjeta";
             this.btnTarjeta.Theme = MetroFramework.MetroThemeStyle.Light;
             this.btnTarjeta.Click += new System.EventHandler(this.btnTarjeta_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(54, 123);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 13);
-            this.label2.TabIndex = 43;
             // 
             // frmCitaPago
             // 
