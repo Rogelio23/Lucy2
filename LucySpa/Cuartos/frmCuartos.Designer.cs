@@ -37,10 +37,6 @@
             this.tbNombre = new System.Windows.Forms.TextBox();
             this.lblNombre = new MetroFramework.Controls.MetroLabel();
             this.dgvServicios = new System.Windows.Forms.DataGridView();
-            this.servicioIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.servicioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lucySpaDB = new LucySpa.DataAccess.LucySpaDB();
             this.btnSeleccionarServicio = new MetroFramework.Controls.MetroButton();
@@ -55,14 +51,18 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.equipoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dgvServicioSeleccionado = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvEquipoSeleccionado = new System.Windows.Forms.DataGridView();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvModificarServicio = new System.Windows.Forms.DataGridView();
             this.servicioTableAdapter = new LucySpa.DataAccess.LucySpaDBTableAdapters.ServicioTableAdapter();
             this.equipoTableAdapter = new LucySpa.DataAccess.LucySpaDBTableAdapters.EquipoTableAdapter();
+            this.servicioIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvServicios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.servicioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lucySpaDB)).BeginInit();
@@ -192,39 +192,6 @@
             this.dgvServicios.TabIndex = 48;
             this.dgvServicios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvServicios_CellClick);
             this.dgvServicios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvServicios_CellContentClick);
-            // 
-            // servicioIDDataGridViewTextBoxColumn
-            // 
-            this.servicioIDDataGridViewTextBoxColumn.DataPropertyName = "ServicioID";
-            this.servicioIDDataGridViewTextBoxColumn.HeaderText = "ServicioID";
-            this.servicioIDDataGridViewTextBoxColumn.Name = "servicioIDDataGridViewTextBoxColumn";
-            this.servicioIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.servicioIDDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nombreDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.nombreDataGridViewTextBoxColumn.Width = 300;
-            // 
-            // costoDataGridViewTextBoxColumn
-            // 
-            this.costoDataGridViewTextBoxColumn.DataPropertyName = "Costo";
-            this.costoDataGridViewTextBoxColumn.HeaderText = "Costo";
-            this.costoDataGridViewTextBoxColumn.Name = "costoDataGridViewTextBoxColumn";
-            this.costoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.costoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // descripcionDataGridViewTextBoxColumn
-            // 
-            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
-            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.descripcionDataGridViewTextBoxColumn.Visible = false;
             // 
             // servicioBindingSource
             // 
@@ -387,21 +354,6 @@
             this.dgvServicioSeleccionado.TabIndex = 56;
             this.dgvServicioSeleccionado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvServicioSeleccionado_CellClick);
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "ServicioID";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Visible = false;
-            this.Column1.Width = 300;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Nombre del Servicio";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 300;
-            // 
             // dgvEquipoSeleccionado
             // 
             this.dgvEquipoSeleccionado.AllowUserToAddRows = false;
@@ -436,11 +388,10 @@
             this.dgvModificarServicio.AllowUserToAddRows = false;
             this.dgvModificarServicio.AllowUserToDeleteRows = false;
             this.dgvModificarServicio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvModificarServicio.Location = new System.Drawing.Point(608, 144);
+            this.dgvModificarServicio.Location = new System.Drawing.Point(573, 324);
             this.dgvModificarServicio.Name = "dgvModificarServicio";
             this.dgvModificarServicio.Size = new System.Drawing.Size(240, 150);
             this.dgvModificarServicio.TabIndex = 58;
-            this.dgvModificarServicio.Visible = false;
             this.dgvModificarServicio.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvModificarServicio_CellContentClick);
             // 
             // servicioTableAdapter
@@ -450,6 +401,52 @@
             // equipoTableAdapter
             // 
             this.equipoTableAdapter.ClearBeforeFill = true;
+            // 
+            // servicioIDDataGridViewTextBoxColumn
+            // 
+            this.servicioIDDataGridViewTextBoxColumn.DataPropertyName = "ServicioID";
+            this.servicioIDDataGridViewTextBoxColumn.HeaderText = "ServicioID";
+            this.servicioIDDataGridViewTextBoxColumn.Name = "servicioIDDataGridViewTextBoxColumn";
+            this.servicioIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.nombreDataGridViewTextBoxColumn.Width = 300;
+            // 
+            // costoDataGridViewTextBoxColumn
+            // 
+            this.costoDataGridViewTextBoxColumn.DataPropertyName = "Costo";
+            this.costoDataGridViewTextBoxColumn.HeaderText = "Costo";
+            this.costoDataGridViewTextBoxColumn.Name = "costoDataGridViewTextBoxColumn";
+            this.costoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.costoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // descripcionDataGridViewTextBoxColumn
+            // 
+            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descripcionDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "ServicioID";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 50;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Nombre del Servicio";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 300;
             // 
             // frmCuartos
             // 
@@ -516,17 +513,17 @@
         private DataAccess.LucySpaDBTableAdapters.EquipoTableAdapter equipoTableAdapter;
         private System.Windows.Forms.DataGridView dgvServicioSeleccionado;
         private System.Windows.Forms.DataGridView dgvEquipoSeleccionado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn servicioIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn costoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridView dgvModificarServicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn servicioIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn costoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }

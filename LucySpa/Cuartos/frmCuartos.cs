@@ -203,7 +203,10 @@ namespace LucySpa.Cuartos
             //for (int c = 0; c < numServiciosNuevos; c++)
             //{
 
-                int newservicioID = servicioID;
+            int newservicioID = servicioID;
+            object objeto;
+            Herramientas.renglonSeleccionado(dgvServicios, out objeto);
+            newservicioID = (int)objeto;
                 foreach(DataGridViewRow renglon in dgvServicioSeleccionado.Rows){
                     
                
@@ -223,7 +226,7 @@ namespace LucySpa.Cuartos
                 DataGridViewRow filaSeleccionada = dgvServicios.SelectedRows[0];
                 NombreServicio = (string)filaSeleccionada.Cells[1].Value;
                 DataGridViewRow row = (DataGridViewRow)dgvServicioSeleccionado.Rows[0].Clone();
-
+                servicioID = (int)objeto;
                 row.Cells[intIdentificador].Value = servicioID;
                 row.Cells[intIdentificador + 1].Value = NombreServicio;
                 dgvServicioSeleccionado.Rows.Add(row);  

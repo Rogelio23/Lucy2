@@ -39,6 +39,8 @@ namespace LucySpa
         DataAccess.DSTarjetasTableAdapters.VentaTarjetasTableAdapter taVentaTarjetas = new DataAccess.DSTarjetasTableAdapters.VentaTarjetasTableAdapter();
         DataAccess.LucySpaDBTableAdapters.ServicioTableAdapter taServicios = new DataAccess.LucySpaDBTableAdapters.ServicioTableAdapter();
 
+        
+
         int equipoID = 0;
         decimal costoTarjetas;
         string tipoTarjeta = "";
@@ -99,6 +101,7 @@ namespace LucySpa
                 this.equipoTableAdapter.Fill(this.lucySpaDB.Equipo);
                 this.productosTableAdapter.Fill(this.lucySpaDB.Productos);
                 this.vistaClientesConTarjetasTableAdapter.FillBy(this.dSTarjetas.VistaClientesConTarjetas);
+                actualizarRegistroCita();
 
 
             }

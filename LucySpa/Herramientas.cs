@@ -298,6 +298,30 @@ namespace LucySpa
             //    e.Handled = true;
             //}
         }
+        /// <summary>
+        /// Método que valida si el usuario ha seleccionado al menos un renglon
+        /// dentro de un datagrid view. Si es asi, toma la primera celda del
+        /// renglon seleccinado y la regresa en forma de objeto a traves de 
+        /// un parametro de salida y el valor verdadero. En caso contrario, 
+        /// regresa al parametor de salida un null e indica falso.
+        /// </summary>
+        /// <param name="dgv">DataGridView que se desea validar si tiene algún renglon seleccionado.</param>
+        /// <param name="ID">Parámetro de salida donde se almacena el valor de la primera celda del renglón seleccionado.</param>
+        /// <returns></returns>
+        public static bool renglonSeleccionado(DataGridView dgv, out object ID)
+        {
+            if (dgv.SelectedRows.Count > 0)
+            {
+                ID = dgv.SelectedRows[0].Cells[0].Value;
+                return true;
+            }
+            else
+            {
+                ID = null;
+                MessageBox.Show("Error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+        }
 
     }
 

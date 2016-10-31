@@ -59,6 +59,8 @@ namespace LucySpa.Citas
             this.vistaEmpleadoTableAdapter.Fill(this.lucySpaDB.vistaEmpleado);
             // TODO: This line of code loads data into the 'lucySpaDB.vistaCLiente' table. You can move, or remove it, as needed.
             this.vistaCLienteTableAdapter.Fill(this.lucySpaDB.vistaCLiente);
+            //Cargar por primera vez el datagridview de servicios del cuarto uno que es el que esta por default en el combobox
+            this.servicioTableAdapter.FillByCuartoID(this.lucySpaDB.Servicio, 1);
 
             //Tomar nombre de cliente
             TAClientes taClientes = new TAClientes();

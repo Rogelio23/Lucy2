@@ -164,3 +164,4 @@ C:\Users\HAL\Documents\Lucy2\LucySpa\obj\Debug\RdlCompile.cache
 C:\Users\HAL\Documents\Lucy2\LucySpa\obj\Debug\RdlCompile.compiled
 C:\Users\HAL\Documents\Lucy2\LucySpa\obj\Debug\LucySpa.exe.manifest
 C:\Users\HAL\Documents\Lucy2\LucySpa\obj\Debug\LucySpa.application
+C:\Users\HAL\Documents\Lucy2\LucySpa\obj\Debug\LucySpa.csprojResolveAssemblyReference.cache
