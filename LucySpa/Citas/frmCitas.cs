@@ -113,7 +113,7 @@ namespace LucySpa.Citas
         {
             try
             {
-                //se obtiene el ID del Cliente con el reglon seleccionado///
+                //se obtiene el ID del Servicio con el reglon seleccionado///
                 DataGridViewRow reglonServicio = dgvServicios.SelectedRows[0];
                 int servicioID = (int)reglonServicio.Cells[0].Value;
 
@@ -124,18 +124,18 @@ namespace LucySpa.Citas
 
                 TACitas taCitas = new TACitas();
                 TAVistaCitas taVistaCitas = new TAVistaCitas();
-                string fecha = ((dtpFechaCita.Value.ToString("MM/dd/yyyy hh:mm:ss tt")).Replace("a.m.","am")).Replace("p.m.", "pm");
-                
+                string fechaHora = ((dtpFechaCita.Value.ToString("MM/dd/yyyy hh:mm:ss tt")).Replace("a.m.","am")).Replace("p.m.", "pm");
                 int cuartoID = (int)cbCuartos.SelectedValue;
 
                 //Se busca si hay citas que hacen conflicto con la que se esta agendando
-                VistaCitas vistaCitasConflictivas = taVistaCitas.GetDataByCitasConflictivas(clienteID, fecha, empleadoID, servicioID,cuartoID);
+                VistaCitas vistaCitasConflictivas = taVistaCitas.GetDataByCitasConflictivas(clienteID, fechaHora, empleadoID, servicioID,cuartoID);
+
                 if (vistaCitasConflictivas.Rows.Count == 0)
                 {//Si no hay citas conflictivas
                     if (ModooVentana == "Modificar")
                     {
                         taCitas.UpdateQueryCitaID(clienteID, empleadoID, servicioID, dtpFechaCita.Value, null, null, null, citaID);
-                        MessageBox.Show("Cita modificado satisfactoriamente.", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Cita modificada satisfactoriamente.", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
                     else
@@ -193,7 +193,7 @@ namespace LucySpa.Citas
 
         private void dtpFechaCita_ValueChanged(object sender, EventArgs e)
         {
-            DateTime d1 = new DateTime();
+           /* DateTime d1 = new DateTime();
             DateTime d2 = new DateTime();
             DateTime d3 = new DateTime();
 
@@ -211,7 +211,7 @@ namespace LucySpa.Citas
             else
             {
                 chbDosPersonas.Checked = false;
-            }
+            }*/
         }
 
         private void dgvEmpleado_CellContentClick(object sender, DataGridViewCellEventArgs e)
