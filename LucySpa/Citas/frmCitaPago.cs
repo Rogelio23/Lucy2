@@ -51,7 +51,7 @@ namespace LucySpa.Citas
                 cambio = 0;
 
             //se muestra en el textbox el cambio que se deve de dar al cliente
-            tbCambio.Text = cambio.ToString();
+            tbCambio.Text = String.Format("{0:C}", cambio); 
         }
 
         private void btnPagar_Click(object sender, EventArgs e)
