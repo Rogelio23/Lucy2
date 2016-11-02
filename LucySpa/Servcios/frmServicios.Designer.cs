@@ -32,7 +32,6 @@
             this.lblDescripcion = new MetroFramework.Controls.MetroLabel();
             this.lblCosto = new MetroFramework.Controls.MetroLabel();
             this.lblNombre = new MetroFramework.Controls.MetroLabel();
-            this.mtbCosto = new System.Windows.Forms.MaskedTextBox();
             this.btnGuardar = new MetroFramework.Controls.MetroButton();
             this.tbNombre = new System.Windows.Forms.TextBox();
             this.tbDescripcionServicio = new System.Windows.Forms.TextBox();
@@ -45,6 +44,7 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.mtbRepreparacion = new System.Windows.Forms.MaskedTextBox();
+            this.mtbCosto = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbRegreso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cuartoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lucySpaDB)).BeginInit();
@@ -103,16 +103,6 @@
             this.lblNombre.Text = "Nombre:";
             this.lblNombre.Theme = MetroFramework.MetroThemeStyle.Light;
             this.lblNombre.UseStyleColors = false;
-            // 
-            // mtbCosto
-            // 
-            this.mtbCosto.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.mtbCosto.Location = new System.Drawing.Point(107, 127);
-            this.mtbCosto.Mask = "0000.00";
-            this.mtbCosto.Name = "mtbCosto";
-            this.mtbCosto.Size = new System.Drawing.Size(204, 20);
-            this.mtbCosto.TabIndex = 2;
-            this.mtbCosto.Validating += new System.ComponentModel.CancelEventHandler(this.mtbCosto_Validating);
             // 
             // btnGuardar
             // 
@@ -233,11 +223,22 @@
             this.mtbRepreparacion.ValidatingType = typeof(System.DateTime);
             this.mtbRepreparacion.Visible = false;
             // 
+            // mtbCosto
+            // 
+            this.mtbCosto.BackColor = System.Drawing.SystemColors.Menu;
+            this.mtbCosto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtbCosto.Location = new System.Drawing.Point(107, 121);
+            this.mtbCosto.Name = "mtbCosto";
+            this.mtbCosto.Size = new System.Drawing.Size(204, 26);
+            this.mtbCosto.TabIndex = 44;
+            this.mtbCosto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mtbCosto_KeyPress_1);
+            // 
             // frmServicios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(341, 405);
+            this.Controls.Add(this.mtbCosto);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.mtbRepreparacion);
             this.Controls.Add(this.metroLabel1);
@@ -246,7 +247,6 @@
             this.Controls.Add(this.tbDescripcionServicio);
             this.Controls.Add(this.tbNombre);
             this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.mtbCosto);
             this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.lblCosto);
             this.Controls.Add(this.lblNombre);
@@ -266,7 +266,6 @@
         private MetroFramework.Controls.MetroLabel lblDescripcion;
         private MetroFramework.Controls.MetroLabel lblCosto;
         private MetroFramework.Controls.MetroLabel lblNombre;
-        private System.Windows.Forms.MaskedTextBox mtbCosto;
         private MetroFramework.Controls.MetroButton btnGuardar;
         private System.Windows.Forms.TextBox tbNombre;
         private System.Windows.Forms.TextBox tbDescripcionServicio;
@@ -279,5 +278,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private System.Windows.Forms.MaskedTextBox mtbRepreparacion;
+        private System.Windows.Forms.TextBox mtbCosto;
     }
 }

@@ -40,7 +40,7 @@ namespace LucySpa
                 tbNombre.Text = datosServicio[0].Nombre;
                 tbDescripcionServicio.Text = datosServicio[0].Descripcion;
                 //adaptarCosto(mtbCosto,datosServicio[0].Costo);//Se adapta el costo dentro de la mascara
-                Herramientas.AcomodarCostoMkb(mtbCosto, datosServicio[0].Costo);
+                //Herramientas.AcomodarCostoMkb(mtbCosto, datosServicio[0].Costo);
                 btnGuardar.Text = "Modificar";
                 intServicioIDOriginal = intServicioID;
                 try
@@ -109,7 +109,8 @@ namespace LucySpa
         private bool entradaDeDatosValidas()
         {
             valNombreServicio = Herramientas.validarTextBox(tbNombre);
-            valCostoServicio = Herramientas.validarMaskedTextBox(mtbCosto);
+            //valCostoServicio = Herramientas.validarMaskedTextBox(mtbCosto);
+            valCostoServicio = (string.IsNullOrWhiteSpace(mtbCosto.Text)==false) ? true : false;
             valDescripcionServicio = Herramientas.validarTextBox(tbDescripcionServicio);
             valTiempoServicio = Herramientas.validarMascaraCosto(mtbTiempoServicio);
             valRepreparacion = Herramientas.validarMascaraCosto(mtbRepreparacion);
@@ -131,9 +132,14 @@ namespace LucySpa
             
         }
 
-        private void mtbCosto_Validating(object sender, CancelEventArgs e)
+        private void mtbCosto_KeyPress_1(object sender, KeyPressEventArgs e)
         {
-            Herramientas.validarMascaraCosto(mtbCosto);
+            Herramientas.keyPressNumeros(e, sender);
+        }
+
+        private void mtbCosto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Herramientas.keyPressNumeros(e, sender);
         }
 
         private void chbCuarto_CheckedChanged(object sender, EventArgs e)
