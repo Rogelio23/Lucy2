@@ -26,8 +26,8 @@ namespace LucySpa.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=\"icebreak.host4asp.net, 1431\";Initial Catalog=ticcoden_LucySpaDB;User" +
-            " ID=ticcoden_LucySpa;Password=manzana123")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SQL5027.SmarterASP.NET;Initial Catalog=DB_A127E3_lucySpaDB;User ID=DB" +
+            "_A127E3_lucySpaDB_admin;Password=manzana123")]
         public string LucySpaDBConnectionString {
             get {
                 return ((string)(this["LucySpaDBConnectionString"]));
@@ -37,8 +37,8 @@ namespace LucySpa.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=icebreak.host4asp.net,1431;Initial Catalog=ticcoden_LucySpaDB;Persist" +
-            " Security Info=True;User ID=ticcoden_LucySpa;Password=manzana123")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SQL5016.SmarterASP.NET;Initial Catalog=SQL5027.SmarterASP.NET;Persist" +
+            " Security Info=True;User ID=DB_A127E3_lucySpaDB_admin;Password=manzana123")]
         public string ticcoden_LucySpaDBConnectionString {
             get {
                 return ((string)(this["ticcoden_LucySpaDBConnectionString"]));
