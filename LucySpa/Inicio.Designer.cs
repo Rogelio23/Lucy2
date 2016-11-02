@@ -325,7 +325,7 @@
             this.tcMenu.FontWeight = MetroFramework.MetroTabControlWeight.Light;
             this.tcMenu.Location = new System.Drawing.Point(11, 81);
             this.tcMenu.Name = "tcMenu";
-            this.tcMenu.SelectedIndex = 6;
+            this.tcMenu.SelectedIndex = 4;
             this.tcMenu.Size = new System.Drawing.Size(1025, 480);
             this.tcMenu.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tcMenu.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1143,6 +1143,7 @@
             // dgvClientes
             // 
             this.dgvClientes.AllowUserToAddRows = false;
+            this.dgvClientes.AllowUserToDeleteRows = false;
             this.dgvClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));

@@ -150,9 +150,23 @@ namespace LucySpa.Citas
                 }
                 else
                 {
-                    //Hay citas conflictivas, asi que se le muestran al usuario en una leyenda.
-                    FrmMostrarCitasConflictivas frmCitasConflictivas = new FrmMostrarCitasConflictivas(vistaCitasConflictivas);
-                    frmCitasConflictivas.ShowDialog();
+                    if (chbDosPersonas.Checked==false)
+                    {
+                        //Hay citas conflictivas, asi que se le muestran al usuario en una leyenda.
+                        FrmMostrarCitasConflictivas frmCitasConflictivas = new FrmMostrarCitasConflictivas(vistaCitasConflictivas);
+                        frmCitasConflictivas.ShowDialog(); 
+                    }
+                    else
+                    {
+                        DialogResult dr = MessageBox.Show("¿Esta seguro que desea agendar dos citas en el mismo cuarto al mismo tiempo?",
+                        "Agendar citas", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                            if (dr == DialogResult.Yes)
+                            {
+                                taCitas.Insert(clienteID, empleadoID, servicioID, dtpFechaCita.Value, null, null, null, (int)cbCuartos.SelectedValue, false);
+                                MessageBox.Show("Guardado satisfactoriamente.", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                this.Close();
+                            }
+                    }
                 }
             }
             catch
