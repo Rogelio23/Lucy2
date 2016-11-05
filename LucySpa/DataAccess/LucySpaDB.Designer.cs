@@ -18756,9 +18756,9 @@ SELECT AbonoID, VentaTratamientoID, Fecha, Cantidad FROM dbo.Abono WHERE (AbonoI
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cantidad", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 19, 4, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        COUNT(*) AS Expr1, SUM(Cantidad) AS Expr2, VentaTratamientoID\r\nFROM" +
-                "            dbo.Abono\r\nGROUP BY VentaTratamientoID\r\nHAVING        (VentaTratamie" +
-                "ntoID = @VentaTratamientoID)";
+            this._commandCollection[2].CommandText = "SELECT        SUM(Cantidad) AS Expr2, VentaTratamientoID\r\nFROM            Abono\r\n" +
+                "GROUP BY VentaTratamientoID\r\nHAVING        (VentaTratamientoID = @VentaTratamien" +
+                "toID)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@VentaTratamientoID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "VentaTratamientoID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -18975,7 +18975,7 @@ SELECT AbonoID, VentaTratamientoID, Fecha, Cantidad FROM dbo.Abono WHERE (AbonoI
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual global::System.Nullable<int> SumarCantidadAbonos(global::System.Nullable<int> VentaTratamientoID) {
+        public virtual object SumarCantidadAbonos(global::System.Nullable<int> VentaTratamientoID) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             if ((VentaTratamientoID.HasValue == true)) {
                 command.Parameters[0].Value = ((int)(VentaTratamientoID.Value));
@@ -18999,10 +18999,10 @@ SELECT AbonoID, VentaTratamientoID, Fecha, Cantidad FROM dbo.Abono WHERE (AbonoI
             }
             if (((returnValue == null) 
                         || (returnValue.GetType() == typeof(global::System.DBNull)))) {
-                return new global::System.Nullable<int>();
+                return null;
             }
             else {
-                return new global::System.Nullable<int>(((int)(returnValue)));
+                return ((object)(returnValue));
             }
         }
     }
