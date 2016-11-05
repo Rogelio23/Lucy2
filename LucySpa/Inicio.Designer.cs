@@ -325,7 +325,7 @@
             this.tcMenu.FontWeight = MetroFramework.MetroTabControlWeight.Light;
             this.tcMenu.Location = new System.Drawing.Point(11, 81);
             this.tcMenu.Name = "tcMenu";
-            this.tcMenu.SelectedIndex = 4;
+            this.tcMenu.SelectedIndex = 10;
             this.tcMenu.Size = new System.Drawing.Size(1025, 480);
             this.tcMenu.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tcMenu.Style = MetroFramework.MetroColorStyle.Blue;
