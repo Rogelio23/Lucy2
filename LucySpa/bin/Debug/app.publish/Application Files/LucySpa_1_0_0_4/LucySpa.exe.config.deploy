@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <configSections>
+    </configSections>
+    <connectionStrings>
+        <add name="LucySpa.Properties.Settings.LucySpaDBConnectionString"
+            connectionString="Data Source=SQL5028.SmarterASP.NET;Initial Catalog=DB_A127E3_lucySpaDB2;User ID=DB_A127E3_lucySpaDB2_admin;Password=manzana123"
+            providerName="System.Data.SqlClient" />
+        
+    </connectionStrings>
+    <startup> 
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" />
+    </startup>
+</configuration>
+

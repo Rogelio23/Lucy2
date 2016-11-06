@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="LucySpa.exe" version="1.0.0.4" publicKeyToken="51b9a43d9165e24a" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="LucySpa" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="LucySpa.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LucySpa.exe" size="1410464">
+      <assemblyIdentity name="LucySpa" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>mBNNdLxxZ7yQ+aVyLCjQ7f5OYj3DafXwIKC2GR7xchg=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MetroFramework.dll" size="136704">
+      <assemblyIdentity name="MetroFramework" version="1.1.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>wjzayw3njFxuih3eCFzKG/gmHTuQ2sOTeaSsRRjSEtE=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Microsoft.ReportViewer.Common.dll" size="6391672">
+      <assemblyIdentity name="Microsoft.ReportViewer.Common" version="10.0.0.0" publicKeyToken="B03F5F7F11D50A3A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>5HUSIEejY3H2Hoa40Jn8jW8mO9O9sD0AsRFrDLWyhjY=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Microsoft.ReportViewer.DataVisualization.dll" size="3875728">
+      <assemblyIdentity name="Microsoft.ReportViewer.DataVisualization" version="10.0.0.0" publicKeyToken="B03F5F7F11D50A3A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>arsMczJIw8rpnFhRKm4rT5OPrTQgID6W6wPJyxqrYLc=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Microsoft.ReportViewer.ProcessingObjectModel.dll" size="92056">
+      <assemblyIdentity name="Microsoft.ReportViewer.ProcessingObjectModel" version="10.0.0.0" publicKeyToken="B03F5F7F11D50A3A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>aN9uEoks3ZJE1QvkwLqiKp4Uu6TmRlVSGynBfrrtKiQ=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Microsoft.ReportViewer.WinForms.dll" size="548224">
+      <assemblyIdentity name="Microsoft.ReportViewer.WinForms" version="10.0.0.0" publicKeyToken="B03F5F7F11D50A3A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>6sxywAKV0FfDrZqqqr7zCGylKhT6cX4W7wU0ABGnH4g=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System.Windows.Forms.Calendar.dll" size="110592">
+      <assemblyIdentity name="System.Windows.Forms.Calendar" version="1.0.3526.15150" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>8OLZ/HFIlAwgi9z4NcR4YHB95bBmCDMtdf9RmURiy94=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="LucySpa.exe.config" size="584">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>MKZFsMHc4nu0sGelaY5r3+ZakAHr3Uj32v8ZL9sKgyM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\clienteSinFoto.jpg" size="4970">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>iEig2wSq1qqLuwEsCHBn7Ul4MC9nmjvrBfqqFcTsUK0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\System.Windows.Forms.Calendar.dll" size="110592">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>8OLZ/HFIlAwgi9z4NcR4YHB95bBmCDMtdf9RmURiy94=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=Hal-PC\Hal" issuerKeyHash="d3568130d2b06677418b96f8edecc637e912af5e" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>f5Hh8y9D/c847k9tnZcmuXR8eONvzGQY+/3iZ4OcLrc=</DigestValue></Reference></SignedInfo><SignatureValue>S0wMWEDpMfEsJvoWGm/b42LhXSxsdJOT4aIeIjJAqJbrcvnFgR9pluTK5S07YtsTiJ6Qgi0HffEq2RQEoKXUDU9xsKHTiNUFTQjradGvTxRoV8lG4XZtRsc97Mz71qaWlAWX3VMBf7bWR3+zBs9BPx/ISTP38focxTMRJKTosA0=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>1CVoXH04rIpIkmvriQxQnDTXGJC2ElZOTjrNoKp9LkhrgGOwzk3xYgsTlaLNrLrXQuZFWl83tsHyycrCLwiNqywZsgxZkS5g6FJDFBjqL/6sf78aGxFlorSFfG5Ot3G20SEAoAOhjclLU72ZSynz5p56y3NBJ1rOxAkayj+jAQc=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="b72e9c8367e2fdfb1864cc6fe3787c74b926979d6d4fee38cffd432ff3e1917f" Description="" Url=""><as:assemblyIdentity name="LucySpa.exe" version="1.0.0.4" publicKeyToken="51b9a43d9165e24a" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=Hal-PC\Hal</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>SsIsbUgCKStkEtoNtuqsNLbZmMy+nPUByRssDGvuy3c=</DigestValue></Reference></SignedInfo><SignatureValue>CYX54CpeJvl50k7Pbon/n58ESBsDEfBd0v9AeiD6LdHsJhaTZ5RbQNgdb81m2rHLLHqyQYub+QlbSgR1ZitSkfbsKTlQ/HwP8USisejl/hRU/JunvQqcNdibNZr/UtC/ksZQONwqM+qwvpLOAajebO9gAaZjoArrwRUA/0dldHk=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>1CVoXH04rIpIkmvriQxQnDTXGJC2ElZOTjrNoKp9LkhrgGOwzk3xYgsTlaLNrLrXQuZFWl83tsHyycrCLwiNqywZsgxZkS5g6FJDFBjqL/6sf78aGxFlorSFfG5Ot3G20SEAoAOhjclLU72ZSynz5p56y3NBJ1rOxAkayj+jAQc=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIBwTCCASqgAwIBAgIQWA4FmYm7LrRHBNn5pNgD4jANBgkqhkiG9w0BAQsFADAfMR0wGwYDVQQDHhQASABhAGwALQBQAEMAXABIAGEAbDAeFw0xNTEyMTIxNjMyNTFaFw0xNjEyMTEyMjMyNTFaMB8xHTAbBgNVBAMeFABIAGEAbAAtAFAAQwBcAEgAYQBsMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDUJWhcfTisikiSa+uJDFCcNNcYkLYSVk5OOs2gqn0uSGuAY7DOTfFiCxOVos2sutdC5kVaXze2wfLJysIvCI2rLBmyDFmRLmDoUkMUGOov/qx/vxobEWWitIV8bk63cbbRIQCgA6GNyUtTvZlLKfPmnnrLc0EnWs7ECRrKP6MBBwIDAQABMA0GCSqGSIb3DQEBCwUAA4GBAFqUwEPUw2wZxZSYRphDynhsQnXwaBSEarJ01mLdfLD22/NuwBr6sM2FyJDz6Tnu1nriVEMdJPi62JMBShUclsyeHqCqAFVuQ5b7bHGWuHo8gYP3GnKZdSTd53sx9wtmKgH7pSvIhB0W5QxMMzB4l2kqn7/q9oQBcCydQfqTw25T</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

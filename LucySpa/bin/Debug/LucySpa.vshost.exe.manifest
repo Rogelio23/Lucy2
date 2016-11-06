@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LucySpa.exe" size="1409952">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LucySpa.exe" size="1410464">
       <assemblyIdentity name="LucySpa" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ege+GDE0kSqaKmJRnTcxe4ODenwWZS5ZTJaQq8tPkpY=</dsig:DigestValue>
+        <dsig:DigestValue>mBNNdLxxZ7yQ+aVyLCjQ7f5OYj3DafXwIKC2GR7xchg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -125,13 +125,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="LucySpa.exe.config" size="582">
+  <file name="LucySpa.exe.config" size="584">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>RYz4qtpUPr/Q+27sT1Bcec1DdLDTZJUEzm2OtQBnoQU=</dsig:DigestValue>
+      <dsig:DigestValue>MKZFsMHc4nu0sGelaY5r3+ZakAHr3Uj32v8ZL9sKgyM=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Resources\clienteSinFoto.jpg" size="4970">

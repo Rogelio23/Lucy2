@@ -26,8 +26,8 @@ namespace LucySpa.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SQL5027.SmarterASP.NET;Initial Catalog=DB_A127E3_lucySpaDB;User ID=DB" +
-            "_A127E3_lucySpaDB_admin;Password=manzana123")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SQL5028.SmarterASP.NET;Initial Catalog=DB_A127E3_lucySpaDB2;User ID=D" +
+            "B_A127E3_lucySpaDB2_admin;Password=manzana123")]
         public string LucySpaDBConnectionString {
             get {
                 return ((string)(this["LucySpaDBConnectionString"]));
