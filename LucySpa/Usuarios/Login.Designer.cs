@@ -96,9 +96,9 @@
             this.tbPassword.Location = new System.Drawing.Point(287, 124);
             this.tbPassword.Multiline = true;
             this.tbPassword.Name = "tbPassword";
+            this.tbPassword.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(235, 33);
             this.tbPassword.TabIndex = 5;
-//            this.tbPassword.DragEnter += new System.Windows.Forms.DragEventHandler(this.tbPassword_DragEnter);
             this.tbPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbPassword_KeyDown);
             // 
             // btnLogin
@@ -128,7 +128,6 @@
             this.MaximizeBox = false;
             this.Name = "frmLogin";
             this.Text = "Login";
-            //this.Load += new System.EventHandler(this.Login_Load);
             this.Enter += new System.EventHandler(this.btnLogin_Click);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
