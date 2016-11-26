@@ -25118,7 +25118,7 @@ WHERE        (nombreCompleto LIKE + N'%' + @buscado + N'%') OR
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[6];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        CitaID, ClienteID, EmpleadoID, ServicioID, Fecha, TratamientoID, VentaTarjeta, Nombre, Apellido, Telefono, Costo, Descripcion, NombreEmpleado, ApellidoEmpleado, TelefonoEmpleado, NombreServicio, 
@@ -25145,26 +25145,44 @@ ORDER BY Fecha";
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cuartoID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CuartoID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT Apellido, ApellidoEmpleado, CitaID, ClienteID, Costo, Descripcion, EmpleadoID, Fecha, NomCompletoClie, NomCompletoEmp, Nombre, NombreEmpleado, NombreServicio, Realizado, ServicioID, Telefono, TelefonoEmpleado, TratamientoID, VentaTarjeta FROM vistaCitas WHERE (Nombre LIKE + N'%' + @buscado + N'%') OR (Apellido LIKE + N'%' + @buscado + N'%')";
+            this._commandCollection[2].CommandText = @"SELECT        Apellido, ApellidoEmpleado, CitaID, ClienteID, ColorEmpleado, Costo, CuartoID, Descripcion, EmpleadoID, Fecha, NomCompletoClie, NomCompletoEmp, Nombre, NombreEmpleado, NombreServicio, Realizado, 
+                         ServicioID, Telefono, TelefonoEmpleado, TratamientoID, VentaTarjeta
+FROM            vistaCitas
+WHERE        (ClienteID = @clienteID) AND (@fechaHora BETWEEN Fecha AND DATEADD(hour, 1, Fecha)) OR
+                         (@fechaHora BETWEEN Fecha AND DATEADD(hour, 1, Fecha)) AND (EmpleadoID = @empleadoID) OR
+                         (@fechaHora BETWEEN Fecha AND DATEADD(hour, 1, Fecha)) AND (ServicioID = @servicioID) AND (CuartoID = @cuartoID) OR
+                         (ClienteID = @clienteID) AND (DATEADD(hour, 1, @fechaHora) BETWEEN Fecha AND DATEADD(hour, 1, Fecha)) OR
+                         (EmpleadoID = @empleadoID) AND (DATEADD(hour, 1, @fechaHora) BETWEEN Fecha AND DATEADD(hour, 1, Fecha)) OR
+                         (ServicioID = @servicioID) AND (CuartoID = @cuartoID) AND (DATEADD(hour, 1, @fechaHora) BETWEEN Fecha AND DATEADD(hour, 1, Fecha))
+ORDER BY Fecha";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@buscado", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@clienteID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ClienteID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaHora", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@empleadoID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "EmpleadoID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@servicioID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ServicioID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cuartoID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CuartoID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = @"SELECT        CitaID, ClienteID, EmpleadoID, ServicioID, Fecha, TratamientoID, VentaTarjeta, Nombre, Apellido, Telefono, Costo, Descripcion, NombreEmpleado, ApellidoEmpleado, TelefonoEmpleado, NombreServicio, 
+            this._commandCollection[3].CommandText = @"SELECT Apellido, ApellidoEmpleado, CitaID, ClienteID, Costo, Descripcion, EmpleadoID, Fecha, NomCompletoClie, NomCompletoEmp, Nombre, NombreEmpleado, NombreServicio, Realizado, ServicioID, Telefono, TelefonoEmpleado, TratamientoID, VentaTarjeta FROM vistaCitas WHERE (Nombre LIKE + N'%' + @buscado + N'%') OR (Apellido LIKE + N'%' + @buscado + N'%')";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@buscado", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = @"SELECT        CitaID, ClienteID, EmpleadoID, ServicioID, Fecha, TratamientoID, VentaTarjeta, Nombre, Apellido, Telefono, Costo, Descripcion, NombreEmpleado, ApellidoEmpleado, TelefonoEmpleado, NombreServicio, 
                          NomCompletoEmp, NomCompletoClie, Realizado
 FROM            vistaCitas
 WHERE        (Realizado IS NULL)";
-            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = @"SELECT        Apellido, ApellidoEmpleado, CitaID, ClienteID, Costo, Descripcion, EmpleadoID, Fecha, NomCompletoClie, NomCompletoEmp, Nombre, NombreEmpleado, NombreServicio, Realizado, ServicioID, Telefono, 
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = @"SELECT        Apellido, ApellidoEmpleado, CitaID, ClienteID, Costo, Descripcion, EmpleadoID, Fecha, NomCompletoClie, NomCompletoEmp, Nombre, NombreEmpleado, NombreServicio, Realizado, ServicioID, Telefono, 
                          TelefonoEmpleado, TratamientoID, VentaTarjeta, ColorEmpleado
 FROM            dbo.vistaCitas
 WHERE        (Fecha BETWEEN @fechaInicial AND @fechaFinal)
 ORDER BY Fecha";
-            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaInicial", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaFinal", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaInicial", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaFinal", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -25279,8 +25297,82 @@ ORDER BY Fecha";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByNombreApellido(LucySpaDB.vistaCitasDataTable dataTable, string buscado) {
+        public virtual int FillByCitasConflictivas2(LucySpaDB.vistaCitasDataTable dataTable, global::System.Nullable<int> clienteID, int fechaHora, global::System.Nullable<int> empleadoID, global::System.Nullable<int> servicioID, global::System.Nullable<int> cuartoID) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((clienteID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(clienteID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(fechaHora));
+            if ((empleadoID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(empleadoID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((servicioID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((int)(servicioID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((cuartoID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[4].Value = ((int)(cuartoID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual LucySpaDB.vistaCitasDataTable GetDataByCitasConflictivas2(global::System.Nullable<int> clienteID, int fechaHora, global::System.Nullable<int> empleadoID, global::System.Nullable<int> servicioID, global::System.Nullable<int> cuartoID) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((clienteID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(clienteID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(fechaHora));
+            if ((empleadoID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(empleadoID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((servicioID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((int)(servicioID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((cuartoID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[4].Value = ((int)(cuartoID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            LucySpaDB.vistaCitasDataTable dataTable = new LucySpaDB.vistaCitasDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByNombreApellido(LucySpaDB.vistaCitasDataTable dataTable, string buscado) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             if ((buscado == null)) {
                 throw new global::System.ArgumentNullException("buscado");
             }
@@ -25299,7 +25391,7 @@ ORDER BY Fecha";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual LucySpaDB.vistaCitasDataTable GetDataByNombreApellido(string buscado) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             if ((buscado == null)) {
                 throw new global::System.ArgumentNullException("buscado");
             }
@@ -25316,7 +25408,7 @@ ORDER BY Fecha";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillByNulos(LucySpaDB.vistaCitasDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -25329,7 +25421,7 @@ ORDER BY Fecha";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual LucySpaDB.vistaCitasDataTable GetDataByNulos() {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             LucySpaDB.vistaCitasDataTable dataTable = new LucySpaDB.vistaCitasDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -25340,7 +25432,7 @@ ORDER BY Fecha";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillByRangoDeFechas(LucySpaDB.vistaCitasDataTable dataTable, System.DateTime fechaInicial, System.DateTime fechaFinal) {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand = this.CommandCollection[5];
             this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(fechaInicial));
             this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(fechaFinal));
             if ((this.ClearBeforeFill == true)) {
@@ -25355,7 +25447,7 @@ ORDER BY Fecha";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual LucySpaDB.vistaCitasDataTable GetDataByRangoDeFechas(System.DateTime fechaInicial, System.DateTime fechaFinal) {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand = this.CommandCollection[5];
             this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(fechaInicial));
             this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(fechaFinal));
             LucySpaDB.vistaCitasDataTable dataTable = new LucySpaDB.vistaCitasDataTable();

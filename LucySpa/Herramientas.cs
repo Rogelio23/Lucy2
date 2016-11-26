@@ -322,6 +322,27 @@ namespace LucySpa
                 return false;
             }
         }
+        public static bool tipoCita(DataGridView dgv)
+        {
+            object ID;
+            if (dgv.SelectedRows.Count > 0)
+            {
+                ID = dgv.SelectedRows[0].Cells[10].Value;
+                if (ID != null)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                ID = null;
+                return false;
+            }
+        }
 
     }
 

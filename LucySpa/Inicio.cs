@@ -1489,6 +1489,20 @@ namespace LucySpa
             Herramientas.keyPressNumerosSinDecimales(tbNuevasTarjetas, e, sender);
         }
 
+        private void dgvCitas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            bool tipoCita = Herramientas.tipoCita(dgvCitas);
+            if (tipoCita == true)
+            {
+                btnPagar.Text = "Realizar";
+
+            }
+            else
+            {
+                btnPagar.Text = "Pagar";
+            }
+        }
+
         private void tbBuscarEmpleado_Click(object sender, EventArgs e)
         {
 

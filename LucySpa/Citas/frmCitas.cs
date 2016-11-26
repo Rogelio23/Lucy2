@@ -111,8 +111,8 @@ namespace LucySpa.Citas
 
         private void mbtnAgendar_Click(object sender, EventArgs e)
         {
-            try
-            {
+            /**try
+            {*/
                 //se obtiene el ID del Servicio con el reglon seleccionado///
                 DataGridViewRow reglonServicio = dgvServicios.SelectedRows[0];
                 int servicioID = (int)reglonServicio.Cells[0].Value;
@@ -126,11 +126,12 @@ namespace LucySpa.Citas
                 TAVistaCitas taVistaCitas = new TAVistaCitas();
                 string fechaHora = ((dtpFechaCita.Value.ToString("MM/dd/yyyy hh:mm:ss tt")).Replace("a.m.","am")).Replace("p.m.", "pm");
                 int cuartoID = (int)cbCuartos.SelectedValue;
+                //string fechaHora = dtpFechaCita.Value.ToString();
 
-                //Se busca si hay citas que hacen conflicto con la que se esta agendando
-                VistaCitas vistaCitasConflictivas = taVistaCitas.GetDataByCitasConflictivas(clienteID, fechaHora, empleadoID, servicioID,cuartoID);
-
-                if (vistaCitasConflictivas.Rows.Count == 0)
+            //Se busca si hay citas que hacen conflicto con la que se esta agendando
+            VistaCitas vistaCitasConflictivas = taVistaCitas.GetDataByCitasConflictivas(clienteID, fechaHora, empleadoID, servicioID,cuartoID);
+            //VistaCitas vistaCitasConflictivas = taVistaCitas.GetDataByCitasConflictivas2(clienteID, dtpFechaCita.Value, empleadoID, servicioID, cuartoID);
+            if (vistaCitasConflictivas.Rows.Count == 0)
                 {//Si no hay citas conflictivas
                     if (ModooVentana == "Modificar")
                     {
@@ -168,13 +169,13 @@ namespace LucySpa.Citas
                             }
                     }
                 }
-            }
-            catch
+            //}
+            /*catch
             {
                 MessageBox.Show("Error al realizar la cita. No hay un Servicio o Empleado selecionado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
 
-            }
+            }*/
 
         }
 
