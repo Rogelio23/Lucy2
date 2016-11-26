@@ -82,7 +82,7 @@ namespace LucySpa.Tratamientos
             string fecha = ((dtpFechaCita.Value.ToString("MM/dd/yyyy hh:mm tt")).Replace("a. m.", "am")).Replace("p. m.", "pm");
             int cuartoID = (int)cbCuartos.SelectedValue;
             //DataAccess.LucySpaDB.vistaCitasDataTable vistaCitasConflictivas = taVistaCitas.GetDataByCitasConflictivas(ClienteID, fecha, EmpleadoID, servicioID, cuartoID);
-            string fechaRogelio = ((dtpFechaCita.Value.ToString("MM/dd/yyyy hh:mm tt")).Replace("a.m.", "am")).Replace("p.m.", "pm");
+            string fechaRogelio = ((dtpFechaCita.Value.ToString("MM/dd/yyyy hh:mm tt")).Replace("a. m.", "am")).Replace("p. m.", "pm");
             DataAccess.LucySpaDB.vistaCitasDataTable vistaCitasConflictivas = taVistaCitas.GetDataByCitasConflictivas(ClienteID, fechaRogelio, EmpleadoID, servicioID, cuartoID);
             if (vistaCitasConflictivas.Rows.Count == 0)
             {//Si no hay citas conflictivas
