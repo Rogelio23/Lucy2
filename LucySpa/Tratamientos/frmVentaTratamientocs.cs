@@ -102,7 +102,7 @@ namespace LucySpa.Tratamientos
                     else
                     {
                         
-                        taCitas.Insert(ClienteID, EmpleadoID, servicioID, dtpFechaCita.Value, TratamientoID, null, null,null,false);
+                        taCitas.Insert(ClienteID, EmpleadoID, servicioID, dtpFechaCita.Value, TratamientoID, null, false,null,false);
                         DataAccess.LucySpaDBTableAdapters.AbonoTableAdapter taAbono = new DataAccess.LucySpaDBTableAdapters.AbonoTableAdapter();
                         DataAccess.LucySpaDBTableAdapters.VentaTratamientoTableAdapter taVentatratamiento = new DataAccess.LucySpaDBTableAdapters.VentaTratamientoTableAdapter();
                         if (ContarClicks < 1)

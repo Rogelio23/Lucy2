@@ -103,6 +103,16 @@ namespace LucySpa
                 this.vistaClientesConTarjetasTableAdapter.FillBy(this.dSTarjetas.VistaClientesConTarjetas);
                 actualizarRegistroCita();
 
+                bool tipoCita = Herramientas.tipoCita(dgvCitas);
+                if (tipoCita == true)
+                {
+                    btnPagar.Text = "Realizar";
+
+                }
+                else
+                {
+                    btnPagar.Text = "Pagar";
+                }
 
             }
             catch (Exception)
@@ -285,7 +295,16 @@ namespace LucySpa
 
         private void tpCitas_Click(object sender, EventArgs e)
         {
+            bool tipoCita = Herramientas.tipoCita(dgvCitas);
+            if (tipoCita == true)
+            {
+                btnPagar.Text = "Realizar";
 
+            }
+            else
+            {
+                btnPagar.Text = "Pagar";
+            }
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
@@ -1331,13 +1350,41 @@ namespace LucySpa
 
         private void btnPagar_Click(object sender, EventArgs e)
         {
-            DataGridViewRow filaSeleccionada = dgvCitas.SelectedRows[0];
-            decimal costoServicio = (decimal)filaSeleccionada.Cells[6].Value;
 
-            int citaID = Herramientas.dgvValorInt(dgvCitas, 0, 0);
-            //decimal costoServicio = (decimal)dgvCitas.Rows[0].Cells[6].Value;
-            LucySpa.Citas.frmCitaPago frmCitaPago = new Citas.frmCitaPago(citaID, costoServicio, this);
-            frmCitaPago.Show();
+            if (btnPagar.Text=="Pagar")
+            {
+                DataGridViewRow filaSeleccionada = dgvCitas.SelectedRows[0];
+                decimal costoServicio = (decimal)filaSeleccionada.Cells[6].Value;
+
+                int citaID = Herramientas.dgvValorInt(dgvCitas, 0, 0);
+                //decimal costoServicio = (decimal)dgvCitas.Rows[0].Cells[6].Value;
+                LucySpa.Citas.frmCitaPago frmCitaPago = new Citas.frmCitaPago(citaID, costoServicio, this);
+                frmCitaPago.Show();
+            }
+            else
+            {
+                DialogResult dr = MessageBox.Show("¿Esta seguro de marcar este servicio del tratamiento como realizado?", "Realizar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dr == DialogResult.Yes)
+                {
+                    int clienteID = Herramientas.dgvValorInt(dgvCitas, 0, 1);
+                    int tratamientoID = Herramientas.dgvValorInt(dgvCitas, 0, 10);
+                    DataAccess.LucySpaDBTableAdapters.VentaTratamientoTableAdapter taVentaTratamiento = new DataAccess.LucySpaDBTableAdapters.VentaTratamientoTableAdapter();
+                    int tratamientoPagado = (int)taVentaTratamiento.tratamientoPagado(clienteID, tratamientoID, true);
+                    int citaID = Herramientas.dgvValorInt(dgvCitas, 0, 0);
+                    int citasRealizadas = (int)taCitas.CitasRealizadas(clienteID, tratamientoID, false);
+                    //esta parte se modificara el campo realizaddo de la cita seleccionada
+                    if (tratamientoPagado == 0 && citasRealizadas==1)
+                    {
+                        MessageBox.Show("usted no a pagado el tratamiento completamente, favor de pagar antes de realizar este ultimo servicio", Resources.strExitoso, MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                    else
+                    {
+                        taCitas.UpdateEstadoCita(true, citaID);
+                        actualizarRegistroCita();
+                    }
+                }
+            }
         }
 
         private void btnLogin_Click_1(object sender, EventArgs e)

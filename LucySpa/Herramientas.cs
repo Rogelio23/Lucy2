@@ -324,11 +324,17 @@ namespace LucySpa
         }
         public static bool tipoCita(DataGridView dgv)
         {
-            object ID;
+            int ID;
             if (dgv.SelectedRows.Count > 0)
             {
-                ID = dgv.SelectedRows[0].Cells[10].Value;
-                if (ID != null)
+                try {
+                    ID = (int)dgv.SelectedRows[0].Cells[10].Value;
+                }
+                catch
+                {
+                    ID = 0;
+                }
+                if (ID != 0)
                 {
                     return true;
                 }
@@ -339,7 +345,6 @@ namespace LucySpa
             }
             else
             {
-                ID = null;
                 return false;
             }
         }

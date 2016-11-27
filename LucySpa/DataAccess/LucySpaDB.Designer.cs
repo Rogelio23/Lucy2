@@ -4938,6 +4938,8 @@ namespace LucySpa.DataAccess {
             
             private global::System.Data.DataColumn columnCostoTratamiento;
             
+            private global::System.Data.DataColumn columnEstadoPago;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public VentaTratamientoDataTable() {
@@ -5005,6 +5007,14 @@ namespace LucySpa.DataAccess {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EstadoPagoColumn {
+                get {
+                    return this.columnEstadoPago;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5040,13 +5050,14 @@ namespace LucySpa.DataAccess {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public VentaTratamientoRow AddVentaTratamientoRow(ClientesRow parentClientesRowByFK_VentaTratamiento_Clientes, TratamientoRow parentTratamientoRowByFK_VentaTratamiento_Tratamiento, decimal CostoTratamiento) {
+            public VentaTratamientoRow AddVentaTratamientoRow(ClientesRow parentClientesRowByFK_VentaTratamiento_Clientes, TratamientoRow parentTratamientoRowByFK_VentaTratamiento_Tratamiento, decimal CostoTratamiento, bool EstadoPago) {
                 VentaTratamientoRow rowVentaTratamientoRow = ((VentaTratamientoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
                         null,
-                        CostoTratamiento};
+                        CostoTratamiento,
+                        EstadoPago};
                 if ((parentClientesRowByFK_VentaTratamiento_Clientes != null)) {
                     columnValuesArray[1] = parentClientesRowByFK_VentaTratamiento_Clientes[0];
                 }
@@ -5086,6 +5097,7 @@ namespace LucySpa.DataAccess {
                 this.columnClienteID = base.Columns["ClienteID"];
                 this.columnTratamientoID = base.Columns["TratamientoID"];
                 this.columnCostoTratamiento = base.Columns["CostoTratamiento"];
+                this.columnEstadoPago = base.Columns["EstadoPago"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5099,6 +5111,8 @@ namespace LucySpa.DataAccess {
                 base.Columns.Add(this.columnTratamientoID);
                 this.columnCostoTratamiento = new global::System.Data.DataColumn("CostoTratamiento", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCostoTratamiento);
+                this.columnEstadoPago = new global::System.Data.DataColumn("EstadoPago", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEstadoPago);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnVentaTratamientoID}, true));
                 this.columnVentaTratamientoID.AutoIncrement = true;
@@ -12061,6 +12075,22 @@ namespace LucySpa.DataAccess {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool EstadoPago {
+                get {
+                    try {
+                        return ((bool)(this[this.tableVentaTratamiento.EstadoPagoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'EstadoPago\' in table \'VentaTratamiento\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVentaTratamiento.EstadoPagoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public TratamientoRow TratamientoRow {
                 get {
                     return ((TratamientoRow)(this.GetParentRow(this.Table.ParentRelations["FK_VentaTratamiento_Tratamiento"])));
@@ -12103,6 +12133,18 @@ namespace LucySpa.DataAccess {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetTratamientoIDNull() {
                 this[this.tableVentaTratamiento.TratamientoIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsEstadoPagoNull() {
+                return this.IsNull(this.tableVentaTratamiento.EstadoPagoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetEstadoPagoNull() {
+                this[this.tableVentaTratamiento.EstadoPagoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15996,7 +16038,7 @@ SELECT CitaID, ClienteID, EmpleadoID, ServicioID, Fecha, TratamientoID, VentaTar
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[7];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[9];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        CitaID, ClienteID, EmpleadoID, ServicioID, Fecha, TratamientoID, Ve" +
@@ -16004,50 +16046,66 @@ SELECT CitaID, ClienteID, EmpleadoID, ServicioID, Fecha, TratamientoID, VentaTar
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        COUNT(*) AS Contador\r\nFROM            dbo.Citas\r\nWHERE        (Vent" +
-                "aTarjeta = @VentaTarjetaID)";
+            this._commandCollection[1].CommandText = "SELECT        COUNT(CitaID) AS citasNorealizadas\r\nFROM            Citas\r\nWHERE   " +
+                "     (ClienteID = @clienteid) AND (TratamientoID = @tratamientoid) AND (Realizad" +
+                "o = @realizado)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@VentaTarjetaID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "VentaTarjeta", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@clienteid", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ClienteID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tratamientoid", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "TratamientoID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@realizado", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Realizado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        COUNT(*) AS Contador\r\nFROM            dbo.Citas\r\nWHERE        (Clie" +
-                "nteID = @ClienteId) AND (Realizado = @estado)\r\nGROUP BY ClienteID";
+            this._commandCollection[2].CommandText = "SELECT        COUNT(*) AS Contador\r\nFROM            dbo.Citas\r\nWHERE        (Vent" +
+                "aTarjeta = @VentaTarjetaID)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClienteId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ClienteID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estado", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Realizado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@VentaTarjetaID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "VentaTarjeta", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "DELETE FROM Citas\r\nWHERE        (CitaID = @Original_CitaID)";
+            this._commandCollection[3].CommandText = "SELECT        COUNT(*) AS Contador\r\nFROM            dbo.Citas\r\nWHERE        (Clie" +
+                "nteID = @ClienteId) AND (Realizado = @estado)\r\nGROUP BY ClienteID";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CitaID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CitaID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClienteId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ClienteID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estado", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Realizado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT CitaID, ClienteID, EmpleadoID, Fecha, Realizado, ServicioID, TratamientoID" +
-                ", VentaTarjeta FROM Citas WHERE (CitaID = @CitaID)";
+            this._commandCollection[4].CommandText = "DELETE FROM Citas\r\nWHERE        (CitaID = @Original_CitaID)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CitaID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CitaID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CitaID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CitaID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "ticcoden_LucySpa.revisarCuartoConCitas";
-            this._commandCollection[5].CommandType = global::System.Data.CommandType.StoredProcedure;
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cuartoID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fecha", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fecha2", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].CommandText = "SELECT CitaID, ClienteID, EmpleadoID, Fecha, Realizado, ServicioID, TratamientoID" +
+                ", VentaTarjeta FROM Citas WHERE (CitaID = @CitaID)";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CitaID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CitaID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = @"UPDATE       Citas
+            this._commandCollection[6].CommandText = "ticcoden_LucySpa.revisarCuartoConCitas";
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cuartoID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fecha", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fecha2", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[7].Connection = this.Connection;
+            this._commandCollection[7].CommandText = "UPDATE [dbo].[Citas] SET[Realizado] = @Realizado\r\nWHERE ([CitaID] = @Original_Cit" +
+                "aID) ";
+            this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Realizado", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Realizado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CitaID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CitaID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[8] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[8].Connection = this.Connection;
+            this._commandCollection[8].CommandText = @"UPDATE       Citas
 SET                ClienteID = @ClienteID, EmpleadoID = @EmpleadoID, ServicioID = @ServicioID, Fecha = @Fecha, TratamientoID = @TratamientoID, VentaTarjeta = @VentaTarjeta, Realizado = @Realizado
 WHERE        (CitaID = @Original_CitaID)";
-            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClienteID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ClienteID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EmpleadoID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "EmpleadoID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ServicioID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ServicioID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fecha", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TratamientoID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "TratamientoID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@VentaTarjeta", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "VentaTarjeta", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Realizado", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Realizado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CitaID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CitaID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClienteID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ClienteID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EmpleadoID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "EmpleadoID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ServicioID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ServicioID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fecha", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TratamientoID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "TratamientoID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@VentaTarjeta", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "VentaTarjeta", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Realizado", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Realizado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CitaID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CitaID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16079,7 +16137,7 @@ WHERE        (CitaID = @Original_CitaID)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillByCitaID(LucySpaDB.CitasDataTable dataTable, int CitaID) {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand = this.CommandCollection[5];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(CitaID));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -16093,7 +16151,7 @@ WHERE        (CitaID = @Original_CitaID)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual LucySpaDB.CitasDataTable GetDataByCitaID(int CitaID) {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand = this.CommandCollection[5];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(CitaID));
             LucySpaDB.CitasDataTable dataTable = new LucySpaDB.CitasDataTable();
             this.Adapter.Fill(dataTable);
@@ -16473,8 +16531,54 @@ WHERE        (CitaID = @Original_CitaID)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual global::System.Nullable<int> contarPagosConTarjeta(global::System.Nullable<int> VentaTarjetaID) {
+        public virtual global::System.Nullable<int> CitasRealizadas(global::System.Nullable<int> clienteid, global::System.Nullable<int> tratamientoid, global::System.Nullable<bool> realizado) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            if ((clienteid.HasValue == true)) {
+                command.Parameters[0].Value = ((int)(clienteid.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((tratamientoid.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(tratamientoid.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((realizado.HasValue == true)) {
+                command.Parameters[2].Value = ((bool)(realizado.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<int>();
+            }
+            else {
+                return new global::System.Nullable<int>(((int)(returnValue)));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<int> contarPagosConTarjeta(global::System.Nullable<int> VentaTarjetaID) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             if ((VentaTarjetaID.HasValue == true)) {
                 command.Parameters[0].Value = ((int)(VentaTarjetaID.Value));
             }
@@ -16508,7 +16612,7 @@ WHERE        (CitaID = @Original_CitaID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual global::System.Nullable<int> contarServiciosPagados(global::System.Nullable<int> ClienteId, global::System.Nullable<bool> estado) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
             if ((ClienteId.HasValue == true)) {
                 command.Parameters[0].Value = ((int)(ClienteId.Value));
             }
@@ -16549,7 +16653,7 @@ WHERE        (CitaID = @Original_CitaID)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
         public virtual int DeleteQueryCitaID(int Original_CitaID) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
             command.Parameters[0].Value = ((int)(Original_CitaID));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -16572,7 +16676,7 @@ WHERE        (CitaID = @Original_CitaID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual object revisarCuartoConCitas(global::System.Nullable<int> cuartoID, global::System.Nullable<global::System.DateTime> fecha, global::System.Nullable<global::System.DateTime> fecha2) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
             if ((cuartoID.HasValue == true)) {
                 command.Parameters[1].Value = ((int)(cuartoID.Value));
             }
@@ -16618,8 +16722,38 @@ WHERE        (CitaID = @Original_CitaID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateEstadoCita(global::System.Nullable<bool> Realizado, int Original_CitaID) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[7];
+            if ((Realizado.HasValue == true)) {
+                command.Parameters[0].Value = ((bool)(Realizado.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            command.Parameters[1].Value = ((int)(Original_CitaID));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int UpdateQueryCitaID(global::System.Nullable<int> ClienteID, global::System.Nullable<int> EmpleadoID, global::System.Nullable<int> ServicioID, System.DateTime Fecha, global::System.Nullable<int> TratamientoID, global::System.Nullable<int> VentaTarjeta, global::System.Nullable<bool> Realizado, int Original_CitaID) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[8];
             if ((ClienteID.HasValue == true)) {
                 command.Parameters[0].Value = ((int)(ClienteID.Value));
             }
@@ -21026,10 +21160,11 @@ SELECT TarjetaID, Tipo, Costo FROM Tarjetas WHERE (TarjetaID = @TarjetaID)";
             tableMapping.ColumnMappings.Add("ClienteID", "ClienteID");
             tableMapping.ColumnMappings.Add("TratamientoID", "TratamientoID");
             tableMapping.ColumnMappings.Add("CostoTratamiento", "CostoTratamiento");
+            tableMapping.ColumnMappings.Add("EstadoPago", "EstadoPago");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [VentaTratamiento] WHERE (([VentaTratamientoID] = @Original_VentaTratamientoID) AND ((@IsNull_ClienteID = 1 AND [ClienteID] IS NULL) OR ([ClienteID] = @Original_ClienteID)) AND ((@IsNull_TratamientoID = 1 AND [TratamientoID] IS NULL) OR ([TratamientoID] = @Original_TratamientoID)) AND ([CostoTratamiento] = @Original_CostoTratamiento))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [VentaTratamiento] WHERE (([VentaTratamientoID] = @Original_VentaTratamientoID) AND ((@IsNull_ClienteID = 1 AND [ClienteID] IS NULL) OR ([ClienteID] = @Original_ClienteID)) AND ((@IsNull_TratamientoID = 1 AND [TratamientoID] IS NULL) OR ([TratamientoID] = @Original_TratamientoID)) AND ([CostoTratamiento] = @Original_CostoTratamiento) AND ((@IsNull_EstadoPago = 1 AND [EstadoPago] IS NULL) OR ([EstadoPago] = @Original_EstadoPago)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_VentaTratamientoID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VentaTratamientoID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ClienteID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClienteID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -21037,28 +21172,34 @@ SELECT TarjetaID, Tipo, Costo FROM Tarjetas WHERE (TarjetaID = @TarjetaID)";
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TratamientoID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TratamientoID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TratamientoID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TratamientoID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CostoTratamiento", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CostoTratamiento", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_EstadoPago", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EstadoPago", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EstadoPago", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EstadoPago", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [VentaTratamiento] ([ClienteID], [TratamientoID], [CostoTratamiento]) VALUES (@ClienteID, @TratamientoID, @CostoTratamiento);
-SELECT VentaTratamientoID, ClienteID, TratamientoID, CostoTratamiento FROM VentaTratamiento WHERE (VentaTratamientoID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [VentaTratamiento] ([ClienteID], [TratamientoID], [CostoTratamiento], [EstadoPago]) VALUES (@ClienteID, @TratamientoID, @CostoTratamiento, @EstadoPago);
+SELECT VentaTratamientoID, ClienteID, TratamientoID, CostoTratamiento, EstadoPago FROM VentaTratamiento WHERE (VentaTratamientoID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClienteID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClienteID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TratamientoID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TratamientoID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CostoTratamiento", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CostoTratamiento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EstadoPago", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EstadoPago", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [VentaTratamiento] SET [ClienteID] = @ClienteID, [TratamientoID] = @TratamientoID, [CostoTratamiento] = @CostoTratamiento WHERE (([VentaTratamientoID] = @Original_VentaTratamientoID) AND ((@IsNull_ClienteID = 1 AND [ClienteID] IS NULL) OR ([ClienteID] = @Original_ClienteID)) AND ((@IsNull_TratamientoID = 1 AND [TratamientoID] IS NULL) OR ([TratamientoID] = @Original_TratamientoID)) AND ([CostoTratamiento] = @Original_CostoTratamiento));
-SELECT VentaTratamientoID, ClienteID, TratamientoID, CostoTratamiento FROM VentaTratamiento WHERE (VentaTratamientoID = @VentaTratamientoID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [VentaTratamiento] SET [ClienteID] = @ClienteID, [TratamientoID] = @TratamientoID, [CostoTratamiento] = @CostoTratamiento, [EstadoPago] = @EstadoPago WHERE (([VentaTratamientoID] = @Original_VentaTratamientoID) AND ((@IsNull_ClienteID = 1 AND [ClienteID] IS NULL) OR ([ClienteID] = @Original_ClienteID)) AND ((@IsNull_TratamientoID = 1 AND [TratamientoID] IS NULL) OR ([TratamientoID] = @Original_TratamientoID)) AND ([CostoTratamiento] = @Original_CostoTratamiento) AND ((@IsNull_EstadoPago = 1 AND [EstadoPago] IS NULL) OR ([EstadoPago] = @Original_EstadoPago)));
+SELECT VentaTratamientoID, ClienteID, TratamientoID, CostoTratamiento, EstadoPago FROM VentaTratamiento WHERE (VentaTratamientoID = @VentaTratamientoID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClienteID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClienteID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TratamientoID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TratamientoID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CostoTratamiento", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CostoTratamiento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EstadoPago", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EstadoPago", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_VentaTratamientoID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VentaTratamientoID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ClienteID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClienteID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ClienteID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClienteID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TratamientoID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TratamientoID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TratamientoID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TratamientoID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CostoTratamiento", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CostoTratamiento", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_EstadoPago", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EstadoPago", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EstadoPago", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EstadoPago", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@VentaTratamientoID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "VentaTratamientoID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -21072,11 +21213,11 @@ SELECT VentaTratamientoID, ClienteID, TratamientoID, CostoTratamiento FROM Venta
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        VentaTratamientoID, ClienteID, TratamientoID, CostoTratamiento\r\nFRO" +
-                "M            VentaTratamiento";
+            this._commandCollection[0].CommandText = "SELECT        VentaTratamientoID, ClienteID, TratamientoID, CostoTratamiento, Est" +
+                "adoPago\r\nFROM            VentaTratamiento";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -21086,6 +21227,22 @@ SELECT VentaTratamientoID, ClienteID, TratamientoID, CostoTratamiento FROM Venta
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClienteID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TratamientoID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CostoTratamiento", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 19, 4, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT        COUNT(VentaTratamientoID) AS trataientoPagado\r\nFROM            Vent" +
+                "aTratamiento\r\nWHERE        (ClienteID = @clienteid) AND (TratamientoID = @tratam" +
+                "ientoid) AND (EstadoPago = @estadopago)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@clienteid", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ClienteID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tratamientoid", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "TratamientoID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estadopago", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "EstadoPago", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "UPDATE       VentaTratamiento\r\nSET                EstadoPago = @EstadoPago\r\nWHERE" +
+                "        (VentaTratamientoID = @Original_VentaTratamientoID)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EstadoPago", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "EstadoPago", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_VentaTratamientoID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "VentaTratamientoID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -21145,7 +21302,7 @@ SELECT VentaTratamientoID, ClienteID, TratamientoID, CostoTratamiento FROM Venta
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_VentaTratamientoID, global::System.Nullable<int> Original_ClienteID, global::System.Nullable<int> Original_TratamientoID, decimal Original_CostoTratamiento) {
+        public virtual int Delete(int Original_VentaTratamientoID, global::System.Nullable<int> Original_ClienteID, global::System.Nullable<int> Original_TratamientoID, decimal Original_CostoTratamiento, global::System.Nullable<bool> Original_EstadoPago) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_VentaTratamientoID));
             if ((Original_ClienteID.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -21164,6 +21321,14 @@ SELECT VentaTratamientoID, ClienteID, TratamientoID, CostoTratamiento FROM Venta
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             this.Adapter.DeleteCommand.Parameters[5].Value = ((decimal)(Original_CostoTratamiento));
+            if ((Original_EstadoPago.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((bool)(Original_EstadoPago.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -21184,7 +21349,7 @@ SELECT VentaTratamientoID, ClienteID, TratamientoID, CostoTratamiento FROM Venta
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> ClienteID, global::System.Nullable<int> TratamientoID, decimal CostoTratamiento) {
+        public virtual int Insert(global::System.Nullable<int> ClienteID, global::System.Nullable<int> TratamientoID, decimal CostoTratamiento, global::System.Nullable<bool> EstadoPago) {
             if ((ClienteID.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ClienteID.Value));
             }
@@ -21198,6 +21363,12 @@ SELECT VentaTratamientoID, ClienteID, TratamientoID, CostoTratamiento FROM Venta
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             this.Adapter.InsertCommand.Parameters[2].Value = ((decimal)(CostoTratamiento));
+            if ((EstadoPago.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((bool)(EstadoPago.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -21218,7 +21389,7 @@ SELECT VentaTratamientoID, ClienteID, TratamientoID, CostoTratamiento FROM Venta
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> ClienteID, global::System.Nullable<int> TratamientoID, decimal CostoTratamiento, int Original_VentaTratamientoID, global::System.Nullable<int> Original_ClienteID, global::System.Nullable<int> Original_TratamientoID, decimal Original_CostoTratamiento, int VentaTratamientoID) {
+        public virtual int Update(global::System.Nullable<int> ClienteID, global::System.Nullable<int> TratamientoID, decimal CostoTratamiento, global::System.Nullable<bool> EstadoPago, int Original_VentaTratamientoID, global::System.Nullable<int> Original_ClienteID, global::System.Nullable<int> Original_TratamientoID, decimal Original_CostoTratamiento, global::System.Nullable<bool> Original_EstadoPago, int VentaTratamientoID) {
             if ((ClienteID.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ClienteID.Value));
             }
@@ -21232,25 +21403,39 @@ SELECT VentaTratamientoID, ClienteID, TratamientoID, CostoTratamiento FROM Venta
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[2].Value = ((decimal)(CostoTratamiento));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_VentaTratamientoID));
-            if ((Original_ClienteID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_ClienteID.Value));
+            if ((EstadoPago.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((bool)(EstadoPago.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_VentaTratamientoID));
+            if ((Original_ClienteID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_ClienteID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             if ((Original_TratamientoID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_TratamientoID.Value));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_TratamientoID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((decimal)(Original_CostoTratamiento));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(VentaTratamientoID));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((decimal)(Original_CostoTratamiento));
+            if ((Original_EstadoPago.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((bool)(Original_EstadoPago.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(VentaTratamientoID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -21271,8 +21456,8 @@ SELECT VentaTratamientoID, ClienteID, TratamientoID, CostoTratamiento FROM Venta
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> ClienteID, global::System.Nullable<int> TratamientoID, decimal CostoTratamiento, int Original_VentaTratamientoID, global::System.Nullable<int> Original_ClienteID, global::System.Nullable<int> Original_TratamientoID, decimal Original_CostoTratamiento) {
-            return this.Update(ClienteID, TratamientoID, CostoTratamiento, Original_VentaTratamientoID, Original_ClienteID, Original_TratamientoID, Original_CostoTratamiento, Original_VentaTratamientoID);
+        public virtual int Update(global::System.Nullable<int> ClienteID, global::System.Nullable<int> TratamientoID, decimal CostoTratamiento, global::System.Nullable<bool> EstadoPago, int Original_VentaTratamientoID, global::System.Nullable<int> Original_ClienteID, global::System.Nullable<int> Original_TratamientoID, decimal Original_CostoTratamiento, global::System.Nullable<bool> Original_EstadoPago) {
+            return this.Update(ClienteID, TratamientoID, CostoTratamiento, EstadoPago, Original_VentaTratamientoID, Original_ClienteID, Original_TratamientoID, Original_CostoTratamiento, Original_EstadoPago, Original_VentaTratamientoID);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -21319,6 +21504,82 @@ SELECT VentaTratamientoID, ClienteID, TratamientoID, CostoTratamiento FROM Venta
             else {
                 return ((object)(returnValue));
             }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<int> tratamientoPagado(global::System.Nullable<int> clienteid, global::System.Nullable<int> tratamientoid, global::System.Nullable<bool> estadopago) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            if ((clienteid.HasValue == true)) {
+                command.Parameters[0].Value = ((int)(clienteid.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((tratamientoid.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(tratamientoid.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((estadopago.HasValue == true)) {
+                command.Parameters[2].Value = ((bool)(estadopago.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<int>();
+            }
+            else {
+                return new global::System.Nullable<int>(((int)(returnValue)));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateEstadoPago(global::System.Nullable<bool> EstadoPago, int Original_VentaTratamientoID) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            if ((EstadoPago.HasValue == true)) {
+                command.Parameters[0].Value = ((bool)(EstadoPago.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            command.Parameters[1].Value = ((int)(Original_VentaTratamientoID));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     
