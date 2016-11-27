@@ -135,14 +135,14 @@ namespace LucySpa.Citas
                 {//Si no hay citas conflictivas
                     if (ModooVentana == "Modificar")
                     {
-                        taCitas.UpdateQueryCitaID(clienteID, empleadoID, servicioID, dtpFechaCita.Value, null, null, null, citaID);
+                        taCitas.UpdateQueryCitaID(clienteID, empleadoID, servicioID, dtpFechaCita.Value, null, null, false, citaID);
                         MessageBox.Show("Cita modificada satisfactoriamente.", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
                     else
                     {
                         //Se insertan los datos de la cita a la base de datos//
-                        taCitas.Insert(clienteID, empleadoID, servicioID, dtpFechaCita.Value, null, null, null, (int)cbCuartos.SelectedValue, false);
+                        taCitas.Insert(clienteID, empleadoID, servicioID, dtpFechaCita.Value, null, null, false, (int)cbCuartos.SelectedValue, false);
                         MessageBox.Show("Guardado satisfactoriamente.", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
@@ -163,7 +163,7 @@ namespace LucySpa.Citas
                         "Agendar citas", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                             if (dr == DialogResult.Yes)
                             {
-                                taCitas.Insert(clienteID, empleadoID, servicioID, dtpFechaCita.Value, null, null, null, (int)cbCuartos.SelectedValue, false);
+                                taCitas.Insert(clienteID, empleadoID, servicioID, dtpFechaCita.Value, null, null, false, (int)cbCuartos.SelectedValue, false);
                                 MessageBox.Show("Guardado satisfactoriamente.", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.Close();
                             }

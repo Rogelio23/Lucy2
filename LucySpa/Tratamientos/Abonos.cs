@@ -38,6 +38,7 @@ namespace LucySpa.Tratamientos
         private void btnAbonar_Click(object sender, EventArgs e)
         {
             DataAccess.LucySpaDBTableAdapters.AbonoTableAdapter taAbonos = new DataAccess.LucySpaDBTableAdapters.AbonoTableAdapter();
+            DataAccess.LucySpaDBTableAdapters.VentaTratamientoTableAdapter taVentaTratamientos = new DataAccess.LucySpaDBTableAdapters.VentaTratamientoTableAdapter();
             decimal cantidad = decimal.Parse(tbAbono.Text);
             DataGridViewRow r = dataGridView1.SelectedRows[0];
             int VentaID = (int)r.Cells[0].Value;
@@ -53,8 +54,10 @@ namespace LucySpa.Tratamientos
                 this.vistaAbonosTableAdapter.FillByID(this.lucySpaDB.VistaAbonos, VentaTratamientoID);
                 MessageBox.Show("Se a realizado un abono de " + cantidad + " Pesos", "Pago exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 decimal SumaNueva = (decimal)taAbonos.SumarCantidadAbonos(VentaID);
+
                 if (SumaNueva >= CostoTratamiento)
                 {
+                    taVentaTratamientos.UpdateEstadoPago(true,VentaTratamientoID);
                     MessageBox.Show("Este tratamiento a sido pagado completamente", "Pago exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
