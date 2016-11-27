@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LucySpa.exe" size="1410976">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LucySpa.exe" size="1414560">
       <assemblyIdentity name="LucySpa" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>KpZq2p/bkpXQMKbBp+uWMrjJZedXNRqcVTyKMNzIzNQ=</dsig:DigestValue>
+        <dsig:DigestValue>yLurvmgpk7ICSJ/FRf10jazVIvaAD7H1fk8VzOKJa3Q=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
